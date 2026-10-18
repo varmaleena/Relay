@@ -1,5 +1,6 @@
 # Preserve source evidence exactly as captured; hashes refer to these bytes.
 docs/pack-sources/** -text
+eval/reports/offline-fixture-v1/report.json -text
 *.pdf -text
 *.png -text
 *.ttf -text

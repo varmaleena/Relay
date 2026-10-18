@@ -741,11 +741,23 @@ def test_legacy_statement_is_not_repaired_by_repeated_live_extraction(context):
     assert origin.get("reference") is None
 
 
-def test_actual_packet_verifier_accepts_live_turn_origin_and_blocks_legacy_unknown(tmp_path):
+def test_actual_packet_verifier_accepts_live_turn_origin_and_blocks_legacy_unknown(
+    tmp_path, monkeypatch
+):
+    from itertools import count
+    from uuid import UUID
+
     from agents.packets import PacketPipeline
     from tests.unit.test_packet_agents import Client
     from tests.unit.test_packet_service import make_packet_context
 
+    # Keep opaque fixture IDs reproducible: random hex can contain card-shaped digit runs.
+    # Production credential controls remain conservative and unchanged.
+    sequence = count(1)
+    monkeypatch.setattr(
+        "packages.common.identifiers.uuid4",
+        lambda: UUID(hex=f"aaaaaaaaaaaaaaaaaaaaaaaa{next(sequence):08x}"),
+    )
     c = make_packet_context(tmp_path)
     path = f"cases/{c.case_id}"
     # New-case fixture has no statement about the claimed identity yet.
