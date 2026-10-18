@@ -168,15 +168,18 @@ def test_http_generate_edit_verify_send_tracker_events_and_audit_export(http):
     assert exported.status_code == 200, exported.text
     assert len(exported.json()["packets"]) == 3 and exported.json()["case"]["caseId"] == c.case_id
     assert client.post(url + "/answer", json={}, headers=headers()).status_code == 422
-    assert client.post(
-        url + "/answer",
-        json={
-            "requestId": "missing-request",
-            "ifVersion": current["version"],
-            "answers": [{"itemKey": "payment.reference", "value": "TEST0000000001"}],
-        },
-        headers=headers(),
-    ).status_code == 409
+    assert (
+        client.post(
+            url + "/answer",
+            json={
+                "requestId": "missing-request",
+                "ifVersion": current["version"],
+                "answers": [{"itemKey": "payment.reference", "value": "TEST0000000001"}],
+            },
+            headers=headers(),
+        ).status_code
+        == 409
+    )
 
 
 def test_http_stale_sources_block_generation_and_approval(http):

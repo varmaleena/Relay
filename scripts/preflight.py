@@ -147,9 +147,9 @@ def local_checks(root):
     return results
 
 
-def run(api, web, *, root=ROOT, transport=fetch, checks=local_checks, timeout=5):
+def run(api, web, *, root=ROOT, transport=fetch, checks=local_checks, timeout=30):
     api, web = origin(api, "api"), origin(web, "web")
-    if not 0 < timeout <= 10:
+    if not 0 < timeout <= 30:
         raise ValueError("timeout_out_of_bounds")
     results = checks(root)
     config = {}
@@ -274,7 +274,7 @@ def main(argv=None):
     parser.add_argument("--api", required=True)
     parser.add_argument("--web", required=True)
     parser.add_argument("--output", required=True)
-    parser.add_argument("--timeout", type=float, default=5)
+    parser.add_argument("--timeout", type=float, default=30)
     args = parser.parse_args(argv)
     try:
         destination = output_path(ROOT, args.output)

@@ -6,6 +6,16 @@ Relay helps someone organize a scam incident, review a source-linked draft plan 
 
 The public [evidence and results page](https://work-511514.web.app/results) separates observed hosted checks from the offline calculator fixture and unmeasured comparisons. See [the priority increment outcome](docs/submission/PRIORITY_INCREMENT_20261018.md) for the raw demo recording, submission artifacts and the still-failing automatic voice fact-saving gate.
 
+## Submission links
+
+- [Live prototype](https://work-511514.web.app)
+- [Narrated and captioned demonstration video](https://drive.google.com/file/d/1U6Ag1LrUGu6eN4uJwC-B0XncIogZwh5Y/view), 1 minute 41 seconds. Actual synthetic screen recording, disclosed synthetic English narration and real waiting time.
+- [Six-slide proposal PDF](https://drive.google.com/file/d/16DkEH1BvfXshfo7Jm_zenFrzer9BHD9f/view)
+- [Evidence and results](https://work-511514.web.app/results)
+- [Submission scope and limitations](docs/submission/SUBMISSION_READINESS.md)
+
+Theme: **BFSI: Intelligent Risk, Fraud & Financial Experiences**. The submitted demonstration covers the text-first workflow. Voice, Studio, linking and broader evaluation retain open gates; they are not advertised as completed hosted features.
+
 M0–M4 core features are implemented. Later voice, Studio, linking, evaluation and demo-control increments have local tests but retain integration and human-review gates; advanced cloud flags remain disabled. See [the current core release](docs/submission/CORE_RELEASE_20261018.md) and [submission handoff](docs/submission/TONIGHT_SUBMISSION.md). Downloading a report does not submit it or establish official acceptance.
 
 ## Local development

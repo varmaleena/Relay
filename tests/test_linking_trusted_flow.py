@@ -52,4 +52,3 @@ def test_approved_delivery_fact_update_revokes_link_proof(flow):  # noqa: F811
     with pytest.raises(IntakeError) as error:
         receiver_links.validate(c.staff, old, "related", None, str(uuid4()))
     assert error.value.code == "stale_link"
-

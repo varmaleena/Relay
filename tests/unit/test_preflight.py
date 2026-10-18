@@ -6,7 +6,7 @@ from scripts.preflight import LIMIT, NoRedirect, origin, output_path, run
 
 
 def transport(url, timeout):
-    assert 0 < timeout <= 10
+    assert 0 < timeout <= 30
     if url.endswith("/healthz"):
         data = {"status": "ok"}
     elif url.endswith("/readyz"):
@@ -116,7 +116,7 @@ def test_safe_output_and_no_unbounded_timeout(tmp_path):
         output_path(tmp_path, tmp_path / "private.json")
     assert output_path(tmp_path, tmp_path / ".tmp/report.json")
     with pytest.raises(ValueError):
-        run("http://localhost", "http://localhost", timeout=11, checks=lambda _: [])
+        run("http://localhost", "http://localhost", timeout=31, checks=lambda _: [])
 
 
 def test_cli_writes_machine_report_and_returns_nonzero_on_critical_failure(tmp_path, monkeypatch):
