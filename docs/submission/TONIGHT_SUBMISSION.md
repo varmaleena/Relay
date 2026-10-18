@@ -1,5 +1,11 @@
 # Relay: tonight's submission handoff
 
+Current portal-specific handoff: PORTAL_ENTRY.md. The owner supplied the prescribed
+template and rules on18October: deck PDF below5MB, video3–4minutes, deadline
+18October2026 at11:59PM IST. RELAY_DECK.pdf now uses that template (14pages),
+and the public narrated video is approximately3:22. The earlier recording plan
+below is historical and does not override the actual portal duration requirement.
+
 18 October 2026, Asia/Calcutta. This is a preparation checklist, not confirmation
 that the entry has been submitted or every milestone has passed. The owner's
 target is the end of 18 October; confirm the competition dashboard's exact cutoff
@@ -34,14 +40,15 @@ not establish a reliability target. Human phone/rehearsal checks remain pending.
 The existing review preview is temporary and must not be mistaken for a permanent
 submission link. Local materials now include RELAY_DEMO.webm (raw silent real
 screen recording,100.88seconds), RELAY_DECK.pdf and VIDEO_NARRATION.md.
-The recording still needs human review, narration/editing and publication.
+The public narrated replacement includes the core recording, PDF and explanatory
+sections. Human listening review remains unclaimed.
 See PRIORITY_INCREMENT_20261018.md for the failed voice fact-saving gate.
-**Public repository / video / deck PDF URLs:** PENDING owner-approved
-publication and confirmed accessible URLs. Declare the BFSI theme if the current
+**Public repository / video / deck PDF URLs:** published with owner approval and
+checked anonymously; see PORTAL_ENTRY.md. Declare the BFSI theme if the current
 portal requires the theme described in the build spec. Prepare submission text,
 video captions and deck in English.
 
-## Recording script: aim for 2:45, leave a 15-second buffer
+## Historical recording script (superseded by the portal's 3–4 minute rule)
 
 | Time | Show | Say or do |
 |---|---|---|
@@ -99,7 +106,7 @@ do not override verification or present that report as verified.
 - [ ] Retain open human source/legal, Hindi/language and outsider comprehension
   reviews as limitations. Automated checks do not complete those reviews. The
   full load/resilience, live quality and all T01–T43 acceptance gates are separate.
-- [ ] Prepare the English deck PDF, a video under three minutes, repository
+- [ ] Prepare the English template deck PDF, a video of three to four minutes, repository
   README/run instructions, architecture and limitations. Review tracked files and
   history for credentials/private fixtures before any public publication.
 - [ ] Obtain the owner's actual publication/submission decisions. Verify public

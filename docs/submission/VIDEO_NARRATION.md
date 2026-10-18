@@ -1,5 +1,11 @@
 # English narration for the core demonstration
 
+The final portal version is approximately3:22. It adds an introduction about the
+user and job before the uninterrupted hosted core, retains the downloaded PDF,
+and closes with Google services and disclosed engineering/human-review gates.
+Synthetic narration and explanatory segments are labeled. The actual portal
+requires3–4minutes; the older shorter video is superseded.
+
 Use the actual captured sequence; do not imply the optional voice, Studio or
 linking flow appears in the text recording. Check duration and current portal
 requirements before upload. This script is suggested narration, not a transcript.
