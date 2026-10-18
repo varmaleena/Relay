@@ -1,0 +1,22 @@
+{
+  "status": "pending-foundations-after-smoke-review",
+  "sourceTask": "T02",
+  "sourceSections": ["3.2", "10.2", "15.1", "16.1", "18.6"],
+  "project": "work-511514",
+  "region": "asia-south1",
+  "environment": "dev",
+  "resourceGroups": [
+    {"group":"compute","resources":["api","live-gateway","worker","mcp-bank-mock","mcp-rail-mock","a2a-receiver","eval-runner","synth-gen"],"status":"future-service-phase-deployment"},
+    {"group":"identities","resources":["relay-dev-api","relay-dev-live","relay-dev-worker","relay-dev-bank-mock","relay-dev-rail-mock","relay-dev-a2a","relay-dev-eval","relay-dev-synth","relay-dev-push"],"status":"pending-reviewed-resource-IAM"},
+    {"group":"database","resources":["Firestore Native operational database","separate mock database boundary","TTL ttlAt policy","composite indexes","Firebase client rules"],"status":"creation-location-gated-pending-existing-database-inspection"},
+    {"group":"files","resources":["evidence","sources","exports","eval"],"status":"pending-dev-prefixed-buckets-retention-and-consent-alignment"},
+    {"group":"analytics","resources":["relay_entities","relay_eval","relay_analytics"],"status":"DDL-prepared-not-executed-dataset-location-scoped-IAM-pending"},
+    {"group":"messaging","resources":["relay-dev-jobs","relay-dev-jobs-dlq","OIDC worker push subscription","relay-dev-deadlines Cloud Tasks queue"],"status":"pending-worker-endpoint-and-invoker-identity"},
+    {"group":"secrets","resources":["relay-dev-entity-hmac","relay-dev-demo-credentials"],"status":"pending-per-secret-workload-access-and-safe-value-creation"},
+    {"group":"Firebase","resources":["project linkage","anonymous Auth","reviewer/receiver providers","custom role/org claims","App Check reCAPTCHA Enterprise","Hosting"],"status":"local-rules-tested-cloud-configuration-pending"},
+    {"group":"search","resources":["Vertex AI Search source passage store or permitted own-index fallback"],"status":"optional-availability-budget-decision-not-provisioned"},
+    {"group":"operations","resources":["structured scrubbed logging","trace dashboard","billing alert","model budgets","GitHub WIF","least-privilege deployment identity"],"status":"pending-resource-specific-setup"},
+    {"group":"production","resources":["separate submitted-demo environment"],"status":"not-authorized-in-current-dev-smoke-plan"}
+  ],
+  "execution": "Registry preserves traceability only. It is not executable and creates nothing."
+}

@@ -1,0 +1,20 @@
+{
+  "solicitation": [
+    "\\b(?:tell|send|share|give|enter|provide|type|upload|reply with)\\b.{0,60}\\b(?:otp|pin|password|cvv|card number|verification code|one.time password|account credentials)\\b",
+    "\\b(?:what is|what's)\\b.{0,25}\\b(?:otp|pin|password|cvv)\\b",
+    "\\binstall\\b.{0,50}\\b(?:anydesk|teamviewer|remote.access)\\b",
+    "\\b(?:pay|send|transfer)\\b.{0,50}\\b(?:recovery agent|recovery service|recovery fee)\\b"
+  ],
+  "promise": [
+    "\\b(?:guaranteed|guarantee)\\b.{0,35}\\b(?:refund|recovery|recover|money)\\b",
+    "\\byou (?:will|shall) (?:get|receive) (?:your |the )?money back\\b",
+    "\\b(?:your |the )?(?:money|funds|payment)\\s+(?:will|shall)\\s+be\\s+(?:recovered|refunded|returned)\\b"
+  ],
+  "legal": [
+    "\\byou are entitled to\\b",
+    "\\b(?:the )?bank must refund\\b"
+  ],
+  "negation": [
+    "\\b(?:do not|don't|never|must not|should not|cannot|can't|will not|won't|no one should)\\b"
+  ]
+}

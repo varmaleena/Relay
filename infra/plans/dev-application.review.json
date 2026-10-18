@@ -1,0 +1,16 @@
+{
+  "authorizedCheckpoint": "2026-10-17 reliability and minimal deployed synthetic demo",
+  "project": "work-511514",
+  "region": "asia-south1",
+  "database": {"id": "(default)", "mode": "FIRESTORE_NATIVE", "location": "asia-south1", "precondition": "inventory empty; never relocate or replace an existing database"},
+  "firebase": {"linkExistingProject": true, "webAppDisplayName": "Relay synthetic dev demo", "anonymousAuth": true, "appCheck": "reCAPTCHA Enterprise; never bypass"},
+  "buckets": ["work-511514-relay-dev-evidence", "work-511514-relay-dev-exports"],
+  "bucketPolicy": {"location": "asia-south1", "uniformAccess": true, "publicAccessPrevention": true, "lifecycleDays": 7},
+  "services": ["relay-dev-api", "relay-dev-worker"],
+  "runtimeAccounts": ["relay-dev-api", "relay-dev-worker", "relay-dev-job-invoker"],
+  "computeLimits": {"minInstances": 0, "maxInstances": 1, "workerConcurrency": 1},
+  "jobs": {"topic": "relay-jobs", "deadLetterTopic": "relay-jobs-dlq", "authenticatedPush": true, "recoverySweep": "private bounded scheduler invocation"},
+  "hosting": "Firebase preview; promote only after actual authenticated browser gates",
+  "existingPlanningBudgetINR": 1000,
+  "notes": ["Alerts are not a spending cap", "Global AI processing is distinct from Mumbai storage", "No real filing or M4 receiver workflow", "No public service before local cloud-mode tests and configuration pass"]
+}

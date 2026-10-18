@@ -1,0 +1,608 @@
+{
+  "$defs": {
+    "Channel": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "phone",
+            "portal",
+            "app",
+            "email",
+            "in_person",
+            "website"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "verified": {
+          "default": false,
+          "title": "Verified",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "title": "Channel",
+      "type": "object"
+    },
+    "CrisisSupport": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "channel": {
+          "title": "Channel",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Refs",
+          "type": "array"
+        },
+        "status": {
+          "default": "unverified",
+          "enum": [
+            "verified",
+            "unverified"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "channel"
+      ],
+      "title": "CrisisSupport",
+      "type": "object"
+    },
+    "Deadline": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Refs",
+          "type": "array"
+        },
+        "status": {
+          "default": "unverified",
+          "enum": [
+            "verified",
+            "unverified"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "applies_to": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Applies To",
+          "type": "array"
+        },
+        "from_event": {
+          "enum": [
+            "payment_timestamp",
+            "discovery_timestamp",
+            "report_timestamp"
+          ],
+          "title": "From Event",
+          "type": "string"
+        },
+        "duration": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Duration"
+        },
+        "type": {
+          "enum": [
+            "soft",
+            "hard"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "consequence": {
+          "title": "Consequence",
+          "type": "string"
+        },
+        "calendar": {
+          "default": "calendar",
+          "enum": [
+            "calendar",
+            "business"
+          ],
+          "title": "Calendar",
+          "type": "string"
+        },
+        "calendar_country": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Calendar Country"
+        }
+      },
+      "required": [
+        "id",
+        "applies_to",
+        "from_event",
+        "type",
+        "consequence"
+      ],
+      "title": "Deadline",
+      "type": "object"
+    },
+    "Form": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "recipient_id": {
+          "title": "Recipient Id",
+          "type": "string"
+        },
+        "fields": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            ]
+          },
+          "title": "Fields",
+          "type": "array"
+        },
+        "format": {
+          "default": "text",
+          "enum": [
+            "text",
+            "pdf",
+            "portal_steps"
+          ],
+          "title": "Format",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "recipient_id"
+      ],
+      "title": "Form",
+      "type": "object"
+    },
+    "Jurisdiction": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "archetype": {
+          "enum": [
+            "centralized_rail",
+            "mandatory_reimbursement",
+            "fragmented"
+          ],
+          "title": "Archetype",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "archetype"
+      ],
+      "title": "Jurisdiction",
+      "type": "object"
+    },
+    "LiabilityRule": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Refs",
+          "type": "array"
+        },
+        "status": {
+          "default": "unverified",
+          "enum": [
+            "verified",
+            "unverified"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "condition": {
+          "title": "Condition",
+          "type": "string"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "limits": {
+          "default": "",
+          "title": "Limits",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "condition",
+        "summary"
+      ],
+      "title": "LiabilityRule",
+      "type": "object"
+    },
+    "PackReview": {
+      "additionalProperties": false,
+      "properties": {
+        "reviewer": {
+          "default": "",
+          "title": "Reviewer",
+          "type": "string"
+        },
+        "reviewed_at": {
+          "default": "",
+          "title": "Reviewed At",
+          "type": "string"
+        },
+        "notes": {
+          "default": "",
+          "title": "Notes",
+          "type": "string"
+        },
+        "accepted_unverified_rule_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Accepted Unverified Rule Ids",
+          "type": "array"
+        }
+      },
+      "title": "PackReview",
+      "type": "object"
+    },
+    "Recipient": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Refs",
+          "type": "array"
+        },
+        "status": {
+          "default": "unverified",
+          "enum": [
+            "verified",
+            "unverified"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "bank",
+            "national_cyber_authority",
+            "police",
+            "payment_app",
+            "telecom",
+            "platform",
+            "ombudsman",
+            "reimbursement_scheme",
+            "support_org"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "channels": {
+          "items": {
+            "$ref": "#/$defs/Channel"
+          },
+          "title": "Channels",
+          "type": "array"
+        },
+        "applies_when": {
+          "default": "True",
+          "title": "Applies When",
+          "type": "string"
+        },
+        "required_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Fields",
+          "type": "array"
+        },
+        "template_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Template Id"
+        },
+        "recipient_language": {
+          "default": "en",
+          "title": "Recipient Language",
+          "type": "string"
+        },
+        "typology_categories": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Typology Categories",
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "name",
+        "channels"
+      ],
+      "title": "Recipient",
+      "type": "object"
+    },
+    "Sequencing": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Refs",
+          "type": "array"
+        },
+        "status": {
+          "default": "unverified",
+          "enum": [
+            "verified",
+            "unverified"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "step": {
+          "minimum": 1,
+          "title": "Step",
+          "type": "integer"
+        },
+        "recipient_id": {
+          "title": "Recipient Id",
+          "type": "string"
+        },
+        "when": {
+          "default": "True",
+          "title": "When",
+          "type": "string"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "step",
+        "recipient_id",
+        "rationale"
+      ],
+      "title": "Sequencing",
+      "type": "object"
+    },
+    "Source": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "publisher": {
+          "title": "Publisher",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "retrieved_at": {
+          "title": "Retrieved At",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[a-fA-F0-9]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "publisher",
+        "url",
+        "retrieved_at",
+        "sha256"
+      ],
+      "title": "Source",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "pack_id": {
+      "title": "Pack Id",
+      "type": "string"
+    },
+    "version": {
+      "title": "Version",
+      "type": "string"
+    },
+    "status": {
+      "default": "draft",
+      "enum": [
+        "draft",
+        "reviewed",
+        "published",
+        "retired"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "jurisdiction": {
+      "$ref": "#/$defs/Jurisdiction"
+    },
+    "languages": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Languages",
+      "type": "array"
+    },
+    "timezone": {
+      "title": "Timezone",
+      "type": "string"
+    },
+    "currency": {
+      "title": "Currency",
+      "type": "string"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/Source"
+      },
+      "title": "Sources",
+      "type": "array"
+    },
+    "recipients": {
+      "items": {
+        "$ref": "#/$defs/Recipient"
+      },
+      "title": "Recipients",
+      "type": "array"
+    },
+    "sequencing": {
+      "items": {
+        "$ref": "#/$defs/Sequencing"
+      },
+      "title": "Sequencing",
+      "type": "array"
+    },
+    "deadlines": {
+      "items": {
+        "$ref": "#/$defs/Deadline"
+      },
+      "title": "Deadlines",
+      "type": "array"
+    },
+    "liability_rules": {
+      "items": {
+        "$ref": "#/$defs/LiabilityRule"
+      },
+      "title": "Liability Rules",
+      "type": "array"
+    },
+    "forms": {
+      "items": {
+        "$ref": "#/$defs/Form"
+      },
+      "title": "Forms",
+      "type": "array"
+    },
+    "crisis_support": {
+      "items": {
+        "$ref": "#/$defs/CrisisSupport"
+      },
+      "title": "Crisis Support",
+      "type": "array"
+    },
+    "disclaimers": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Disclaimers",
+      "type": "array"
+    },
+    "review": {
+      "$ref": "#/$defs/PackReview"
+    }
+  },
+  "required": [
+    "pack_id",
+    "version",
+    "jurisdiction",
+    "languages",
+    "timezone",
+    "currency"
+  ],
+  "title": "Pack",
+  "type": "object"
+}

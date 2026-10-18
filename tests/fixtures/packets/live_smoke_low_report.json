@@ -1,0 +1,724 @@
+{
+  "runAt": "2026-10-15T14:42:19.679583+00:00",
+  "inputSha256": "b6b16aa8ecbfbdab4c41317f3fd6c0867cb35e233a01192d2547e0923a7e4141",
+  "model": "gemini-3.8-flash",
+  "project": "work-511514",
+  "processingLocation": "global",
+  "sdkVersion": "2.30.1",
+  "n": 3,
+  "providerAttempts": 7,
+  "providerFailures": [
+    "http_429",
+    "http_504",
+    "http_429"
+  ],
+  "attemptLedger": [
+    {
+      "attempt": 1,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [],
+      "reason": "success",
+      "statusCode": null,
+      "latencyMs": 10297,
+      "usage": [
+        {
+          "model": "gemini-3.8-flash",
+          "latencyMs": 10297,
+          "inputTokens": 1346,
+          "outputTokens": 596,
+          "reasoningTokens": null
+        }
+      ]
+    },
+    {
+      "attempt": 2,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [
+        "identifiers"
+      ],
+      "reason": "http_429",
+      "statusCode": 429,
+      "latencyMs": 766,
+      "usage": []
+    },
+    {
+      "attempt": 3,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [],
+      "reason": "success",
+      "statusCode": null,
+      "latencyMs": 8140,
+      "usage": [
+        {
+          "model": "gemini-3.8-flash",
+          "latencyMs": 8140,
+          "inputTokens": 1413,
+          "outputTokens": 445,
+          "reasoningTokens": null
+        }
+      ]
+    },
+    {
+      "attempt": 4,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [
+        "identifiers"
+      ],
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 12532,
+      "usage": []
+    },
+    {
+      "attempt": 5,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [],
+      "reason": "success",
+      "statusCode": null,
+      "latencyMs": 8515,
+      "usage": [
+        {
+          "model": "gemini-3.8-flash",
+          "latencyMs": 8515,
+          "inputTokens": 1362,
+          "outputTokens": 539,
+          "reasoningTokens": null
+        }
+      ]
+    },
+    {
+      "attempt": 6,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [
+        "identifiers"
+      ],
+      "reason": "success",
+      "statusCode": null,
+      "latencyMs": 8453,
+      "usage": [
+        {
+          "model": "gemini-3.8-flash",
+          "latencyMs": 8453,
+          "inputTokens": 2453,
+          "outputTokens": 561,
+          "reasoningTokens": null
+        }
+      ]
+    },
+    {
+      "attempt": 7,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [
+        "identifiers"
+      ],
+      "reason": "http_429",
+      "statusCode": 429,
+      "latencyMs": 969,
+      "usage": []
+    }
+  ],
+  "sdkFailures": [
+    {
+      "schemaName": "WriterOutput",
+      "reason": "http_429",
+      "statusCode": 429,
+      "latencyMs": 766
+    },
+    {
+      "schemaName": "WriterOutput",
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 12532
+    },
+    {
+      "schemaName": "WriterOutput",
+      "reason": "http_429",
+      "statusCode": 429,
+      "latencyMs": 969
+    }
+  ],
+  "packetThinkingLevel": "LOW",
+  "writerMaxOutputTokens": 2500,
+  "usage": [
+    {
+      "model": "gemini-3.8-flash",
+      "latencyMs": 10297,
+      "inputTokens": 1346,
+      "outputTokens": 596,
+      "reasoningTokens": null
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "latencyMs": 8140,
+      "inputTokens": 1413,
+      "outputTokens": 445,
+      "reasoningTokens": null
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "latencyMs": 8515,
+      "inputTokens": 1362,
+      "outputTokens": 539,
+      "reasoningTokens": null
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "latencyMs": 8453,
+      "inputTokens": 2453,
+      "outputTokens": 561,
+      "reasoningTokens": null
+    }
+  ],
+  "cost": null,
+  "costNote": "No fabricated monetary estimate; usage recorded where SDK supplied it.",
+  "limitations": [
+    "Synthetic smoke n=3; no production accuracy claim.",
+    "Draft sources remain unverified; model entailment is fallible."
+  ],
+  "results": [
+    {
+      "recipient": "bank",
+      "status": "NEEDS_HUMAN_REVIEW",
+      "writerAttempts": 2,
+      "attemptHistory": [
+        {
+          "attempt": 1,
+          "checks": [
+            {
+              "id": "recipient",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Recipient must match selected pack and plan.",
+              "severity": "blocker"
+            },
+            {
+              "id": "language",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Language metadata must match requested languages.",
+              "severity": "blocker"
+            },
+            {
+              "id": "footer",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Required versioned footer and draft labels.",
+              "severity": "blocker"
+            },
+            {
+              "id": "attachments",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Attachment manifest must match verified hashes.",
+              "severity": "blocker"
+            },
+            {
+              "id": "citations",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Every source reference must resolve; draft status must survive.",
+              "severity": "blocker"
+            },
+            {
+              "id": "fields",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Structured values and provenance must equal case facts.",
+              "severity": "blocker"
+            },
+            {
+              "id": "completeness",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Completeness is computed from trusted field metadata.",
+              "severity": "blocker"
+            },
+            {
+              "id": "required",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Required fields must be provided.",
+              "severity": "blocker"
+            },
+            {
+              "id": "victim_copy",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "A complete plain-language victim copy is required.",
+              "severity": "blocker"
+            },
+            {
+              "id": "rule_references",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Plan rule references must belong to the selected pack.",
+              "severity": "blocker"
+            },
+            {
+              "id": "safety",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "No credentials, full accounts, promises or unsupported legal conclusions.",
+              "severity": "blocker"
+            },
+            {
+              "id": "amounts",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Explicit currency amounts must equal the case amount.",
+              "severity": "blocker"
+            },
+            {
+              "id": "timestamps",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Explicit timestamps must equal case facts.",
+              "severity": "blocker"
+            },
+            {
+              "id": "identifiers",
+              "type": "deterministic",
+              "passed": false,
+              "detail": "Explicit identifiers must match victim facts, not new model values.",
+              "severity": "blocker"
+            },
+            {
+              "id": "provenance",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Every populated field requires a traceable statement or evidence origin.",
+              "severity": "blocker"
+            },
+            {
+              "id": "promise",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Recovery cannot be promised.",
+              "severity": "blocker"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "stage": "writer",
+          "errorType": "ModelFailure"
+        }
+      ],
+      "latencySeconds": 11.093999999924563,
+      "checks": [
+        {
+          "id": "writer_unavailable",
+          "type": "deterministic",
+          "passed": false,
+          "detail": "Draft unavailable or invalid; review required.",
+          "severity": "blocker"
+        }
+      ],
+      "content": null
+    },
+    {
+      "recipient": "cyber",
+      "status": "NEEDS_HUMAN_REVIEW",
+      "writerAttempts": 2,
+      "attemptHistory": [
+        {
+          "attempt": 1,
+          "checks": [
+            {
+              "id": "recipient",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Recipient must match selected pack and plan.",
+              "severity": "blocker"
+            },
+            {
+              "id": "language",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Language metadata must match requested languages.",
+              "severity": "blocker"
+            },
+            {
+              "id": "footer",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Required versioned footer and draft labels.",
+              "severity": "blocker"
+            },
+            {
+              "id": "attachments",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Attachment manifest must match verified hashes.",
+              "severity": "blocker"
+            },
+            {
+              "id": "citations",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Every source reference must resolve; draft status must survive.",
+              "severity": "blocker"
+            },
+            {
+              "id": "fields",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Structured values and provenance must equal case facts.",
+              "severity": "blocker"
+            },
+            {
+              "id": "completeness",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Completeness is computed from trusted field metadata.",
+              "severity": "blocker"
+            },
+            {
+              "id": "required",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Required fields must be provided.",
+              "severity": "blocker"
+            },
+            {
+              "id": "victim_copy",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "A complete plain-language victim copy is required.",
+              "severity": "blocker"
+            },
+            {
+              "id": "rule_references",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Plan rule references must belong to the selected pack.",
+              "severity": "blocker"
+            },
+            {
+              "id": "safety",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "No credentials, full accounts, promises or unsupported legal conclusions.",
+              "severity": "blocker"
+            },
+            {
+              "id": "amounts",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Explicit currency amounts must equal the case amount.",
+              "severity": "blocker"
+            },
+            {
+              "id": "timestamps",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Explicit timestamps must equal case facts.",
+              "severity": "blocker"
+            },
+            {
+              "id": "identifiers",
+              "type": "deterministic",
+              "passed": false,
+              "detail": "Explicit identifiers must match victim facts, not new model values.",
+              "severity": "blocker"
+            },
+            {
+              "id": "provenance",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Every populated field requires a traceable statement or evidence origin.",
+              "severity": "blocker"
+            },
+            {
+              "id": "promise",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Recovery cannot be promised.",
+              "severity": "blocker"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "stage": "writer",
+          "errorType": "ModelFailure"
+        }
+      ],
+      "latencySeconds": 20.67200000002049,
+      "checks": [
+        {
+          "id": "writer_unavailable",
+          "type": "deterministic",
+          "passed": false,
+          "detail": "Draft unavailable or invalid; review required.",
+          "severity": "blocker"
+        }
+      ],
+      "content": null
+    },
+    {
+      "recipient": "payment-app",
+      "status": "NEEDS_HUMAN_REVIEW",
+      "writerAttempts": 3,
+      "attemptHistory": [
+        {
+          "attempt": 1,
+          "checks": [
+            {
+              "id": "recipient",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Recipient must match selected pack and plan.",
+              "severity": "blocker"
+            },
+            {
+              "id": "language",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Language metadata must match requested languages.",
+              "severity": "blocker"
+            },
+            {
+              "id": "footer",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Required versioned footer and draft labels.",
+              "severity": "blocker"
+            },
+            {
+              "id": "attachments",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Attachment manifest must match verified hashes.",
+              "severity": "blocker"
+            },
+            {
+              "id": "citations",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Every source reference must resolve; draft status must survive.",
+              "severity": "blocker"
+            },
+            {
+              "id": "fields",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Structured values and provenance must equal case facts.",
+              "severity": "blocker"
+            },
+            {
+              "id": "completeness",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Completeness is computed from trusted field metadata.",
+              "severity": "blocker"
+            },
+            {
+              "id": "required",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Required fields must be provided.",
+              "severity": "blocker"
+            },
+            {
+              "id": "victim_copy",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "A complete plain-language victim copy is required.",
+              "severity": "blocker"
+            },
+            {
+              "id": "rule_references",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Plan rule references must belong to the selected pack.",
+              "severity": "blocker"
+            },
+            {
+              "id": "safety",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "No credentials, full accounts, promises or unsupported legal conclusions.",
+              "severity": "blocker"
+            },
+            {
+              "id": "amounts",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Explicit currency amounts must equal the case amount.",
+              "severity": "blocker"
+            },
+            {
+              "id": "timestamps",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Explicit timestamps must equal case facts.",
+              "severity": "blocker"
+            },
+            {
+              "id": "identifiers",
+              "type": "deterministic",
+              "passed": false,
+              "detail": "Explicit identifiers must match victim facts, not new model values.",
+              "severity": "blocker"
+            },
+            {
+              "id": "provenance",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Every populated field requires a traceable statement or evidence origin.",
+              "severity": "blocker"
+            },
+            {
+              "id": "promise",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Recovery cannot be promised.",
+              "severity": "blocker"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "checks": [
+            {
+              "id": "recipient",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Recipient must match selected pack and plan.",
+              "severity": "blocker"
+            },
+            {
+              "id": "language",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Language metadata must match requested languages.",
+              "severity": "blocker"
+            },
+            {
+              "id": "footer",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Required versioned footer and draft labels.",
+              "severity": "blocker"
+            },
+            {
+              "id": "attachments",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Attachment manifest must match verified hashes.",
+              "severity": "blocker"
+            },
+            {
+              "id": "citations",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Every source reference must resolve; draft status must survive.",
+              "severity": "blocker"
+            },
+            {
+              "id": "fields",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Structured values and provenance must equal case facts.",
+              "severity": "blocker"
+            },
+            {
+              "id": "completeness",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Completeness is computed from trusted field metadata.",
+              "severity": "blocker"
+            },
+            {
+              "id": "required",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Required fields must be provided.",
+              "severity": "blocker"
+            },
+            {
+              "id": "victim_copy",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "A complete plain-language victim copy is required.",
+              "severity": "blocker"
+            },
+            {
+              "id": "rule_references",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Plan rule references must belong to the selected pack.",
+              "severity": "blocker"
+            },
+            {
+              "id": "safety",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "No credentials, full accounts, promises or unsupported legal conclusions.",
+              "severity": "blocker"
+            },
+            {
+              "id": "amounts",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Explicit currency amounts must equal the case amount.",
+              "severity": "blocker"
+            },
+            {
+              "id": "timestamps",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Explicit timestamps must equal case facts.",
+              "severity": "blocker"
+            },
+            {
+              "id": "identifiers",
+              "type": "deterministic",
+              "passed": false,
+              "detail": "Explicit identifiers must match victim facts, not new model values.",
+              "severity": "blocker"
+            },
+            {
+              "id": "provenance",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Every populated field requires a traceable statement or evidence origin.",
+              "severity": "blocker"
+            },
+            {
+              "id": "promise",
+              "type": "deterministic",
+              "passed": true,
+              "detail": "Recovery cannot be promised.",
+              "severity": "blocker"
+            }
+          ]
+        },
+        {
+          "attempt": 3,
+          "stage": "writer",
+          "errorType": "ModelFailure"
+        }
+      ],
+      "latencySeconds": 17.93700000003446,
+      "checks": [
+        {
+          "id": "writer_unavailable",
+          "type": "deterministic",
+          "passed": false,
+          "detail": "Draft unavailable or invalid; review required.",
+          "severity": "blocker"
+        }
+      ],
+      "content": null
+    }
+  ]
+}

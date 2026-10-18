@@ -1,0 +1,202 @@
+{
+  "synthetic": true,
+  "draftPreview": true,
+  "classificationMode": "planning_classification_fixture_not_live",
+  "generatedAt": "2026-10-15T14:28:05.902172+00:00",
+  "facts": {
+    "country": {
+      "value": "IN",
+      "availability": "available",
+      "provenance": {
+        "source": "selected",
+        "reference": "synthetic-country-selection",
+        "confidence": null
+      }
+    },
+    "payment": {
+      "method": "upi",
+      "amount": {
+        "value": "45000",
+        "currency": "INR"
+      },
+      "timestamp": "2026-10-15T14:08:05.902172Z",
+      "authorizedByVictim": true,
+      "recipientIdentifier": {
+        "type": "upi",
+        "value": "safe.verify@fakebank"
+      },
+      "transactionRef": "TEST0000000001"
+    },
+    "contact": {
+      "channel": "phone",
+      "identifier": null,
+      "claimedIdentity": "Test Bank"
+    },
+    "victimBank": "Test Bank",
+    "ongoingContact": false,
+    "credentialsShared": [],
+    "victimAgeBand": null,
+    "languages": [],
+    "discoveryTimestamp": null,
+    "reportTimestamp": null,
+    "fieldProvenance": {},
+    "unavailableFields": []
+  },
+  "plan": {
+    "planId": "plan_c504d9c22e4f415a99a91bc38c3195b6",
+    "packId": "pack_in_cyber_rail",
+    "packVersion": "0.1.0",
+    "packStatus": "draft",
+    "generatedAt": "2026-10-15T14:28:05.902172Z",
+    "steps": [
+      {
+        "stepNo": 1,
+        "recipientId": "bank",
+        "action": "Contact Your bank using this pack's listed channel.",
+        "whyNow": "Guidance is unverified. Check an official source before acting.",
+        "channel": {
+          "type": "app",
+          "value": "Use your bank’s official app or independently verified website/contact channel",
+          "verified": false
+        },
+        "deadline": null,
+        "packetId": null,
+        "ruleRefs": [
+          "bank",
+          "sequence-bank"
+        ],
+        "sourceRefs": [],
+        "recipientName": "Your bank",
+        "recipientType": "bank",
+        "additionalChannels": []
+      },
+      {
+        "stepNo": 2,
+        "recipientId": "cyber",
+        "action": "Contact National financial cyber fraud reporting using this pack's listed channel.",
+        "whyNow": "Guidance is unverified. Check an official source before acting.",
+        "channel": {
+          "type": "phone",
+          "value": "1930",
+          "verified": false
+        },
+        "deadline": null,
+        "packetId": null,
+        "ruleRefs": [
+          "cyber",
+          "sequence-cyber"
+        ],
+        "sourceRefs": [
+          "mha-1930:reporting"
+        ],
+        "recipientName": "National financial cyber fraud reporting",
+        "recipientType": "national_cyber_authority",
+        "additionalChannels": [
+          {
+            "type": "portal",
+            "value": "https://www.cybercrime.gov.in/",
+            "verified": false
+          }
+        ]
+      },
+      {
+        "stepNo": 3,
+        "recipientId": "payment-app",
+        "action": "Contact Payment app support using this pack's listed channel.",
+        "whyNow": "Guidance is unverified. Check an official source before acting.",
+        "channel": {
+          "type": "app",
+          "value": "Use the support channel inside the payment app you used",
+          "verified": false
+        },
+        "deadline": null,
+        "packetId": null,
+        "ruleRefs": [
+          "payment-app",
+          "sequence-payment-app"
+        ],
+        "sourceRefs": [],
+        "recipientName": "Payment app support",
+        "recipientType": "payment_app",
+        "additionalChannels": []
+      }
+    ],
+    "unverifiedNotices": [
+      {
+        "ruleId": "bank",
+        "code": "unverified",
+        "text": "Guidance is unverified. Check an official source before acting."
+      },
+      {
+        "ruleId": "cyber",
+        "code": "unverified",
+        "text": "Guidance is unverified. Check an official source before acting."
+      },
+      {
+        "ruleId": "payment-app",
+        "code": "unverified",
+        "text": "Guidance is unverified. Check an official source before acting."
+      },
+      {
+        "ruleId": "sequence-bank",
+        "code": "unverified",
+        "text": "Guidance is unverified. Check an official source before acting."
+      },
+      {
+        "ruleId": "sequence-cyber",
+        "code": "unverified",
+        "text": "Guidance is unverified. Check an official source before acting."
+      },
+      {
+        "ruleId": "sequence-payment-app",
+        "code": "unverified",
+        "text": "Guidance is unverified. Check an official source before acting."
+      },
+      {
+        "code": "resolution_notice",
+        "text": "Unverified draft rules: demonstration only; no human review is recorded."
+      }
+    ],
+    "factsRevision": 1,
+    "factsHash": "0bdf626a9206105286c62c095945dd58eee20c8b8a101e4726de130c3e3f508f",
+    "packHash": "8b3f07a4a89818cc43783fad1fce5d7387dcd0f618a94482a132401be87f8887",
+    "inputHash": null,
+    "catalogHash": null,
+    "classification": {
+      "typology": "bank_impersonation",
+      "authorizationType": "authorized_manipulated",
+      "authorizationRationale": "facts.payment.authorizedByVictim records that the victim made or approved the reported payment.",
+      "urgency": {
+        "level": "critical",
+        "reason": "Recent transfer: prioritize contact with the bank. Recency does not establish where funds are. This is not a legal deadline."
+      },
+      "fundsLikelyInSystem": "unknown",
+      "vulnerabilityFlags": [],
+      "confidence": 0.95,
+      "needsHumanReview": false,
+      "clarifyingQuestion": null,
+      "degraded": false,
+      "failureCode": null
+    },
+    "countryCode": "IN",
+    "resolutionReason": "explicit_draft_demo",
+    "resolutionConfidence": 1.0,
+    "genericGuidance": false,
+    "draftPreview": true,
+    "sourceCitations": [
+      {
+        "reference": "mha-1930:reporting",
+        "title": "Cyber Frauds Helpline",
+        "publisher": "Ministry of Home Affairs / PIB",
+        "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1814120&lang=2&reg=48",
+        "passage": "The Ministry of Home Affairs has operationalized a toll-free Helpline number ‘1930’ (earlier ‘155260’) for immediate reporting of financial frauds on the “Citizen Financial Cyber Fraud Reporting and Management System” module and to get assistance in lodging cyber crime incidents on the “National Cyber Crime Reporting Portal” ( www.cybercrime.gov.in ).",
+        "retrievedAt": "2026-10-14T13:56:02.501454+00:00",
+        "snapshotHash": "86cefeeb84d89891758801ef38eaa4e980424c759a3eed1bb67a411ec4c9e61d",
+        "status": "unverified"
+      }
+    ],
+    "stale": false,
+    "processingMs": 0
+  },
+  "victimLanguage": "en"
+}

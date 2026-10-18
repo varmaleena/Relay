@@ -1,0 +1,1045 @@
+=== PAGE 1 ===
+Relay
+Project dossier
+Guidance tells scam victims where to go. Relay does the work.
+Google Cloud AI Builder Cup 2026 | Theme: BFSI (Intelligent Risk, Fraud and Financial Experiences)
+Prepared 11 October 2026
+Status: concept and full specification complete. Nothing has been built yet.
+Relay is a working title. Check trademark and domain before using it publicly.
+What is inside
+- The competition, its rules, and how the idea was chosen
+- The problem, with evidence by region and our own test results
+- The solution, a worked example, the users, and the business model
+- How Relay differs from existing systems, and how it scores as a judge would see it
+- Product design, architecture, agents, safety, and the evaluation plan
+- Demo and build plans, risks, human-only tasks, and how to resume the project later
+
+=== PAGE 2 ===
+RELAY Project dossier | 11 Oct 2026
+Contents
+About this document . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1. Executive summary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2. The competition we are entering . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+Precedent: the 2025 Gen AI Exchange Hackathon . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3. How we chose the idea . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+How the idea evolved . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+Decisions log . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+4. The problem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+4.1 Plain statement . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+4.2 Why now . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+4.3 Evidence by region . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+4.4 What we saw when we tested a typical guidance assistant . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+4.5 What Relay is trying to resolve . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+5. The solution: Relay . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+5.1 The idea in one paragraph . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+5.2 The five parts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+5.3 A worked example . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+5.4 Key design ideas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+6. Who it is for and why they would use it . . . . . . . . . . . . . . . . . . . . . . . . . 12
+Who would pay (hypotheses, not validated) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+7. Competitive landscape and differentiation . . . . . . . . . . . . . . . . . . . . . . . 13
+The claim we can defend . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+Verify before you pitch . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+8. How it scores, as a judge would see it . . . . . . . . . . . . . . . . . . . . . . . . . 14
+Estimated chances (gut estimates, not data) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+What would sink it . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+Likely judge questions and short answers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+9. Product design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+Clarity rules (so a viewer understands in five seconds) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+Look and feel . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+Languages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+10. Architecture and technology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+Platform facts verified on 11 Oct 2026 (re-check before building) . . . . . . . . . . . . . . . . . . . . . . . . 17
+11. Agents and why Gen AI is essential . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+Where Gen AI is genuinely needed . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+12. Safety, privacy and honesty . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 2
+
+=== PAGE 3 ===
+RELAY Project dossier | 11 Oct 2026
+13. Evaluation plan . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+Dataset . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+Metrics (report n and 95% confidence intervals) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+14. Demo and submission plan . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+14.1 The three-minute video (hard limit 3:00) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+14.2 Submission package (from the organizer's FAQ) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+14.3 Comprehension tests before recording . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+15. Build plan . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+Cut list if time runs short (in order) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+16. Risks, open decisions and human tasks . . . . . . . . . . . . . . . . . . . . . . . . 24
+Tasks only a person can do . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+Open decisions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+17. Picking this project up later . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+What is already decided . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+Useful starting prompts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+What to re-check first . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+Appendix A. Manual baseline test log (October 2026) . . . . . . . . . . . . . . . . . . . 26
+Appendix B. Key facts and how reliable they are . . . . . . . . . . . . . . . . . . . . . 27
+Appendix C. Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+Appendix D. Sources consulted . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+About this document
+This dossier records everything decided about the project during the planning conversation: the name, the
+problem, the solution, who it is for, how it differs from what exists, how it fits the competition, how it works,
+how it will be built, tested and demonstrated, what is still uncertain, and how to pick the work up again
+with a new assistant. It is written to stand alone, so you do not need the original chat.
+How to use this dossier
+Companion file: RELAY_BUILD_SPEC.md (about 2,300 lines) is the full build specification: endpoints, data
+schemas, agent prompts, screens, tests, deployment, and a 43-task work breakdown. This dossier is the
+summary and the reasoning. Download both and keep them together.
+Reading the evidence: facts are tagged Official (organizer, government, or Google documentation),
+Secondary (news, law-firm, vendor, or policy-institute summaries), or Unverified (needs checking).
+Nothing in the secondary or unverified groups should be quoted in the submission without confirming it
+against an official source.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 3
+
+=== PAGE 4 ===
+RELAY Project dossier | 11 Oct 2026
+1. Executive summary
+Relay is an AI system that takes a scam victim's first, frightened report and turns it into the right
+document packet for every institution that has to act: the victim's bank, the national cyber-fraud authority,
+the payment app, and others. It prepares each packet in that institution's format, puts the contacts in the
+right order, tracks deadlines, and follows each one to resolution. The rules for each country live in reviewed
+data files called Jurisdiction Packs, so adding a country means adding a pack, not rewriting software.
+Its tagline is "Guidance tells scam victims where to go. Relay does the work." Existing consumer
+assistants mostly explain what to do. Our own small tests showed they stayed generic, did not name the
+national channels, ignored urgency, and declined to draft the message a victim needs to send. Relay
+closes that step.
+Item Decision
+Project name Relay (working title). The name comes from passing a case from one institution to the next like a
+baton. An earlier name, "Golden Hour", was dropped because the phrase is already used by banks
+and by Indian government guidance, so it cannot be owned.
+Competition and Google Cloud AI Builder Cup 2026 (organized by Hack2skill, sponsored by Google Cloud). Theme:
+theme BFSI: Intelligent Risk, Fraud and Financial Experiences.
+Problem After a scam, the first hour decides whether money can be stopped, but victims face a maze of
+institutions with different forms, orders, and deadlines that differ by country.
+Solution Voice and chat intake in the victim's language; screenshot reading; classification (including
+whether the victim authorized the payment); an ordered plan from a reviewed country pack;
+verified, cited packets per institution; a receiver console; tracking.
+Main users Scam victims (often elderly or not fluent in the official language); fraud and case staff at banks,
+payment apps and authorities; compliance analysts who maintain country rules.
+What is different It produces and tracks the packets each recipient needs, across institutions, in any country, with
+sources and human approval, and it measures its own accuracy against a baseline.
+Technology Google Gemini models (including the Live API for voice), Agent Development Kit, MCP and A2A,
+Cloud Run, Firebase, Firestore, BigQuery, Vertex AI Search (now under Gemini Enterprise Agent
+Platform).
+Honest status Concept, research and full specification are done. No code has been written. Institutions in the
+demo are simulated and labeled as such.
+Estimated chances Gut estimate, not data: about 25 to 40% to be shortlisted for the Singapore finale and 6 to 12% to
+reach the podium, if executed well.
+The honest summary
+Strongest points: the idea needs Gen AI (messy multilingual evidence, reasoning about authorization,
+drafting, extracting rules from regulator text); packs make it generic and scalable; measured evaluation
+against a baseline is rare in hackathon entries.
+Weakest point: originality. A global assistant (Scam.org) and a bank-side Gen AI product (NICE
+Actimize) overlap with parts of the idea. The differentiation rests on the cross-institution packets, the
+packs, and tested gaps, so claims must stay narrow.
+Biggest risks: legal accuracy of generated rules, a wide build that breaks live, and judges mistaking the
+simulation for real integration.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 4
+
+=== PAGE 5 ===
+RELAY Project dossier | 11 Oct 2026
+2. The competition we are entering
+The facts below come from the organizer's official site (aibuildercup.com) fetched on 11 October 2026,
+plus the prize list you provided. Check the official dashboard for anything that matters to your submission.
+Topic What the official pages say Tier
+Event Google Cloud AI Builder Cup 2026, powered by Hack2skill, sponsored by Google Official
+Cloud. JAPAC-wide hackathon. Hack2skill operates it independently; Google Cloud
+provides technical expertise and resources.
+Who can enter Working professionals, entrepreneurs, startups. Age 21+. Students are not Official
+eligible and can be disqualified even after shortlisting. All team members must be
+based in JAPAC. Cross-country teams within JAPAC are allowed.
+Teams 2 to 4 members; solo entry is not allowed (you may register solo and form a team Official
+later). Only 2 members can travel to Singapore if shortlisted. No one may be in two
+teams or submit two solutions.
+Fresh work only Only projects built during the hackathon window are eligible; pre-existing projects Official
+are not.
+Themes (choose BFSI; Retail and Commerce; Manufacturing; Media, Content and Digital Official
+one) Experiences; Future of Work and Enterprise Productivity; Sustainability and Social
+Impact. The themes page also contains leftover text about an old category list
+(Healthcare, Education, Accessibility, Social Good); the six themes govern.
+Technology rules Prototype must use Google AI models (Gemini or Gemma) or be built with agentic Official
+platforms (Agent Platform, Antigravity, AI Studio), and be deployed on Google Cloud
+via Cloud Run or Firebase. Solutions built mainly on other clouds are not evaluated.
+What to submit A working deployed link; a video demo under 3 minutes; a public GitHub repository; Official
+a deck (PDF) explaining the solution. All in English. The theme must be declared.
+Judging (same for Technical Merit and Gen AI Implementation 40% (meaningful Gen AI use, technical Official
+every theme) implementation, scalability and sustainability); Problem Alignment and Impact 25%;
+Innovation and Creativity 25% (originality and differentiation, innovation in Gen AI
+use); User Experience and Solution Design 10% (usability and accessibility,
+experience and integration).
+Prizes (USD Winner 10,000; first runner-up 7,000; second runner-up 5,000; Best use of Google Provided by
+30,000 total) Cloud AI tools 2,000; Most Impactful Solution 2,000; Social Choice Award 2,000; user
+Best UI/UX 2,000. (Prize list as you provided it; the rewards page itself was not
+fetched.)
+Dates on the Team formation closes 11 Oct 2026; prototype submission 18 Oct 2026; evaluation Official
+official site 19 Oct to 6 Nov; finalists announced 7 Nov; Grand Finale (Demo Day) in Singapore
+on 4 Dec 2026. Travel for two members per finalist team is sponsored (flights,
+accommodation, meals on the finale day); visas are the team's job.
+Date conflicts Third-party listing sites show different dates (for example a submission deadline of Secondary
+4 Oct and registration ending 30 Sept). Trust the official site and confirm in your
+registration dashboard.
+Scoring before The FAQ states there is a scoring round before the finale that produces the shortlist Official
+the finale of teams invited to Singapore.
+Precedent: the 2025 Gen AI Exchange Hackathon
+There was no earlier "AI Builder Cup", so the closest precedent is Hack2skill and Google Cloud's Gen AI
+Exchange Hackathon 2025 in India. It drew over 270,000 developers, 4,457 deployed prototypes, and 100
+finalists (about 2% of prototypes) judged by about 30 experts (Official, Hack2skill blog). The ten winning
+projects were: youth mental-wellness check-ins; an agentic marketplace assistant for artisans;
+legal-document explanation with retrieval; explainable deepfake and misinformation detection; career and
+skills advising; test-case generation from requirement documents; autonomous plant-operations agents for
+cement manufacturing; startup evaluation for investors; personalized trip planning; and a governance
+dashboard for citizens and officials.
+Lessons we took: winners were domain-specific, agentic, and human-in-the-loop; several themes
+(wellness, legal, deepfake, career, travel) are ones many teams build, so differentiation and depth matter
+more than topic choice.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 5
+
+=== PAGE 6 ===
+RELAY Project dossier | 11 Oct 2026
+3. How we chose the idea
+The brief was to pick the track and idea with the biggest real market gap and real-world value, tested the
+way a judge would, and to be honest when a candidate failed. We scored candidates by whether
+competitors already exist, whether Gen AI is essential, whether it can be demonstrated with synthetic
+data, and whether it fits the judging criteria.
+Candidate Theme What we found Outcome
+Letter-of-credit BFSI The financing gap is real (ADB estimates a 2.5 trillion USD trade Dropped
+document checker finance gap), but AI document checking for letters of credit is
+crowded: Newgen, Finastra with Cleareye, V7 and others sell it,
+and one hackathon entry claimed "zero AI competitors", which is
+false.
+CBAM (EU carbon Sustainability CBAM entered its cost-bearing phase on 1 Jan 2026 and Asian Backup
+border tax) copilot exporters need data, but at least six dedicated tools already only
+for exporters compete (Coolset, CBAMBOO, Greenly, CarbonChain, kolum,
+Dubrink and others).
+Crop-insurance BFSI / Social Real gap (claim delays reported up to 14 months in a 2025 study; Runner-up
+claims copilot impact an automatic 12% penalty on insurers for late claims since Kharif
+(PMFBY, India) 2024), strong social story, but the government already pushes
+satellite and app-based assessment, Gen AI is less essential, real
+data is hard to get, and farmer assistants are a common
+hackathon topic.
+Scam response and BFSI Prevention and detection are crowded; the response side (what Chosen
+recovery happens after the victim realizes) is thin. Regulation is making
+response a legal duty in several regions.
+Copilots, content, Other Crowded, compete with Google's own products, or hard to Avoided
+shopping agents, themes demonstrate without real data. Last year's cement-plant winner
+plant agents already took the manufacturing agent angle.
+How the idea evolved
+1. Golden Hour (first version). A victim-to-bank-to-police response chain, with a cross-bank
+privacy-preserving sharing protocol as the headline. It leaned on Singapore data because the finale is in
+Singapore.
+2. Golden Hour India. You are building from India, so we re-grounded it in India's rail (the 1930 helpline,
+the cybercrime portal, the CFCFRMS system under I4C). Research showed India already centralizes
+inter-bank sharing and that RBI's MuleHunter.AI covers mule detection at 26 banks, so we demoted both
+from the headline. The gap that remained was the quality of the victim's first report and the slow work
+after a freeze (restoration and grievances).
+3. Relay (generic). You asked for a design that is not specific to any country. Country knowledge moved
+into Jurisdiction Packs, and a Pack Builder agent drafts new packs from regulator text. India, the UK and
+a generic fragmented regime became demonstration packs, not the product's identity.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 6
+
+=== PAGE 7 ===
+RELAY Project dossier | 11 Oct 2026
+Decisions log
+Decision Reason
+Submit under BFSI, not Sustainability The BFSI text names fraud mitigation, automating complex processes, and
+and Social Impact improving customer interactions; alignment is literal. The social-impact
+story still helps for the Most Impactful and Social Choice awards.
+Do not use every Google product The first criterion is meaningful use of Gen AI; tool-stuffing reads as
+superficial. Each component has one job.
+Do not compete with mule detection Those exist (MuleHunter.AI, CFCFRMS). Relay prepares and tracks
+or national rails submissions into them and gives institutions structured cases.
+Distinguish authorized (manipulated) Regimes treat them differently, and a Hindi test showed an assistant
+from unauthorized payments mislabeling a self-authorized payment as unauthorized.
+Make multilingual a baseline, not a The competing global assistant already supports 50+ languages, including
+differentiator Hindi.
+Rules are data, not model output A reviewed, cited pack is deterministic and auditable; the model only
+extracts messy input and writes text.
+Never call the demo real Banks and authorities are simulated, and every relevant screen says so.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 7
+
+=== PAGE 8 ===
+RELAY Project dossier | 11 Oct 2026
+4. The problem
+4.1 Plain statement
+When someone is scammed, speed decides whether money can be stopped. The victim is frightened, often
+elderly, often not fluent in the official language, and often ashamed. To act, they must work out which
+institutions to contact, in what order, with what information, in which format, by which deadline. That
+differs by country and by type of payment. Mistakes are common and costly: the wrong portal category,
+missing evidence, reporting only to the bank, or describing a payment the wrong way.
+4.2 Why now
+(cid:127) Scam losses are enormous. The Global Anti-Scam Alliance estimated about 442 billion USD lost to scams
+across 42 surveyed countries in its 2025 report (Secondary, via press coverage).
+(cid:127) Regulators are turning response into a duty. Singapore's Shared Responsibility Framework has been in
+force since 16 Dec 2024; the UK has mandatory reimbursement for authorized push payment scams
+since Oct 2024; Australia's Scams Prevention Framework includes a response principle with substantive
+commencement on 31 Mar 2027. Institutions need fast, documented case handling.
+(cid:127) Generative AI is changing both sides. Scams are becoming more personalized and convincing, and
+institutions are expecting higher case volumes.
+4.3 Evidence by region
+Region Finding Tier
+India CFCFRMS, run under I4C (Ministry of Home Affairs), connects the 1930 helpline and Secondary (cites
+the cybercrime portal to banks and payment companies. By 30 June 2026 it had saved government
+over INR 11,158 crore across about 3.28 million complaints, with 1,586 connected figures)
+entities.
+India Common complaint failures: wrong portal category, incomplete evidence, and Secondary
+reporting only to the bank.
+India A report put over INR 9,079 crore under lien but only about INR 206 crore refunded to Secondary;
+victims, which points to a bottleneck after the freeze. Money Restoration and verify with PIB
+Grievance modules became functional in April 2026.
+India RBI draft directions (6 Mar 2026) propose compensation for small-value fraud (up to Secondary;
+INR 25,000 in summaries) and a 5-day reporting window. Draft status; final text verify with RBI
+unknown.
+India RBI's MuleHunter.AI was live at 26 banks on 31 Mar 2026, with four more underway. Secondary
+Singapore H1 2026: scam cases down 14.4% and losses down 17.9%, but elderly victims still had Official (SPF
+the highest average losses. brief)
+Singapore A police and five-bank operation in May and June 2026 used RPA and about 3,800 SMS Secondary /
+alerts to roughly 3,300 at-risk customers, helping avert over S$38 million. Police do Official (MHA
+not track the time to freeze funds; it is typically within hours to a day after an order. reply)
+UK Mandatory reimbursement for authorized push payment scam victims from Oct 2024; Secondary
+88% of in-scope losses were reimbursed in the period reported; the claims system run
+by Pay.UK has been criticized for limited integration with banks' own systems.
+Australia Scams Prevention Framework Act 2025; substantive commencement 31 Mar 2027; the Secondary
+securities regulator already secured a A$35 million penalty from a bank for
+scam-prevention failures.
+Global Scam.org (GASA with OpenAI) launched 12 Mar 2026 as a global assistant for Secondary
+education, prevention, detection, reporting and victim support in 50+ languages.
+4.4 What we saw when we tested a typical guidance assistant
+You ran a small, dated manual test of a public guidance assistant in October 2026. The full log is in
+Appendix A. In short:
+(cid:127) India, English: it correctly named the scam type but gave generic steps, did not mention the 1930
+helpline, ignored the "20 minutes ago" urgency, and declined twice (the second time with all details
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 8
+
+=== PAGE 9 ===
+RELAY Project dossier | 11 Oct 2026
+supplied) to write a message to the bank.
+(cid:127) India, Hindi: fluent Hindi, but generic; it did not name the scam type, did not name the national
+channels, asked again which country, and told the victim to report money moved "without your
+permission" when the story was a self-authorized transfer.
+(cid:127) UK, English: generic steps; no named UK channel; no mention of the UK reimbursement regime;
+answered a direct question about time limits with "limits vary".
+Be careful how you use this
+Limits of this evidence: one product, one session per prompt, small sample, no repeats, and the
+no-hotline-country, screenshot and prompt-injection tests were not run. Use it as dated evidence of a
+gap, not as a headline comparison, and do not name the product in the video or deck.
+4.5 What Relay is trying to resolve
+1. Make the first report complete, correct and in the right order, within minutes, in the victim's
+own language.
+2. Give institutions a complete, structured case instead of an incomplete message, so staff spend
+time deciding, not chasing information.
+3. Make country knowledge portable: the rules of each regime live in reviewed, cited packs that can
+be built from regulator text.
+4. Prove it with numbers: measured accuracy, completeness and safety against a baseline, reported
+with sample sizes and confidence intervals.
+What Relay does not do
+It does not detect or prevent scams, move money, submit anything to real authorities, give legal advice,
+promise recovery, replace national reporting systems, or use real personal data. In the demo, every
+institution is simulated.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 9
+
+=== PAGE 10 ===
+RELAY Project dossier | 11 Oct 2026
+5. The solution: Relay
+5.1 The idea in one paragraph
+A victim speaks or types what happened, in Hindi or English, and uploads screenshots. Relay tells them the
+first safe action within seconds, reads the evidence, decides what kind of scam it was and whether the
+victim authorized the payment, finds the right country pack, and builds an ordered plan. For each
+institution on the plan, it drafts a packet with the right fields, the right wording and citations to the rules it
+used, and an independent checker verifies it. The victim reviews and approves each packet. Institution
+staff see a complete, normalized case file in a console, decide what to do, and can ask the victim for
+anything missing. Everything is tracked with deadlines and an audit trail.
+1 Report 2 Plan 3 Review and send 4 Institution acts 5 Track
+Victim speaks or types; Relay classifies and Victim checks each Organization gets a Status, deadlines,
+uploads evidence orders who to contact message and approves complete case file requests for more info
+The same five stages appear on every screen as a progress bar, so a viewer always knows where the case is.
+5.2 The five parts
+Part What it does Used by
+Victim app Voice or chat intake; says the first action in the first turn; reads screenshots; Victims
+shows a plan as an ordered line of organizations; lets the victim edit and
+approve each message; tracks progress.
+Case engine Extracts evidence, classifies the case, resolves the country pack, plans the Runs in the
+(agents) order, drafts and verifies packets, prepares a brief for each recipient. background
+Receiver Console Normalized case file with a completeness score and missing items; one-click Bank, authority
+decisions (acknowledge, request more information, place a simulated hold, and payment-app
+reject, escalate); possible linked cases; audit trail. staff
+Pack Studio Turns an official document into a draft country pack with citations; a critic Compliance and
+checks each rule; a human reviews and publishes. rule reviewers
+Evaluation Lab Synthetic multilingual cases; compares Relay with a baseline and with Admins; judges
+ablations; reports accuracy, completeness, safety and cost with sample
+sizes and confidence intervals.
+5.3 A worked example
+Asha, 67, India. Twenty minutes ago a caller claiming to be her bank's security team told her to move
+INR 45,000 to a "safe account" by UPI. She did. All data below is synthetic.
+Step What Asha sees and does What Relay does
+1 Report Opens the app, taps "Talk to Relay", Speaks the first-action script in Hindi in its first turn
+speaks Hindi. The screen shows a clock: (stop contact, share no code or PIN, call your bank using
+00:20 since she paid, and three safe first the number on your card). Records facts as she speaks.
+actions. Shows English captions beneath the Hindi.
+2 Evidence Uploads a payment screenshot and Extracts the UPI ID, transaction reference, amount and
+confirms what was read. time; flags any hidden instructions inside the image;
+asks her to confirm each item.
+3 Plan Sees an ordered line: her bank first, then Classifies it as bank impersonation, authorized by the
+the national cyber helpline and portal, victim but manipulated. Loads the reviewed India pack
+then her payment app. and orders the contacts by the pack's rules, showing
+deadlines and why.
+4 Review and Reads a plain-language Hindi version of Drafts each packet from facts only, with citations, then
+send each message, edits it, approves it. verifies every sentence against the case. Nothing is sent
+without her click.
+5 Institution (The bank's staff member, Meera, sees the Shows a complete case file, 7 of 8 fields, one item
+acts case.) missing. Meera requests it. A simulated hold is
+recorded.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 10
+
+=== PAGE 11 ===
+RELAY Project dossier | 11 Oct 2026
+Step What Asha sees and does What Relay does
+6 Track Sees "They need one more thing", Updates the packet version, re-verifies, and logs every
+answers, sees the reference number. step. The console also shows five other reports that may
+share the same account, for a person to confirm.
+5.4 Key design ideas
+(cid:127) Jurisdiction Packs are data. A pack lists who must be told, the channels, required fields, deadlines,
+sequencing, liability descriptions, forms, languages and crisis resources, each with a source citation or
+an "unverified" label. A new country is a new pack.
+(cid:127) The Pack Builder. An agent reads a regulator's public guidance, extracts rules with passage
+references, a critic verifies each one against its passage, and a human reviews and publishes. This is the
+most original piece and the proof that "generic" is real.
+(cid:127) Authorized versus unauthorized payments. The classifier separates a payment the victim made
+because they were deceived from one made by someone else, because rules and remedies differ.
+(cid:127) Rules are deterministic; the model writes and reads. The plan comes from a rule engine over the
+pack. The model extracts messy input and writes the text, and a deterministic check confirms it adds
+nothing the plan does not contain.
+(cid:127) Verified and human-approved. Every packet is checked field by field and sentence by sentence;
+every send, publish or decision needs an explicit human action.
+(cid:127) Linked cases without sharing identities. Identifiers are stored only as keyed hashes. Links are
+shown as "possible", explained by Gemini using only entity types, and confirmed by a person.
+(cid:127) Honest simulation. Banks, authorities and payment apps are simulated and labeled on every relevant
+screen.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 11
+
+=== PAGE 12 ===
+RELAY Project dossier | 11 Oct 2026
+6. Who it is for and why they would use it
+Who Situation What Relay gives them
+Asha, 67, India (victim) Paid INR 45,000 to a fake bank caller 20 The first action now, by voice, in Hindi; the right
+minutes ago; Hindi speaker; low digital messages ready to send; clear order and
+confidence. deadlines.
+Daniel, 41, UK (victim) Sent GBP 3,000 to an "investment" What his bank needs, which scheme may apply,
+contact three days ago. and time limits, taken from a cited pack.
+Meera, bank fraud nodal Receives many claims; incomplete A complete, structured case; a clear list of what
+officer evidence slows her down. is missing; an audit trail.
+Inspector Rao, cyber Gets reports in inconsistent formats. Consistent structured reports and possible
+authority desk linked cases.
+Lena, compliance analyst Maintains the rules for a regime. A draft pack with citations she can verify
+quickly.
+A judge Has three minutes of video and a link. Sees depth, measured results, and honest
+labeling.
+Who would pay (hypotheses, not validated)
+Customer Offer Pricing idea
+Banks and payment providers Receiver Console and adapters; complete Per processed case plus a
+(especially under response-duty cases; deadline tracking; audit platform fee
+regimes)
+Regulators and national fraud centers Pack Studio and published packs; Annual licence for authoring
+response-quality analytics and distribution
+Victim-support organizations The victim app with their own branding and Free or subsidized
+packs
+Roadmap, not built for the hackathon: billing, plans and quotas, single sign-on, per-customer data residency, certifications
+and legal compliance (which need qualified legal review). Do not claim any of these as built.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 12
+
+=== PAGE 13 ===
+RELAY Project dossier | 11 Oct 2026
+7. Competitive landscape and differentiation
+System What it does Overlap with Relay
+Scam.org (GASA with AI assistant for scam education, prevention, High on the victim-facing front door.
+OpenAI, launched 12 Mar detection, reporting and victim support in Not seen: institution-specific packets,
+2026) 50+ languages; its page offers Learn, Check, deadline tracking, or onboarding new
+Protect, Report and Get Help. countries (from public descriptions and
+our small test).
+NICE Actimize Fraud Gen AI inside a bank's fraud investigation and High on the bank side. It serves one
+Investigations claims handling, including reimbursement institution after a claim arrives.
+workflows.
+Charm Security AI scam-defense platform with copilots for Medium (prevention and frontline).
+bank frontline staff.
+Scamnetic Scam intervention service with expert Low to medium.
+support; a threat-intelligence partner to
+Scam.org.
+National rails (for example Government coordination of reporting, They are the infrastructure Relay plugs
+India's CFCFRMS, Singapore's freezing and reimbursement. into, not rivals.
+Anti-Scam Centre, UK
+reimbursement system)
+MuleHunter.AI (RBI) Mule-account detection at banks. Relay does not compete; its linking is
+for response and explanation.
+Inter-bank intelligence Banks share scam intelligence. Shows the cross-bank idea is already
+sharing (for example being built; not our headline.
+Australia)
+The claim we can defend
+Differentiation statement
+Say: "Existing assistants guide victims and existing bank systems investigate claims. Relay covers the
+step between them: it turns a victim's first report into the right packet for each institution, in order, with
+deadlines and sources, in any jurisdiction, and tracks the outcome."
+Do not say: "nobody does this" or "no competitors". Our research was limited, and a vendor may
+already offer part of it. State what we tested and when.
+Verify before you pitch
+(cid:127) Re-run the manual test on the same product, with repeats and with the follow-up prompts, because
+answers vary.
+(cid:127) Check bank-side vendors again (Feedzai, Featurespace, Quantexa, Hawk and NICE Actimize) for any
+victim-facing intake.
+(cid:127) Check whether any Indian bank, I4C-linked project or startup already offers victim guidance or
+restoration tooling.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 13
+
+=== PAGE 14 ===
+RELAY Project dossier | 11 Oct 2026
+8. How it scores, as a judge would see it
+The organizer publishes group weights only, so sub-criteria are split equally within each group. Scores are
+our judgment, assuming strong execution; they are not data.
+Criterion Weight Score /10 Reasoning
+Meaningful Gen AI 40% group 8.5 Multimodal evidence reading, multilingual voice,
+authorization reasoning, grounded drafting; the system
+cannot work without Gen AI.
+Technical implementation 7.5 Ambitious multi-service build; the score depends on a stable
+live demo.
+Scalability and 8.5 Packs as data; Pack Builder; needs a pack-maintenance and
+sustainability liability story.
+Problem alignment 25% group 8.5 Direct BFSI fit: fraud response, automation, customer
+interaction.
+Potential impact 8.0 Clear beneficiaries; needs credible measured results.
+Originality and 25% group 6.5 Overlap with Scam.org and NICE Actimize; differentiation is
+differentiation the packet layer and packs.
+Innovation in Gen AI use 8.0 Pack Builder with critic and citations; verifier loop;
+authorization reasoning.
+Usability and accessibility 10% group 7.5 Voice-first, Hindi, captions, large type.
+Experience and integration 7.5 One flow from victim to receiver to tracker.
+Weighted total 7.9 Group averages 8.2, 8.3, 7.3, 7.5 combined at 40/25/25/10.
+Estimated chances (gut estimates, not data)
+Outcome Estimate if executed Why
+well
+Shortlisted for Singapore About 25 to 40% Last year about 2% of deployed prototypes reached the finale,
+but this field should be smaller and a differentiated, measured,
+working entry should do better than the base rate.
+Podium (winner, first or About 6 to 12% Finals are judged live against other strong teams; one weak
+second runner-up) answer in Q&A can cost a place.
+Any prize incl. special Higher than podium Most Impactful and Social Choice suit a victim-protection story;
+awards Best Use of Google Cloud AI Tools suits the stack.
+What would sink it
+(cid:127) A wide, shallow build that breaks live; or a demo where mocks look real.
+(cid:127) An unverified or invented rule appearing in a pack, or a Pack Builder that hallucinates without citations.
+(cid:127) Overclaiming novelty or quoting unmeasured numbers.
+(cid:127) BFSI is likely the most crowded and most scrutinized theme; domain-expert judges will probe the bank
+and police workflows.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 14
+
+=== PAGE 15 ===
+RELAY Project dossier | 11 Oct 2026
+Likely judge questions and short answers
+Question Answer
+How is this different from They guide and link. We produce each recipient's packet in order, with deadlines
+existing scam assistants? and sources, and track outcomes. The tested gap is documented with sample size.
+Isn't a bank vendor doing this? Those serve one institution after a claim arrives. Relay covers intake and the
+multi-party handoff and gives each institution a normalized case.
+Is anything real? No. Institutions are simulated and labeled. The architecture shows where real
+adapters attach.
+Why Gen AI and not rules? Messy multilingual inputs and screenshots, authorization reasoning, drafting, and
+extracting rules from regulator text. A rules-only ablation quantifies the gap.
+What if a generated pack is Citations to source passages, critic verification, human review, version history,
+wrong? unverified labels, and a publish gate.
+How would you add a country? Add a source, run the Pack Builder, human review, publish, then run the evaluation
+slice for that pack.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 15
+
+=== PAGE 16 ===
+RELAY Project dossier | 11 Oct 2026
+9. Product design
+Relay is one web app with five role-based surfaces plus a presentation mode, and 12 screens (10 full
+pages and 2 side panels). There is no separate native mobile app; the victim surface is designed
+phone-first and works in a phone browser.
+Surface Used by Screens
+Victim Scam victims S1 Start; S2 Intake (voice or chat); S3 Evidence confirmation (panel);
+S4 Plan; S5 Message review and send; S6 Tracker
+Console Bank, authority, payment-app S7 Receiver Console; S8 Linked cases (panel)
+staff
+Studio Pack reviewers S9 Pack Studio (add source, extract, verify, review, publish)
+Eval Admins; judges S10 Evaluation Lab
+Demo Admin, for rehearsal S11 Demo control
+Present Whoever records the demo S12 Present: victim phone and institution console side by side with a
+Mode plain-language narration line
+Clarity rules (so a viewer understands in five seconds)
+(cid:127) A five-stage progress bar on every screen: Report, Plan, Review and send, Institution acts, Track.
+(cid:127) A one-sentence purpose line under every screen title.
+(cid:127) Plain words for each audience: the victim sees "Message for your bank" where the system says packet.
+A check fails the build if jargon (entity, packet, agent, pack, JSON, token) appears in victim text.
+(cid:127) Real progress steps instead of blank spinners ("Reading your screenshot", "Checking the rules for
+India").
+(cid:127) One main button per screen; statuses are always words, never color alone; every non-obvious item has
+a "Why" link with its source.
+(cid:127) An optional "Behind the scenes" drawer shows technical depth to judges without cluttering the victim's
+view.
+Look and feel
+Cool pale background, ink-navy text, teal for actions, and amber used only for time (the clock strip and
+deadlines). The signature element is the Relay line: one station per organization, in order, filling in once
+when packets are ready. Fonts: Atkinson Hyperlegible for the interface (made for low-vision readers) and
+Literata for headings; Noto fonts for Devanagari. Body text in the victim app is at least 18 px, touch targets
+at least 48 px, and the target is WCAG 2.2 AA.
+Token Value Used for
+Ledger #EEF1F4 Page background
+Ink #172033 Text, strong lines
+Station #0F6B6F Primary actions, active station
+Clock #D9922B Time-critical items only (fill with ink text)
+Sealed #2E7D4F Sent or acknowledged
+Hold #B3392F Blocked, failed, overdue
+Languages
+Two required: English and Hindi for the interface, voice, and the victim's plain-language copy. A third is
+optional. Messages to institutions use the language each pack specifies. Evidence reading and evaluation
+also cover Hinglish (mixed Hindi and English). Do not claim a language that has not been tested.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 16
+
+=== PAGE 17 ===
+RELAY Project dossier | 11 Oct 2026
+10. Architecture and technology
+Everything runs on Google Cloud. The web app is on Firebase Hosting; backend services run on Cloud Run;
+all model calls use Google's Gemini models through the Agent Platform.
+PEOPLE
+Scam victim Institution staff
+Pack reviewer Admin / judge
+(phone browser) (bank, authority)
+WEB APP (Firebase Hosting, React + TypeScript)
+Victim Receiver Pack Eval Demo Present
+app Console Studio Lab control Mode
+SERVICES (Google Cloud Run)
+api live-gateway worker mock bank + rail receiver agent
+REST voice WebSocket agent pipeline MCP servers A2A
+AI (Google)
+Gemini Live Gemini reasoning ADK agent Vertex AI Search
+voice models workflow source passages
+DATA (Google Cloud)
+Firestore Cloud Storage BigQuery Pub/Sub
+Secret Manager
+cases, packets evidence, PDFs links, eval jobs
+Layer Choice and purpose
+Frontend React 18 and TypeScript on Firebase Hosting; Firebase Auth (anonymous for victims, sign-in for staff),
+Firestore live updates, App Check against abuse; internationalization for English and Hindi.
+API Python 3.12 with FastAPI on Cloud Run: cases, uploads through signed URLs, packets, decisions,
+packs, evaluation reports (44 endpoints documented in the build spec).
+Voice Gemini Live API through ADK streaming, via a WebSocket gateway on Cloud Run. The voice agent is
+deliberately thin: it talks and calls four fast tools; heavy work runs in a background worker.
+Agents Google Agent Development Kit; 15 agents (see Section 11). MCP for tool servers and A2A for the
+receiver hand-off, both simulated and labeled.
+Grounding Reviewed pack data for rules; Vertex AI Search over source passages for citations and explanations.
+Data Firestore (cases, packets, audit), Cloud Storage (evidence, PDFs), BigQuery (hashed entity links,
+evaluation, usage), Pub/Sub (jobs), Secret Manager.
+Operations Cloud Logging and Trace, Cloud Run revisions with traffic splitting for rollback, GitHub Actions to
+Artifact Registry, make preflight before demos.
+Platform facts verified on 11 Oct 2026 (re-check before building)
+(cid:127) Gemini 3.x is the current family. Docs updated 9 Oct 2026 list Gemini 3.8 Flash and Live models named
+gemini-3.8-live and gemini-3.8-live-extended-thinking (Official).
+(cid:127) Do not use Gemini 2.5 models: on the Agent Platform (formerly Vertex AI) gemini-2.5-pro and
+gemini-2.5-flash shut down on 20 Oct 2026 (Official, Firebase documentation).
+(cid:127) Use the new SDK: google-genai version 2.3.0 or later; the older google-generativeai packages are
+deprecated (Official).
+(cid:127) A Live API session returns either text or audio, not both; gemini-3.8-live does not support the
+thinking-level setting. Known ADK reports describe connection closures when long tools run inside a
+streaming voice session, hence the thin voice agent.
+(cid:127) Vertex AI was renamed Gemini Enterprise Agent Platform at Cloud Next 2026; ADK, Agent Engine
+and Agent Studio sit under it. Use the new names in the deck.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 17
+
+=== PAGE 18 ===
+RELAY Project dossier | 11 Oct 2026
+(cid:127) Model IDs, SDK versions, audio formats, quotas and region support must be confirmed in the first build
+milestone (tasks V1 to V9 in the spec).
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 18
+
+=== PAGE 19 ===
+RELAY Project dossier | 11 Oct 2026
+11. Agents and why Gen AI is essential
+Agent Job Notes
+Intake (voice, text) Conversational intake; first-action script; records facts; Thin; four fast tools; never asks
+requests uploads; flags distress for PIN or OTP
+Evidence Reads screenshots and text; extracts identifiers with roles Multimodal; treats content as
+and confidence; detects hidden instructions untrusted data
+Classifier Scam type; authorized versus unauthorized; urgency; Asks one clarifying question if
+vulnerability flags unsure
+Jurisdiction resolver Chooses the country pack Falls back to a generic pack with a
+visible notice
+Planner Orders recipients and deadlines from the pack Deterministic rule engine; the
+model only writes the wording
+Packet Drafts one packet per recipient, with citations and a Facts only; never promises
+plain-language copy outcomes
+Verifier Deterministic checks plus sentence-by-sentence support Up to two repair loops
+check; sends packets back for repair
+Receiver brief Prepares the institution's summary, missing items and Recommends; the human
+suggested actions decides; also exposed through
+A2A
+Cluster explainer Explains possible links using entity types only Says "possible"; a person confirms
+Pack Builder and Extract rules with passage references; verify each rule Unsupported items are labeled
+Critic unverified
+Scammer simulator Generates synthetic scam scripts and victim messages for Fictional banks and apps only
+evaluation
+Guidance baseline Models a typical guidance assistant for fair comparison No packs or tools
+Safety guard Screens uploads for injection; filters forbidden output Deterministic plus a classifier
+Where Gen AI is genuinely needed
+(cid:127) Reading screenshots, chats and messages that are messy, cropped, multilingual and code-mixed.
+(cid:127) Deciding whether the victim authorized the payment from a free-form story.
+(cid:127) Speaking calmly in the victim's language and drafting plain-language and institutional wording.
+(cid:127) Turning regulator prose into structured, cited rules (the Pack Builder).
+(cid:127) Explaining possible links in plain language.
+A rules-only ablation will measure how much worse extraction and classification are without Gemini, so this
+claim is tested, not asserted.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 19
+
+=== PAGE 20 ===
+RELAY Project dossier | 11 Oct 2026
+12. Safety, privacy and honesty
+Class Meaning Examples
+Auto Agents may do it without asking Read evidence, classify, compute deadlines, draft packets,
+translate, explain, generate synthetic data
+Needs Requires an explicit human click, Victim sends a packet; staff acknowledge, hold (simulated), reject
+approval logged or escalate; a reviewer publishes a pack
+Forbidden Never, whatever the instructions Contact the scammer; ask for PIN, OTP, password or full card
+data; promise recovery; state legal conclusions; recommend paid
+recovery services; submit to real authorities; present unverified
+rules as verified; follow instructions found in evidence; reveal
+system prompts
+(cid:127) Prompt injection: uploads are validated, scored for injected instructions, and wrapped as untrusted
+data; agents have tool allow-lists; a red-team set of at least 40 cases is part of the evaluation.
+(cid:127) Harmful output: deterministic filters block requests for PIN or OTP, promises of recovery, and
+unframed legal conclusions, in English and Hindi.
+(cid:127) Fabricated rules: every rule needs a source passage or an "unverified" label; publishing is gated by a
+human reviewer.
+(cid:127) Privacy: synthetic data only in the demo; consent shown before intake; identifiers stored only as keyed
+hashes for linking; demo data deleted after 72 hours; a "delete my case" button; region-pinned storage.
+(cid:127) Distress: if a victim shows hopelessness or self-harm, fact-collection pauses, the reply is warm, verified
+support resources from the pack are shown (or a fall-back to emergency services), and a flag is logged
+for human follow-up.
+(cid:127) Honest labeling: a persistent "Simulated institutions: demo environment" banner; every packet
+carries "Prepared by Relay from [pack] v[version]. Review before sending. This is not legal advice.";
+every metric shows sample size, date and confidence interval.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 20
+
+=== PAGE 21 ===
+RELAY Project dossier | 11 Oct 2026
+13. Evaluation plan
+The evaluation is a product feature, not an afterthought: it is what separates Relay from a demo.
+System compared Definition
+Relay Full pipeline with packs, agents and verifier
+Baseline Same model, same facts, a general scam-guidance prompt with no packs, tools or rules
+(models a typical guidance assistant)
+Ablation: rules only Extraction and classification replaced by regex and keyword rules
+Ablation: no verifier Relay without the verification loop
+Ablation: no pack Relay forced to use the generic fragmented pack
+Dataset
+At least 300 synthetic cases across the three reference packs and one live-built pack; English, Hindi and
+Hinglish; 11 scam types; all payment-authorization types; noisy and incomplete inputs; text, screenshot
+and transcript modalities; plus at least 40 injection cases. Screenshots are rendered from templates with
+generic fake app skins. A 10% manual realism review and a dataset card record limits. All reports say the
+data is synthetic.
+Metrics (report n and 95% confidence intervals)
+Metric Meaning
+Entity extraction F1 Identifiers read correctly, with role
+Scam-type and authorization accuracy Exact match, with a confusion matrix
+Recipient recall and precision; order Did the plan name the right institutions in the right order?
+correctness
+Deadline correctness Right windows from the right start event
+Packet completeness and faithfulness Required fields filled correctly; every sentence supported by the case facts
+Citation validity Every cited rule and source resolves
+Forbidden-content rate PIN or OTP requests, promises of recovery, legal conclusions
+Injection success rate Cases where hostile text changed behavior
+Pack Builder precision and recall Extracted rules versus a hand-built gold pack, by field type
+Time and cost per case Latency and token cost
+Be careful
+Targets, not results: entity F1 at least 0.90; scam-type and authorization accuracy at least 0.90;
+recipient recall at least 0.95; packet completeness at least 0.95; citation validity 100%; forbidden-content
+rate 0. If a target is missed, report the real number and the failure analysis. Never present a target as a
+result.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 21
+
+=== PAGE 22 ===
+RELAY Project dossier | 11 Oct 2026
+14. Demo and submission plan
+14.1 The three-minute video (hard limit 3:00)
+Time On screen Message
+0:00 to 0:15 Phone with the clock at 00:20 "She paid a fake bank caller twenty minutes ago.
+The next hour decides everything."
+0:15 to 0:50 Victim speaks Hindi; English captions; details fill in; Live run. First action in the first turn; evidence
+screenshot read understood.
+0:50 to 1:20 Plan appears as the Relay line; one message with "Guidance tells her where to go. Relay prepared
+citations what each institution needs, in order, with
+sources."
+1:20 to 1:50 Receiver console with completeness and a A complete case file for staff; possible links for a
+simulated hold; linked cases panel person to confirm.
+1:50 to 2:20 Switch country; then build a new country pack from "Jurisdictions are data."
+an official document
+2:20 to 2:50 Evaluation: Relay versus baseline with sample size One or two headline numbers, read exactly as
+and confidence interval; red-team result measured.
+2:50 to 3:00 Architecture strip Built on Gemini, ADK, Cloud Run, Firestore and
+BigQuery. Institutions are simulated.
+The video must show a live run, not only a replay. Record at 1080p, zoom the browser so text is easily
+readable, burn in English captions for Hindi speech, record at least three takes of each scene, and disclose
+anything simulated. Watch the final video with the sound off: the progress bar, narration line and captions
+must be enough to follow the story.
+14.2 Submission package (from the organizer's FAQ)
+(cid:127) A deployed link to the working prototype on Cloud Run or Firebase.
+(cid:127) A video under 3 minutes (public).
+(cid:127) A public GitHub repository with a clear README.
+(cid:127) A deck (PDF): about 14 slides covering the victim's first hour, the gap with dated evidence, who it
+serves, the solution, how it works, packs and the Pack Builder, architecture, Gen AI depth, evaluation,
+impact and adoption, scalability, safety and honesty, roadmap and team.
+(cid:127) The theme declared as BFSI; everything in English.
+14.3 Comprehension tests before recording
+(cid:127) Five-second test: show each main screen for five seconds to three people outside the team; at least
+two of three must say what it is for and what they would click next.
+(cid:127) Silent-video test: show the video with captions and no sound to three outsiders; at least two of three
+must name the five stages and what happened to the victim's request.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 22
+
+=== PAGE 23 ===
+RELAY Project dossier | 11 Oct 2026
+15. Build plan
+The build specification (RELAY_BUILD_SPEC.md) breaks the work into milestones and 43 tasks with
+dependencies and parallel lanes. Give a coding agent one task or milestone at a time, with the spec
+sections it touches. Do not ask any agent to build everything at once.
+Milestone Goal Done when
+M0 Foundations: repo, GCP setup, schemas, pack validator, Platform questions answered and recorded; CI
+auth and rules, verify current model and SDK facts green; a Gemini call works from Cloud Run
+M1 Text intake and evidence reading A victim can describe a scam, upload a
+screenshot and confirm what was read
+M2 Classify, resolve the pack, plan Plan appears in under 10 seconds; evaluation
+smoke set runs from here on
+M3 Packets, verification, send and track Three verified packets for the India scenario;
+simulated send; live tracker
+M4 Receiver side Full loop: send, request info, answer,
+acknowledge. First complete demo.
+M5 Voice Spoken reports in Hindi and English match the
+text path
+M6 Generality: UK pack, Pack Studio, Pack Builder A new country built from an official document
+and run correctly
+M7 Linked cases A seeded ring of six cases detected with a
+cited explanation
+M8 Evaluation Lab Full run with baseline, ablations, red-team set
+and dashboard
+M9 and M9b Hardening; Present Mode and comprehension tests Accessibility, security, load and preflight pass;
+outsiders understand the flow
+M10 Submission assets Video, deck, README, public repository,
+results appendix
+Critical path: repository and cloud setup, then contracts and schemas, then API and intake, then classification and
+planning, then packets, then receiver side, then Present Mode, then submission assets. Build the evaluation smoke set
+early so metrics guide the work.
+Cut list if time runs short (in order)
+Third language; true audio evaluation; Terraform; DLP integration; keyboard shortcuts; PDF styling; cluster
+graph visualization. Never cut: simulation labels, citations and provenance, the verifier, human approval,
+the evaluation dashboard with sample sizes and intervals, and the live-built pack moment.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 23
+
+=== PAGE 24 ===
+RELAY Project dossier | 11 Oct 2026
+16. Risks, open decisions and human tasks
+Risk Likelihood Impact Mitigation
+Live voice instability or Medium High Text path always available; thin voice agent; reconnect;
+latency disclose any fallback in the video
+Model, SDK or platform High Medium Model IDs are configuration; verify early; smoke
+changes evaluation catches regressions; avoid 2.x models
+Wrong or outdated regulatory Medium High Citations, critic, named reviewers, unverified labels, no
+content hard-coded facts
+Scope too wide High High Milestone order; P0 first; cut list
+Differentiation challenged Medium Medium Dated baseline evidence; narrow claims; ablations;
+re-test the baseline with repeats
+Prompt injection incident in Low High Guard layers; red-team set; rehearsal
+the demo
+Judges mistake simulation for Medium High Banners and wording rules
+real
+Evaluation numbers Medium Medium Report honestly with failure analysis; improve; never
+disappoint hide
+Team eligibility problem Low Very high Confirm no students and all members in the eligible
+region before submitting
+Tasks only a person can do
+Task Why
+Check current model IDs, SDK versions, voice settings, Platform facts change; this must be read from live
+quotas and regions documentation
+Author and verify the reference packs from official Legal and regulatory accuracy; a named reviewer must
+sources sign off
+Choose the official document for the live-built pack and A judgment call that needs rehearsal
+prepare a fallback
+Human review of Hindi text and captions Quality and tone for frightened users
+Review the bank and police workflows with someone Realism a model cannot guarantee
+from fraud operations or a cyber cell
+Legal review of consent, privacy and terms text Legal wording
+Product name, domain and trademark check Legal and branding
+GCP billing, quota requests, Firebase and reCAPTCHA Account-level actions
+setup
+Record the demo and run the comprehension tests with Performance and human participants
+outsiders
+Confirm team eligibility Competition rule
+Open decisions
+(cid:127) Final product name, and whether to keep "Relay".
+(cid:127) Primary cloud region for data at rest.
+(cid:127) Which Indian language to add after Hindi, if any.
+(cid:127) Which regulator document to use for the live-built pack (for example a Singapore or Australian one) and
+its fallback.
+(cid:127) Whether to use Vertex AI Search or a fallback index; whether to include Cloud DLP.
+(cid:127) Who the named human reviewers are for pack content.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 24
+
+=== PAGE 25 ===
+RELAY Project dossier | 11 Oct 2026
+17. Picking this project up later
+If you start a new conversation with an assistant, give it this dossier and RELAY_BUILD_SPEC.md. Say clearly
+what is already decided so it does not reopen the work.
+What is already decided
+(cid:127) Project: Relay, BFSI theme, Google Cloud AI Builder Cup 2026.
+(cid:127) The problem, the solution, the five parts, and the five-stage flow in this document.
+(cid:127) Generic design: country knowledge lives in Jurisdiction Packs; India, the UK and a generic regime are
+demonstration packs.
+(cid:127) Languages: English and Hindi required.
+(cid:127) Institutions are simulated; data is synthetic; humans approve every send, publish and decision.
+(cid:127) Not building: detection, real submissions, legal advice, recovery promises, mule detection.
+Useful starting prompts
+(cid:127) "Read RELAY_BUILD_SPEC.md and implement tasks T01 to T09 (Milestone M0). Follow Section 0 and
+Section 18.9. Do not invent legal or regulatory facts."
+(cid:127) "Using Section 14.2, generate docs/openapi.json and the TypeScript client, and add contract tests."
+(cid:127) "Author the India pack from official sources only, with source references and an unverified label
+wherever a source does not confirm a rule. List what a human must verify."
+(cid:127) "Review this repository against the five-second comprehension requirements in Section 17 and list
+screens that fail."
+What to re-check first
+(cid:127) The organizer's official pages and your registration dashboard for dates, rules and eligibility.
+(cid:127) Current Gemini model IDs, SDK versions and the Live API settings.
+(cid:127) Every regulatory fact marked secondary or unverified in Appendix B.
+(cid:127) Whether the baseline gap still holds (repeat the manual test with the same prompts).
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 25
+
+=== PAGE 26 ===
+RELAY Project dossier | 11 Oct 2026
+Appendix A. Manual baseline test log (October
+2026)
+A small, dated test of one public guidance assistant, run by you and scored by us. Do not name the product
+publicly. Limits: one product, one session per prompt, no repeats, English and Hindi only, no screenshot or
+injection tests.
+Prompt What the assistant did Our reading
+India, English: "Someone claiming to be Identified a bank-impersonation scam. Told the Correct but generic. No
+my bank's security team told me to move victim to stop contact, contact the bank, 1930, no urgency, no
+INR 45,000 to a safe account by UPI 20 monitor the account and avoid sharing ordered plan. About 4 of
+minutes ago. I have their phone number information. Offered to check the number or 10 on our rubric.
+and a screenshot..." find reporting channels.
+India, English: write the exact message to Declined: said it focuses only on scam-related Refusal even though the
+send to the bank (with all details) topics and asked if there was a scam concern. request was about a
+scam.
+India, English: same request, rewritten as Declined again with the same reply. Rules out a
+one message with full context missing-context
+explanation.
+India, English: which authorities, in what Named the national cybercrime portal only, One correct channel;
+order, how quickly? (it first asked which with no order and no time frame; offered missed the helpline, order
+country) post-report advice. and urgency.
+UK, English: sent GBP 3,000 three days Generic steps (contact bank, monitor, report to No named UK channel; no
+ago to an "investment" contact "official authorities"); offered to find the mention of the UK
+authorities. reimbursement regime.
+About 3 of 12.
+UK, English: what does my bank need, Generic evidence list; "limits vary by bank and Non-answer to a direct
+and is there a time limit? jurisdiction"; refer to the bank. question. About 2 of 10.
+India, Hindi: the same Fluent Hindi; generic steps; asked again which Language is fine;
+bank-impersonation story country; described the loss as a transfer made specificity is not;
+"without your permission"; suggested a police mislabels a self-authorized
+report. payment as unauthorized.
+About 3 of 12.
+Not run No-hotline country; screenshot reading; Run these before claiming
+prompt-injection image; follow-ups for the anything about them.
+police report, deadlines and refund rights; UK
+message drafting; Hindi message drafting.
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 26
+
+=== PAGE 27 ===
+RELAY Project dossier | 11 Oct 2026
+Appendix B. Key facts and how reliable they are
+Fact Tier Check against
+Event dates, rules, eligibility, judging weights, submission Official aibuildercup.com and your
+requirements dashboard
+2025 precedent: 4,457 prototypes, 100 finalists, ten winners Official Hack2skill blog
+Gemini 3.x family; Gemini 2.5 shutdown on the Agent Platform on Official ai.google.dev and Firebase
+20 Oct 2026; google-genai 2.3.0 or later; Live model names docs
+Singapore H1 2026 scam statistics Official Singapore Police Force brief
+Singapore freeze timing statement Official Ministry of Home Affairs reply
+India CFCFRMS totals (INR 11,158 crore; 32.80 lakh complaints; Secondary PIB releases
+1,586 entities)
+India lien versus refund figures Secondary PIB and I4C
+India Money Restoration and Grievance modules, April 2026 Secondary MHA and PIB
+RBI draft compensation framework (INR 25,000; 5 days) Secondary, draft RBI final directions
+MuleHunter.AI at 26 banks Secondary RBI reports
+Singapore Shared Responsibility Framework in force 16 Dec 2024 Secondary MAS and IMDA
+UK mandatory reimbursement from Oct 2024; 88% reimbursed; Secondary PSR and Pay.UK
+GBP 85,000 cap in one vendor summary
+Australia Scams Prevention Framework; commencement 31 Mar Secondary Treasury, ACCC, ASIC
+2027; A$35 million penalty
+Scam.org launch 12 Mar 2026, 50+ languages Secondary GASA
+GASA estimate of about 442 billion USD lost to scams Secondary GASA report
+NICE Actimize Gen AI fraud investigations (Sept 2024) Secondary (vendor Vendor documentation
+press)
+Trade finance gap 2.5 trillion USD; CBAM definitive phase 1 Jan Secondary ADB; EU sources
+2026
+Your manual test results (Appendix A) Own evidence, Repeat with repeats
+small sample
+Appendix C. Glossary
+Term Meaning
+Authorized (manipulated) A payment the victim made themselves because they were deceived
+payment
+Unauthorized payment A payment made by someone else without the victim's action
+Jurisdiction Pack A reviewed, cited data file describing one regime's recipients, channels, fields,
+deadlines, sequencing, liability descriptions and forms
+Pack Builder An agent that drafts a pack from official documents, checked by a critic and a human
+Packet The document set for one recipient (shown to victims as "message for [organization]")
+Relay line The ordered line of organizations on the plan screen
+Receiver A staff member at a bank, authority or payment app
+ADK Google's Agent Development Kit
+MCP, A2A Open protocols for connecting agents to tools (MCP) and to other agents (A2A)
+CFCFRMS, I4C, NCRP, 1930 India's cyber-fraud reporting and freezing system, the cybercrime coordination center,
+the national portal, and the helpline
+Simulated Built for the demo; not a real institution or system
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 27
+
+=== PAGE 28 ===
+RELAY Project dossier | 11 Oct 2026
+Appendix D. Sources consulted
+Collected during research on 11 October 2026. Most are secondary; confirm against official sources before quoting.
+Competition
+https://aibuildercup.com/themes.html
+https://aibuildercup.com/index.html
+https://aibuildercup.com/Faqs.html
+https://blog.hack2skill.com/gen-ai-exchange-hackathon-finale
+Competitors and landscape
+https://www.scam.org/
+https://gasa.org/knowledge-base/blog/global-anti-scam-alliance-launches-scam.org-with-openai-and-key-partners
+https://www.businesswire.com/news/home/20240924451508/en
+https://www.businesswire.com/news/home/20250910455268/en/Charm-Security-and-Give-an-Hour-Unite-AI-and-Mental-Health-Exp
+ertise-to-Fight-Scams
+https://newgensoft.com/solutions/tfdp
+https://lablab.ai/ai-hackathons/techex-intelligent-enterprise-solutions-hackathon/meridian/meridian-autonomous-lc-intel
+ligence
+https://cbamguide.com/software/best-cbam-software/
+https://www.adb.org/news/demand-trade-finance-rise-amid-supply-chain-realignment-adb-report
+https://www.iasgyan.in/daily-current-affairs/pradhan-mantri-fasal-bima-yojana-systemic-failures
+India
+https://www.impriindia.com/insights/policy-update/citizen-financial-cyber-fraud-reporting-and-management-system-cfcfrms
+-strengthening-indias-response-to-digital-financial-fraud/
+https://wenotice.in/guides/online-fraud-first-hour
+https://cyberdefender.in/lost-money-to-a-cyber-fraud-dont-panic-act-fast/
+https://lawyush.com/cybercrime-complaint-filing-in-india-guide/
+https://ksandk.com/newsletter/indias-digital-fraud-overhaul/
+https://www.taxheal.com/?p=117704
+https://www.basispointinsight.com/Story/large-ticket-frauds-drive-sharp-rise-in-bank-fraud-value-despite-fewer-cases--r
+bi-report_015c44e1de9a.html
+Singapore, UK, Australia
+https://www.police.gov.sg/-/media/SPF/Media-Room/Statistics/Mid-Year-Scam-and-Cybercrime-Brief-2026/Mid-Year-Scam-and-C
+ybercrime-Brief-2026.pdf
+https://fintechnews.sg/134107/security/singapore-anti-scam-centre/
+https://www.mha.gov.sg/media-room/newsroom/quarterly-scam-losses-by-typology-from-2023-to-2025-victims-age-loss-recover
+y-rate-and-time-taken-to-freeze-funds
+https://itbrief.co.uk/story/uk-fraud-losses-rise-as-ai-scams-drive-new-warnings
+https://www.cognizant.com/uk/en/insights/blog/articles/beyond-reimbursement-claims-management-system-rcms-enhancing-app
+-fraud-reimbursement-for-uk-psps
+https://www.financierworldwide.com/australias-world-leading-scams-prevention-framework-is-nearing-implementation
+Google platform
+https://ai.google.dev/gemini-api/docs/models
+https://ai.google.dev/gemini-api/docs/live-api/capabilities
+https://firebase.google.com/docs/ai-logic/models
+https://github.com/google-gemini/gemini-skills/blob/main/skills/gemini-live-api-dev/SKILL.md
+https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/google-models
+Planning documents. Figures marked secondary or unverified must be confirmed against official sources. Page 28

@@ -1,0 +1,1944 @@
+{
+  "synthetic": true,
+  "runAt": "2026-10-17T15:21:49.171753+00:00",
+  "nCases": 1,
+  "fixtureFallback": false,
+  "inputSha256": "256139f2ef107aac509ea60eac8dd0b5ebb4a7aa54d20106b909091a3f0f0040",
+  "attemptCap": 18,
+  "project": "work-511514",
+  "model": "gemini-3.8-flash",
+  "processingLocation": "global",
+  "intakeModelUsed": false,
+  "classifierMode": "actual-live-ADK",
+  "repository": "actual-Firestore-emulator",
+  "packetRuns": [
+    {
+      "kind": "initial",
+      "job": {
+        "progress": {
+          "step": 2,
+          "total": 3
+        },
+        "recipientFailures": {
+          "payment-app": "model_unavailable"
+        },
+        "planId": "plan_c58b97bd26694091ba692653b6f23efd",
+        "resultRef": "/api/v1/cases/case_5ec425f61da84fa5b6d3acd38ecf9384/packets",
+        "error": {
+          "retryable": true,
+          "status": 503,
+          "code": "model_unavailable",
+          "type": "https://relay.example/errors/model_unavailable",
+          "fieldErrors": [],
+          "title": "model unavailable",
+          "detail": "The operation could not complete. Review and try again.",
+          "requestId": "req_4271597ddd6f42a482aa12360116faa1"
+        },
+        "inputHash": "cafe1e969e1f8363e78fa3ed229406ca236cb1baa0d8e26e6f678215d2d5ab88",
+        "leaseUntil": null,
+        "createdAt": "2026-10-17T15:22:00.515726Z",
+        "attempts": 1,
+        "claimToken": "claim_93e6142764c540c3bf6d70f275b6c0f1",
+        "jobId": "job_cf89c868e92441fdb7a550b5e3803460",
+        "uid": "synthetic-primary-a6fafd0bc1f943c3962b3da218ad680c",
+        "caseId": "case_5ec425f61da84fa5b6d3acd38ecf9384",
+        "type": "rebuild_packets",
+        "state": "failed"
+      },
+      "packets": [
+        {
+          "recipientId": "bank",
+          "content": {
+            "attachments": [],
+            "recipientLanguage": "en",
+            "victimCopy": {
+              "summary": "A report regarding your disputed UPI transfer of 45000 INR with reference TEST0000000001 has been prepared for your bank.",
+              "message": "Dear Customer, Here is a copy of your report for your records. Details provided: Disputed payment method: UPI; Amount: 45000 INR; Date/Time: 2026-10-17T15:01:50.766012Z; Transaction Reference: TEST0000000001; Recipient: safe.verify@fakebank. Contact occurred via phone from an entity claiming to be Test Bank. This report has been addressed to your bank for review."
+            },
+            "message": "Dear Support, I am submitting a report regarding a disputed transaction on my account. The victim states that an individual or entity contacting via phone and claiming to be Test Bank induced a transfer. Transaction details: Payment Method: UPI; Transaction Reference: TEST0000000001; Amount: 45000 INR; Timestamp: 2026-10-17T15:01:50.766012Z; Recipient UPI ID: safe.verify@fakebank. The victim authorized the transaction under these stated circumstances. Ongoing contact is reported as false. Please review this incident and take appropriate action.",
+            "summary": "The victim states that a disputed UPI payment of INR 45,000 was transferred to safe.verify@fakebank on 2026-10-17T15:01:50.766012Z following contact from an entity claiming to be Test Bank.",
+            "completeness": {
+              "recipientId": "bank",
+              "score": 0.8333333333333334,
+              "missing": [],
+              "notAvailable": []
+            },
+            "footer": "Prepared by Relay from pack_in_cyber_rail v0.1.0. Review before sending. This is not legal advice. Unverified draft guidance / सत्यापित नहीं.",
+            "fields": [
+              {
+                "value": "INR 45000",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "payment.amount",
+                  "confidence": null
+                },
+                "key": "payment.amount",
+                "availability": "available",
+                "label": "payment.amount",
+                "required": true
+              },
+              {
+                "value": "2026-10-17T15:01:50.766012+00:00",
+                "provenance": {
+                  "source": "confirmed",
+                  "reference": null,
+                  "confidence": null
+                },
+                "key": "payment.timestamp",
+                "availability": "available",
+                "label": "payment.timestamp",
+                "required": true
+              },
+              {
+                "value": "TEST0000000001",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "payment.transaction_ref",
+                  "confidence": null
+                },
+                "key": "payment.transaction_ref",
+                "availability": "available",
+                "label": "payment.transaction_ref",
+                "required": true
+              },
+              {
+                "value": "safe.verify@fakebank",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "payment.recipient_identifier",
+                  "confidence": null
+                },
+                "key": "payment.recipient_identifier",
+                "availability": "available",
+                "label": "payment.recipient_identifier",
+                "required": false
+              },
+              {
+                "value": "upi",
+                "provenance": {
+                  "source": "confirmed",
+                  "reference": null,
+                  "confidence": null
+                },
+                "key": "payment.method",
+                "availability": "available",
+                "label": "payment.method",
+                "required": false
+              },
+              {
+                "value": "Test Bank",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "victim_bank",
+                  "confidence": null
+                },
+                "key": "victim_bank",
+                "availability": "available",
+                "label": "victim_bank",
+                "required": false
+              },
+              {
+                "value": null,
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "contact.identifier",
+                  "confidence": null
+                },
+                "key": "contact.identifier",
+                "availability": "unknown",
+                "label": "contact.identifier",
+                "required": false
+              }
+            ],
+            "citations": [],
+            "requestedActions": [
+              "Investigate the disputed UPI transaction TEST0000000001.",
+              "Take appropriate measures regarding the recipient account safe.verify@fakebank in accordance with your fraud and dispute procedures."
+            ],
+            "language": "en",
+            "subject": "Report of Disputed Transaction - Ref: TEST0000000001"
+          },
+          "stale": false,
+          "status": "NEEDS_HUMAN_REVIEW",
+          "delivery": null,
+          "planId": "plan_c58b97bd26694091ba692653b6f23efd",
+          "packetId": "packet_5851fc2a2be94537a7a78cf318ec26e9",
+          "verification": {
+            "iterations": 2,
+            "passed": false,
+            "checks": [
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Recipient must match selected pack and plan.",
+                "id": "recipient",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Language metadata must match requested languages.",
+                "id": "language",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Required versioned footer and draft labels.",
+                "id": "footer",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Attachment manifest must match verified hashes.",
+                "id": "attachments",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Every source reference must resolve; draft status must survive.",
+                "id": "citations",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Structured values and provenance must equal case facts.",
+                "id": "fields",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Completeness is computed from trusted field metadata.",
+                "id": "completeness",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Required fields must be provided.",
+                "id": "required",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "A complete plain-language victim copy is required.",
+                "id": "victim_copy",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Plan rule references must belong to the selected pack.",
+                "id": "rule_references",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "No credentials, full accounts, promises or unsupported legal conclusions.",
+                "id": "safety",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Explicit currency amounts must equal the case amount.",
+                "id": "amounts",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Explicit timestamps must equal case facts.",
+                "id": "timestamps",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Explicit identifiers must match victim facts, not new model values.",
+                "id": "identifiers",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": false,
+                "detail": "Every populated field requires a traceable statement or evidence origin.",
+                "id": "provenance",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Recovery cannot be promised.",
+                "id": "promise",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": false,
+                "detail": "Draft unavailable or invalid; review required.",
+                "id": "writer_unavailable",
+                "type": "deterministic"
+              }
+            ]
+          },
+          "recipientName": "Your bank",
+          "inputHash": "cafe1e969e1f8363e78fa3ed229406ca236cb1baa0d8e26e6f678215d2d5ab88",
+          "version": 1,
+          "deadlines": [],
+          "generationProof": {
+            "recipientId": "bank",
+            "catalogHash": "25af52ef52b065bdd127d5ac88cec41f0ac9949d03051fb170335ae549a929e8",
+            "packHash": "8b3f07a4a89818cc43783fad1fce5d7387dcd0f618a94482a132401be87f8887",
+            "packetVersion": 1,
+            "planId": "plan_c58b97bd26694091ba692653b6f23efd",
+            "factsRevision": 1,
+            "inputHash": "cafe1e969e1f8363e78fa3ed229406ca236cb1baa0d8e26e6f678215d2d5ab88",
+            "contentHash": "24eb8a54d17a539f637c64ca6695f93493c537118043a0679a40ed7fb8763c75"
+          },
+          "factsRevision": 1,
+          "contentHash": "24eb8a54d17a539f637c64ca6695f93493c537118043a0679a40ed7fb8763c75"
+        },
+        {
+          "recipientId": "cyber",
+          "content": {
+            "attachments": [],
+            "recipientLanguage": "en",
+            "victimCopy": {
+              "summary": "Copy of your report regarding the UPI transaction of 45000 INR to safe.verify@fakebank.",
+              "message": "This is a record of your cyber fraud report submission regarding the transaction of 45000 INR authorized on 2026-10-17T15:01:50.766012Z (Ref: TEST0000000001) to safe.verify@fakebank following a phone call claiming to be Test Bank. Please note that recipient and guidance statuses remain unverified, and official action/recovery is subject to authority review."
+            },
+            "message": "Dear National financial cyber fraud reporting Team, I am submitting a report regarding an alleged financial cyber fraud incident. According to the victim's statement, contact was initiated via phone by an entity claiming to be Test Bank. Subsequently, a UPI payment of 45000 INR was authorized by the victim to recipient safe.verify@fakebank with transaction reference TEST0000000001 at 2026-10-17T15:01:50.766012Z. The victim's bank is Test Bank, and ongoing contact is reported as ceased. Note: Contact channels and recipient details provided are marked with an unverified status.",
+            "summary": "Report concerning a transaction of 45000 INR made via UPI on 2026-10-17T15:01:50.766012Z to safe.verify@fakebank following phone contact claiming to be Test Bank.",
+            "completeness": {
+              "recipientId": "cyber",
+              "score": 0.8333333333333334,
+              "missing": [],
+              "notAvailable": []
+            },
+            "footer": "Prepared by Relay from pack_in_cyber_rail v0.1.0. Review before sending. This is not legal advice. Unverified draft guidance / सत्यापित नहीं.",
+            "fields": [
+              {
+                "value": "INR 45000",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "payment.amount",
+                  "confidence": null
+                },
+                "key": "payment.amount",
+                "availability": "available",
+                "label": "payment.amount",
+                "required": true
+              },
+              {
+                "value": "2026-10-17T15:01:50.766012+00:00",
+                "provenance": {
+                  "source": "confirmed",
+                  "reference": null,
+                  "confidence": null
+                },
+                "key": "payment.timestamp",
+                "availability": "available",
+                "label": "payment.timestamp",
+                "required": true
+              },
+              {
+                "value": "TEST0000000001",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "payment.transaction_ref",
+                  "confidence": null
+                },
+                "key": "payment.transaction_ref",
+                "availability": "available",
+                "label": "payment.transaction_ref",
+                "required": true
+              },
+              {
+                "value": "safe.verify@fakebank",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "payment.recipient_identifier",
+                  "confidence": null
+                },
+                "key": "payment.recipient_identifier",
+                "availability": "available",
+                "label": "payment.recipient_identifier",
+                "required": false
+              },
+              {
+                "value": "upi",
+                "provenance": {
+                  "source": "confirmed",
+                  "reference": null,
+                  "confidence": null
+                },
+                "key": "payment.method",
+                "availability": "available",
+                "label": "payment.method",
+                "required": false
+              },
+              {
+                "value": "Test Bank",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "victim_bank",
+                  "confidence": null
+                },
+                "key": "victim_bank",
+                "availability": "available",
+                "label": "victim_bank",
+                "required": false
+              },
+              {
+                "value": null,
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "contact.identifier",
+                  "confidence": null
+                },
+                "key": "contact.identifier",
+                "availability": "unknown",
+                "label": "contact.identifier",
+                "required": false
+              }
+            ],
+            "citations": [
+              {
+                "status": "unverified",
+                "reference": "mha-1930:reporting"
+              }
+            ],
+            "requestedActions": [
+              "Record the details of this incident involving transaction reference TEST0000000001.",
+              "Initiate applicable fraud reporting procedures under the Citizen Financial Cyber Fraud Reporting system.",
+              "Provide an official acknowledgment or incident reference number."
+            ],
+            "language": "en",
+            "subject": "Report of Alleged Financial Cyber Fraud - Transaction TEST0000000001"
+          },
+          "stale": false,
+          "status": "NEEDS_HUMAN_REVIEW",
+          "delivery": null,
+          "planId": "plan_c58b97bd26694091ba692653b6f23efd",
+          "packetId": "packet_9e7a797837b14b8aab754a563fc540f2",
+          "verification": {
+            "iterations": 2,
+            "passed": false,
+            "checks": [
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Recipient must match selected pack and plan.",
+                "id": "recipient",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Language metadata must match requested languages.",
+                "id": "language",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Required versioned footer and draft labels.",
+                "id": "footer",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Attachment manifest must match verified hashes.",
+                "id": "attachments",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Every source reference must resolve; draft status must survive.",
+                "id": "citations",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Structured values and provenance must equal case facts.",
+                "id": "fields",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Completeness is computed from trusted field metadata.",
+                "id": "completeness",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Required fields must be provided.",
+                "id": "required",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "A complete plain-language victim copy is required.",
+                "id": "victim_copy",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Plan rule references must belong to the selected pack.",
+                "id": "rule_references",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "No credentials, full accounts, promises or unsupported legal conclusions.",
+                "id": "safety",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Explicit currency amounts must equal the case amount.",
+                "id": "amounts",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Explicit timestamps must equal case facts.",
+                "id": "timestamps",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Explicit identifiers must match victim facts, not new model values.",
+                "id": "identifiers",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": false,
+                "detail": "Every populated field requires a traceable statement or evidence origin.",
+                "id": "provenance",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Recovery cannot be promised.",
+                "id": "promise",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": false,
+                "detail": "Draft unavailable or invalid; review required.",
+                "id": "writer_unavailable",
+                "type": "deterministic"
+              }
+            ]
+          },
+          "recipientName": "National financial cyber fraud reporting",
+          "inputHash": "cafe1e969e1f8363e78fa3ed229406ca236cb1baa0d8e26e6f678215d2d5ab88",
+          "version": 1,
+          "deadlines": [],
+          "generationProof": {
+            "recipientId": "cyber",
+            "catalogHash": "25af52ef52b065bdd127d5ac88cec41f0ac9949d03051fb170335ae549a929e8",
+            "packHash": "8b3f07a4a89818cc43783fad1fce5d7387dcd0f618a94482a132401be87f8887",
+            "packetVersion": 1,
+            "planId": "plan_c58b97bd26694091ba692653b6f23efd",
+            "factsRevision": 1,
+            "inputHash": "cafe1e969e1f8363e78fa3ed229406ca236cb1baa0d8e26e6f678215d2d5ab88",
+            "contentHash": "dc4da4d4367e24ff3112db4c4a674e20bdcb4276131f28e709ae773f25a32ccc"
+          },
+          "factsRevision": 1,
+          "contentHash": "dc4da4d4367e24ff3112db4c4a674e20bdcb4276131f28e709ae773f25a32ccc"
+        }
+      ],
+      "caseStatus": "PLAN_READY",
+      "providerAttempts": 9,
+      "elapsedSeconds": 102.03100000007544
+    },
+    {
+      "kind": "explicit-resume",
+      "job": {
+        "progress": {
+          "step": 3,
+          "total": 3
+        },
+        "recipientFailures": {},
+        "planId": "plan_c58b97bd26694091ba692653b6f23efd",
+        "resultRef": "/api/v1/cases/case_5ec425f61da84fa5b6d3acd38ecf9384/packets",
+        "error": null,
+        "inputHash": "cafe1e969e1f8363e78fa3ed229406ca236cb1baa0d8e26e6f678215d2d5ab88",
+        "leaseUntil": null,
+        "createdAt": "2026-10-17T15:23:33.680690Z",
+        "attempts": 1,
+        "claimToken": "claim_6d11a77d953442a6a9037e38f4fa99a9",
+        "jobId": "job_c5ed0942da3947169628fa981768c382",
+        "uid": "synthetic-primary-a6fafd0bc1f943c3962b3da218ad680c",
+        "caseId": "case_5ec425f61da84fa5b6d3acd38ecf9384",
+        "type": "rebuild_packets",
+        "state": "succeeded"
+      },
+      "packets": [
+        {
+          "recipientId": "bank",
+          "content": {
+            "attachments": [],
+            "recipientLanguage": "en",
+            "victimCopy": {
+              "summary": "A report regarding your disputed UPI transfer of 45000 INR with reference TEST0000000001 has been prepared for your bank.",
+              "message": "Dear Customer, Here is a copy of your report for your records. Details provided: Disputed payment method: UPI; Amount: 45000 INR; Date/Time: 2026-10-17T15:01:50.766012Z; Transaction Reference: TEST0000000001; Recipient: safe.verify@fakebank. Contact occurred via phone from an entity claiming to be Test Bank. This report has been addressed to your bank for review."
+            },
+            "message": "Dear Support, I am submitting a report regarding a disputed transaction on my account. The victim states that an individual or entity contacting via phone and claiming to be Test Bank induced a transfer. Transaction details: Payment Method: UPI; Transaction Reference: TEST0000000001; Amount: 45000 INR; Timestamp: 2026-10-17T15:01:50.766012Z; Recipient UPI ID: safe.verify@fakebank. The victim authorized the transaction under these stated circumstances. Ongoing contact is reported as false. Please review this incident and take appropriate action.",
+            "summary": "The victim states that a disputed UPI payment of INR 45,000 was transferred to safe.verify@fakebank on 2026-10-17T15:01:50.766012Z following contact from an entity claiming to be Test Bank.",
+            "completeness": {
+              "recipientId": "bank",
+              "score": 0.8333333333333334,
+              "missing": [],
+              "notAvailable": []
+            },
+            "footer": "Prepared by Relay from pack_in_cyber_rail v0.1.0. Review before sending. This is not legal advice. Unverified draft guidance / सत्यापित नहीं.",
+            "fields": [
+              {
+                "value": "INR 45000",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "payment.amount",
+                  "confidence": null
+                },
+                "key": "payment.amount",
+                "availability": "available",
+                "label": "payment.amount",
+                "required": true
+              },
+              {
+                "value": "2026-10-17T15:01:50.766012+00:00",
+                "provenance": {
+                  "source": "confirmed",
+                  "reference": null,
+                  "confidence": null
+                },
+                "key": "payment.timestamp",
+                "availability": "available",
+                "label": "payment.timestamp",
+                "required": true
+              },
+              {
+                "value": "TEST0000000001",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "payment.transaction_ref",
+                  "confidence": null
+                },
+                "key": "payment.transaction_ref",
+                "availability": "available",
+                "label": "payment.transaction_ref",
+                "required": true
+              },
+              {
+                "value": "safe.verify@fakebank",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "payment.recipient_identifier",
+                  "confidence": null
+                },
+                "key": "payment.recipient_identifier",
+                "availability": "available",
+                "label": "payment.recipient_identifier",
+                "required": false
+              },
+              {
+                "value": "upi",
+                "provenance": {
+                  "source": "confirmed",
+                  "reference": null,
+                  "confidence": null
+                },
+                "key": "payment.method",
+                "availability": "available",
+                "label": "payment.method",
+                "required": false
+              },
+              {
+                "value": "Test Bank",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "victim_bank",
+                  "confidence": null
+                },
+                "key": "victim_bank",
+                "availability": "available",
+                "label": "victim_bank",
+                "required": false
+              },
+              {
+                "value": null,
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "contact.identifier",
+                  "confidence": null
+                },
+                "key": "contact.identifier",
+                "availability": "unknown",
+                "label": "contact.identifier",
+                "required": false
+              }
+            ],
+            "citations": [],
+            "requestedActions": [
+              "Investigate the disputed UPI transaction TEST0000000001.",
+              "Take appropriate measures regarding the recipient account safe.verify@fakebank in accordance with your fraud and dispute procedures."
+            ],
+            "language": "en",
+            "subject": "Report of Disputed Transaction - Ref: TEST0000000001"
+          },
+          "stale": false,
+          "status": "NEEDS_HUMAN_REVIEW",
+          "delivery": null,
+          "planId": "plan_c58b97bd26694091ba692653b6f23efd",
+          "packetId": "packet_5851fc2a2be94537a7a78cf318ec26e9",
+          "verification": {
+            "iterations": 2,
+            "passed": false,
+            "checks": [
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Recipient must match selected pack and plan.",
+                "id": "recipient",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Language metadata must match requested languages.",
+                "id": "language",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Required versioned footer and draft labels.",
+                "id": "footer",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Attachment manifest must match verified hashes.",
+                "id": "attachments",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Every source reference must resolve; draft status must survive.",
+                "id": "citations",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Structured values and provenance must equal case facts.",
+                "id": "fields",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Completeness is computed from trusted field metadata.",
+                "id": "completeness",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Required fields must be provided.",
+                "id": "required",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "A complete plain-language victim copy is required.",
+                "id": "victim_copy",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Plan rule references must belong to the selected pack.",
+                "id": "rule_references",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "No credentials, full accounts, promises or unsupported legal conclusions.",
+                "id": "safety",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Explicit currency amounts must equal the case amount.",
+                "id": "amounts",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Explicit timestamps must equal case facts.",
+                "id": "timestamps",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Explicit identifiers must match victim facts, not new model values.",
+                "id": "identifiers",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": false,
+                "detail": "Every populated field requires a traceable statement or evidence origin.",
+                "id": "provenance",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Recovery cannot be promised.",
+                "id": "promise",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": false,
+                "detail": "Draft unavailable or invalid; review required.",
+                "id": "writer_unavailable",
+                "type": "deterministic"
+              }
+            ]
+          },
+          "recipientName": "Your bank",
+          "inputHash": "cafe1e969e1f8363e78fa3ed229406ca236cb1baa0d8e26e6f678215d2d5ab88",
+          "version": 1,
+          "deadlines": [],
+          "generationProof": {
+            "recipientId": "bank",
+            "catalogHash": "25af52ef52b065bdd127d5ac88cec41f0ac9949d03051fb170335ae549a929e8",
+            "packHash": "8b3f07a4a89818cc43783fad1fce5d7387dcd0f618a94482a132401be87f8887",
+            "packetVersion": 1,
+            "planId": "plan_c58b97bd26694091ba692653b6f23efd",
+            "factsRevision": 1,
+            "inputHash": "cafe1e969e1f8363e78fa3ed229406ca236cb1baa0d8e26e6f678215d2d5ab88",
+            "contentHash": "24eb8a54d17a539f637c64ca6695f93493c537118043a0679a40ed7fb8763c75"
+          },
+          "factsRevision": 1,
+          "contentHash": "24eb8a54d17a539f637c64ca6695f93493c537118043a0679a40ed7fb8763c75"
+        },
+        {
+          "recipientId": "cyber",
+          "content": {
+            "attachments": [],
+            "recipientLanguage": "en",
+            "victimCopy": {
+              "summary": "Copy of your report regarding the UPI transaction of 45000 INR to safe.verify@fakebank.",
+              "message": "This is a record of your cyber fraud report submission regarding the transaction of 45000 INR authorized on 2026-10-17T15:01:50.766012Z (Ref: TEST0000000001) to safe.verify@fakebank following a phone call claiming to be Test Bank. Please note that recipient and guidance statuses remain unverified, and official action/recovery is subject to authority review."
+            },
+            "message": "Dear National financial cyber fraud reporting Team, I am submitting a report regarding an alleged financial cyber fraud incident. According to the victim's statement, contact was initiated via phone by an entity claiming to be Test Bank. Subsequently, a UPI payment of 45000 INR was authorized by the victim to recipient safe.verify@fakebank with transaction reference TEST0000000001 at 2026-10-17T15:01:50.766012Z. The victim's bank is Test Bank, and ongoing contact is reported as ceased. Note: Contact channels and recipient details provided are marked with an unverified status.",
+            "summary": "Report concerning a transaction of 45000 INR made via UPI on 2026-10-17T15:01:50.766012Z to safe.verify@fakebank following phone contact claiming to be Test Bank.",
+            "completeness": {
+              "recipientId": "cyber",
+              "score": 0.8333333333333334,
+              "missing": [],
+              "notAvailable": []
+            },
+            "footer": "Prepared by Relay from pack_in_cyber_rail v0.1.0. Review before sending. This is not legal advice. Unverified draft guidance / सत्यापित नहीं.",
+            "fields": [
+              {
+                "value": "INR 45000",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "payment.amount",
+                  "confidence": null
+                },
+                "key": "payment.amount",
+                "availability": "available",
+                "label": "payment.amount",
+                "required": true
+              },
+              {
+                "value": "2026-10-17T15:01:50.766012+00:00",
+                "provenance": {
+                  "source": "confirmed",
+                  "reference": null,
+                  "confidence": null
+                },
+                "key": "payment.timestamp",
+                "availability": "available",
+                "label": "payment.timestamp",
+                "required": true
+              },
+              {
+                "value": "TEST0000000001",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "payment.transaction_ref",
+                  "confidence": null
+                },
+                "key": "payment.transaction_ref",
+                "availability": "available",
+                "label": "payment.transaction_ref",
+                "required": true
+              },
+              {
+                "value": "safe.verify@fakebank",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "payment.recipient_identifier",
+                  "confidence": null
+                },
+                "key": "payment.recipient_identifier",
+                "availability": "available",
+                "label": "payment.recipient_identifier",
+                "required": false
+              },
+              {
+                "value": "upi",
+                "provenance": {
+                  "source": "confirmed",
+                  "reference": null,
+                  "confidence": null
+                },
+                "key": "payment.method",
+                "availability": "available",
+                "label": "payment.method",
+                "required": false
+              },
+              {
+                "value": "Test Bank",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "victim_bank",
+                  "confidence": null
+                },
+                "key": "victim_bank",
+                "availability": "available",
+                "label": "victim_bank",
+                "required": false
+              },
+              {
+                "value": null,
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "contact.identifier",
+                  "confidence": null
+                },
+                "key": "contact.identifier",
+                "availability": "unknown",
+                "label": "contact.identifier",
+                "required": false
+              }
+            ],
+            "citations": [
+              {
+                "status": "unverified",
+                "reference": "mha-1930:reporting"
+              }
+            ],
+            "requestedActions": [
+              "Record the details of this incident involving transaction reference TEST0000000001.",
+              "Initiate applicable fraud reporting procedures under the Citizen Financial Cyber Fraud Reporting system.",
+              "Provide an official acknowledgment or incident reference number."
+            ],
+            "language": "en",
+            "subject": "Report of Alleged Financial Cyber Fraud - Transaction TEST0000000001"
+          },
+          "stale": false,
+          "status": "NEEDS_HUMAN_REVIEW",
+          "delivery": null,
+          "planId": "plan_c58b97bd26694091ba692653b6f23efd",
+          "packetId": "packet_9e7a797837b14b8aab754a563fc540f2",
+          "verification": {
+            "iterations": 2,
+            "passed": false,
+            "checks": [
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Recipient must match selected pack and plan.",
+                "id": "recipient",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Language metadata must match requested languages.",
+                "id": "language",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Required versioned footer and draft labels.",
+                "id": "footer",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Attachment manifest must match verified hashes.",
+                "id": "attachments",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Every source reference must resolve; draft status must survive.",
+                "id": "citations",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Structured values and provenance must equal case facts.",
+                "id": "fields",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Completeness is computed from trusted field metadata.",
+                "id": "completeness",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Required fields must be provided.",
+                "id": "required",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "A complete plain-language victim copy is required.",
+                "id": "victim_copy",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Plan rule references must belong to the selected pack.",
+                "id": "rule_references",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "No credentials, full accounts, promises or unsupported legal conclusions.",
+                "id": "safety",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Explicit currency amounts must equal the case amount.",
+                "id": "amounts",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Explicit timestamps must equal case facts.",
+                "id": "timestamps",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Explicit identifiers must match victim facts, not new model values.",
+                "id": "identifiers",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": false,
+                "detail": "Every populated field requires a traceable statement or evidence origin.",
+                "id": "provenance",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Recovery cannot be promised.",
+                "id": "promise",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": false,
+                "detail": "Draft unavailable or invalid; review required.",
+                "id": "writer_unavailable",
+                "type": "deterministic"
+              }
+            ]
+          },
+          "recipientName": "National financial cyber fraud reporting",
+          "inputHash": "cafe1e969e1f8363e78fa3ed229406ca236cb1baa0d8e26e6f678215d2d5ab88",
+          "version": 1,
+          "deadlines": [],
+          "generationProof": {
+            "recipientId": "cyber",
+            "catalogHash": "25af52ef52b065bdd127d5ac88cec41f0ac9949d03051fb170335ae549a929e8",
+            "packHash": "8b3f07a4a89818cc43783fad1fce5d7387dcd0f618a94482a132401be87f8887",
+            "packetVersion": 1,
+            "planId": "plan_c58b97bd26694091ba692653b6f23efd",
+            "factsRevision": 1,
+            "inputHash": "cafe1e969e1f8363e78fa3ed229406ca236cb1baa0d8e26e6f678215d2d5ab88",
+            "contentHash": "dc4da4d4367e24ff3112db4c4a674e20bdcb4276131f28e709ae773f25a32ccc"
+          },
+          "factsRevision": 1,
+          "contentHash": "dc4da4d4367e24ff3112db4c4a674e20bdcb4276131f28e709ae773f25a32ccc"
+        },
+        {
+          "recipientId": "payment-app",
+          "content": {
+            "attachments": [],
+            "recipientLanguage": "en",
+            "victimCopy": {
+              "summary": "Dispute report for UPI transaction TEST0000000001 of 45000 INR sent to safe.verify@fakebank.",
+              "message": "A report has been prepared for Payment app support regarding the UPI transaction TEST0000000001 for 45000 INR sent on 2026-10-17T15:01:50.766012Z to safe.verify@fakebank. The report states that the payment followed phone contact claiming to be Test Bank. Please note that recipient support status is unverified, actions taken are requests only, and recovery or liability determination cannot be guaranteed."
+            },
+            "message": "I am reporting a fraudulent UPI transaction. The transaction details are as follows: Transaction Reference: TEST0000000001, Amount: 45000 INR, Timestamp: 2026-10-17T15:01:50.766012Z, Recipient UPI ID: safe.verify@fakebank, Victim Bank: Test Bank. According to the victim's statement, contact occurred via phone claiming the identity of Test Bank. The victim states that the payment was authorized under these fraudulent circumstances. Please note that recipient support channel status and guidance remain unverified.",
+            "summary": "The victim reports a fraudulent UPI payment of 45000 INR made on 2026-10-17T15:01:50.766012Z to safe.verify@fakebank following phone contact claiming to be Test Bank.",
+            "completeness": {
+              "recipientId": "payment-app",
+              "score": 0.8333333333333334,
+              "missing": [],
+              "notAvailable": []
+            },
+            "footer": "Prepared by Relay from pack_in_cyber_rail v0.1.0. Review before sending. This is not legal advice. Unverified draft guidance / सत्यापित नहीं.",
+            "fields": [
+              {
+                "value": "INR 45000",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "payment.amount",
+                  "confidence": null
+                },
+                "key": "payment.amount",
+                "availability": "available",
+                "label": "payment.amount",
+                "required": true
+              },
+              {
+                "value": "2026-10-17T15:01:50.766012+00:00",
+                "provenance": {
+                  "source": "confirmed",
+                  "reference": null,
+                  "confidence": null
+                },
+                "key": "payment.timestamp",
+                "availability": "available",
+                "label": "payment.timestamp",
+                "required": true
+              },
+              {
+                "value": "TEST0000000001",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "payment.transaction_ref",
+                  "confidence": null
+                },
+                "key": "payment.transaction_ref",
+                "availability": "available",
+                "label": "payment.transaction_ref",
+                "required": true
+              },
+              {
+                "value": "safe.verify@fakebank",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "payment.recipient_identifier",
+                  "confidence": null
+                },
+                "key": "payment.recipient_identifier",
+                "availability": "available",
+                "label": "payment.recipient_identifier",
+                "required": false
+              },
+              {
+                "value": "upi",
+                "provenance": {
+                  "source": "confirmed",
+                  "reference": null,
+                  "confidence": null
+                },
+                "key": "payment.method",
+                "availability": "available",
+                "label": "payment.method",
+                "required": false
+              },
+              {
+                "value": "Test Bank",
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "victim_bank",
+                  "confidence": null
+                },
+                "key": "victim_bank",
+                "availability": "available",
+                "label": "victim_bank",
+                "required": false
+              },
+              {
+                "value": null,
+                "provenance": {
+                  "source": "victim_statement",
+                  "reference": "contact.identifier",
+                  "confidence": null
+                },
+                "key": "contact.identifier",
+                "availability": "unknown",
+                "label": "contact.identifier",
+                "required": false
+              }
+            ],
+            "citations": [],
+            "requestedActions": [
+              "Investigate the reported UPI transaction TEST0000000001.",
+              "Review the recipient UPI handle safe.verify@fakebank.",
+              "Assist with available dispute mechanisms or transaction recall processes in accordance with standard operating procedures."
+            ],
+            "language": "en",
+            "subject": "Dispute and Fraud Report: UPI Transaction TEST0000000001"
+          },
+          "stale": false,
+          "status": "NEEDS_HUMAN_REVIEW",
+          "delivery": null,
+          "planId": "plan_c58b97bd26694091ba692653b6f23efd",
+          "packetId": "packet_41a90c9560514c3aa37650d7e18d05c8",
+          "verification": {
+            "iterations": 3,
+            "passed": false,
+            "checks": [
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Recipient must match selected pack and plan.",
+                "id": "recipient",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Language metadata must match requested languages.",
+                "id": "language",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Required versioned footer and draft labels.",
+                "id": "footer",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Attachment manifest must match verified hashes.",
+                "id": "attachments",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Every source reference must resolve; draft status must survive.",
+                "id": "citations",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Structured values and provenance must equal case facts.",
+                "id": "fields",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Completeness is computed from trusted field metadata.",
+                "id": "completeness",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Required fields must be provided.",
+                "id": "required",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "A complete plain-language victim copy is required.",
+                "id": "victim_copy",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Plan rule references must belong to the selected pack.",
+                "id": "rule_references",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "No credentials, full accounts, promises or unsupported legal conclusions.",
+                "id": "safety",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Explicit currency amounts must equal the case amount.",
+                "id": "amounts",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Explicit timestamps must equal case facts.",
+                "id": "timestamps",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Explicit identifiers must match victim facts, not new model values.",
+                "id": "identifiers",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": false,
+                "detail": "Every populated field requires a traceable statement or evidence origin.",
+                "id": "provenance",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": true,
+                "detail": "Recovery cannot be promised.",
+                "id": "promise",
+                "type": "deterministic"
+              },
+              {
+                "severity": "blocker",
+                "passed": false,
+                "detail": "Draft unavailable or invalid; review required.",
+                "id": "writer_unavailable",
+                "type": "deterministic"
+              }
+            ]
+          },
+          "recipientName": "Payment app support",
+          "inputHash": "cafe1e969e1f8363e78fa3ed229406ca236cb1baa0d8e26e6f678215d2d5ab88",
+          "version": 1,
+          "deadlines": [],
+          "generationProof": {
+            "recipientId": "payment-app",
+            "catalogHash": "25af52ef52b065bdd127d5ac88cec41f0ac9949d03051fb170335ae549a929e8",
+            "packHash": "8b3f07a4a89818cc43783fad1fce5d7387dcd0f618a94482a132401be87f8887",
+            "packetVersion": 1,
+            "planId": "plan_c58b97bd26694091ba692653b6f23efd",
+            "factsRevision": 1,
+            "inputHash": "cafe1e969e1f8363e78fa3ed229406ca236cb1baa0d8e26e6f678215d2d5ab88",
+            "contentHash": "3c534560e201790a85e365d0c5898b3fb2425d04c90683c912955eacd00d55b1"
+          },
+          "factsRevision": 1,
+          "contentHash": "3c534560e201790a85e365d0c5898b3fb2425d04c90683c912955eacd00d55b1"
+        }
+      ],
+      "caseStatus": "PLAN_READY",
+      "providerAttempts": 14,
+      "elapsedSeconds": 163.34299999999348
+    }
+  ],
+  "caseId": "case_5ec425f61da84fa5b6d3acd38ecf9384",
+  "actorUid": "synthetic-primary-a6fafd0bc1f943c3962b3da218ad680c",
+  "planning": {
+    "job": {
+      "progress": {
+        "step": 3,
+        "total": 3
+      },
+      "packVersion": null,
+      "catalogHash": "25af52ef52b065bdd127d5ac88cec41f0ac9949d03051fb170335ae549a929e8",
+      "resultRef": "/api/v1/cases/case_5ec425f61da84fa5b6d3acd38ecf9384",
+      "factsHash": "f4f970481f1d646dee42d727023ab875055995991be39647632406356145d6c6",
+      "inputHash": "cafe1e969e1f8363e78fa3ed229406ca236cb1baa0d8e26e6f678215d2d5ab88",
+      "error": null,
+      "leaseUntil": null,
+      "previewDraft": true,
+      "type": "process_case",
+      "attempts": 1,
+      "factsRevision": 1,
+      "jobId": "job_9549158153e345349b919cef01500967",
+      "uid": "synthetic-primary-a6fafd0bc1f943c3962b3da218ad680c",
+      "claimToken": "claim_f351dee18eb3480d98d278346c8046be",
+      "caseId": "case_5ec425f61da84fa5b6d3acd38ecf9384",
+      "state": "succeeded",
+      "createdAt": "2026-10-17T15:21:51.208699Z"
+    },
+    "packets": [],
+    "caseStatus": "PLAN_READY",
+    "providerAttempts": 1,
+    "elapsedSeconds": 9.234000000054948
+  },
+  "plan": {
+    "planId": "plan_c58b97bd26694091ba692653b6f23efd",
+    "packId": "pack_in_cyber_rail",
+    "packVersion": "0.1.0",
+    "packStatus": "draft",
+    "generatedAt": "2026-10-17T15:21:51.297756Z",
+    "steps": [
+      {
+        "stepNo": 1,
+        "recipientId": "bank",
+        "action": "Contact Your bank using this pack's listed channel.",
+        "whyNow": "Guidance is unverified. Check an official source before acting.",
+        "channel": {
+          "type": "app",
+          "value": "Use your bank’s official app or independently verified website/contact channel",
+          "verified": false
+        },
+        "deadline": null,
+        "packetId": null,
+        "ruleRefs": [
+          "bank",
+          "sequence-bank"
+        ],
+        "sourceRefs": [],
+        "recipientName": "Your bank",
+        "recipientType": "bank",
+        "additionalChannels": []
+      },
+      {
+        "stepNo": 2,
+        "recipientId": "cyber",
+        "action": "Contact National financial cyber fraud reporting using this pack's listed channel.",
+        "whyNow": "Guidance is unverified. Check an official source before acting.",
+        "channel": {
+          "type": "phone",
+          "value": "1930",
+          "verified": false
+        },
+        "deadline": null,
+        "packetId": null,
+        "ruleRefs": [
+          "cyber",
+          "sequence-cyber"
+        ],
+        "sourceRefs": [
+          "mha-1930:reporting"
+        ],
+        "recipientName": "National financial cyber fraud reporting",
+        "recipientType": "national_cyber_authority",
+        "additionalChannels": [
+          {
+            "type": "portal",
+            "value": "https://www.cybercrime.gov.in/",
+            "verified": false
+          }
+        ]
+      },
+      {
+        "stepNo": 3,
+        "recipientId": "payment-app",
+        "action": "Contact Payment app support using this pack's listed channel.",
+        "whyNow": "Guidance is unverified. Check an official source before acting.",
+        "channel": {
+          "type": "app",
+          "value": "Use the support channel inside the payment app you used",
+          "verified": false
+        },
+        "deadline": null,
+        "packetId": null,
+        "ruleRefs": [
+          "payment-app",
+          "sequence-payment-app"
+        ],
+        "sourceRefs": [],
+        "recipientName": "Payment app support",
+        "recipientType": "payment_app",
+        "additionalChannels": []
+      }
+    ],
+    "unverifiedNotices": [
+      {
+        "ruleId": "bank",
+        "code": "unverified",
+        "text": "Guidance is unverified. Check an official source before acting."
+      },
+      {
+        "ruleId": "cyber",
+        "code": "unverified",
+        "text": "Guidance is unverified. Check an official source before acting."
+      },
+      {
+        "ruleId": "payment-app",
+        "code": "unverified",
+        "text": "Guidance is unverified. Check an official source before acting."
+      },
+      {
+        "ruleId": "sequence-bank",
+        "code": "unverified",
+        "text": "Guidance is unverified. Check an official source before acting."
+      },
+      {
+        "ruleId": "sequence-cyber",
+        "code": "unverified",
+        "text": "Guidance is unverified. Check an official source before acting."
+      },
+      {
+        "ruleId": "sequence-payment-app",
+        "code": "unverified",
+        "text": "Guidance is unverified. Check an official source before acting."
+      },
+      {
+        "code": "resolution_notice",
+        "text": "Unverified draft rules: demonstration only; no human review is recorded."
+      }
+    ],
+    "factsRevision": 1,
+    "factsHash": "f4f970481f1d646dee42d727023ab875055995991be39647632406356145d6c6",
+    "packHash": "8b3f07a4a89818cc43783fad1fce5d7387dcd0f618a94482a132401be87f8887",
+    "inputHash": "cafe1e969e1f8363e78fa3ed229406ca236cb1baa0d8e26e6f678215d2d5ab88",
+    "catalogHash": "25af52ef52b065bdd127d5ac88cec41f0ac9949d03051fb170335ae549a929e8",
+    "classification": {
+      "typology": "bank_impersonation",
+      "authorizationType": "authorized_manipulated",
+      "authorizationRationale": "facts.payment.authorizedByVictim records that the victim made or approved the reported payment.",
+      "urgency": {
+        "level": "critical",
+        "reason": "Recent transfer: prioritize contact with the bank. Recency does not establish where funds are. This is not a legal deadline."
+      },
+      "fundsLikelyInSystem": "unknown",
+      "vulnerabilityFlags": [],
+      "confidence": 0.95,
+      "needsHumanReview": false,
+      "clarifyingQuestion": null,
+      "degraded": false,
+      "failureCode": null
+    },
+    "countryCode": "IN",
+    "resolutionReason": "explicit_draft_demo",
+    "resolutionConfidence": 1.0,
+    "genericGuidance": false,
+    "draftPreview": true,
+    "sourceCitations": [
+      {
+        "reference": "mha-1930:reporting",
+        "title": "Cyber Frauds Helpline",
+        "publisher": "Ministry of Home Affairs / PIB",
+        "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1814120&lang=2&reg=48",
+        "passage": "The Ministry of Home Affairs has operationalized a toll-free Helpline number ‘1930’ (earlier ‘155260’) for immediate reporting of financial frauds on the “Citizen Financial Cyber Fraud Reporting and Management System” module and to get assistance in lodging cyber crime incidents on the “National Cyber Crime Reporting Portal” ( www.cybercrime.gov.in ).",
+        "retrievedAt": "2026-10-14T13:56:02.501454+00:00",
+        "snapshotHash": "86cefeeb84d89891758801ef38eaa4e980424c759a3eed1bb67a411ec4c9e61d",
+        "status": "unverified"
+      }
+    ],
+    "stale": false,
+    "processingMs": 8969
+  },
+  "providerAttempts": 14,
+  "providerFailures": [
+    "http_504",
+    "http_other",
+    "http_504",
+    "http_other",
+    "http_504",
+    "http_504",
+    "http_504",
+    "http_504",
+    "http_504"
+  ],
+  "attemptLedger": [
+    {
+      "event": "provider_attempt",
+      "attempt": 1,
+      "schemaName": "Classification",
+      "stage": "classifier",
+      "repairCheckIds": [],
+      "reason": "success",
+      "statusCode": null,
+      "latencyMs": 8141,
+      "usage": [
+        {
+          "model": "gemini-3.8-flash",
+          "latencyMs": 8141,
+          "inputTokens": 1208,
+          "outputTokens": 93,
+          "reasoningTokens": 533
+        }
+      ]
+    },
+    {
+      "event": "provider_attempt",
+      "attempt": 2,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [],
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 12172,
+      "usage": []
+    },
+    {
+      "event": "retry_backoff",
+      "schemaName": "WriterOutput",
+      "reason": "http_504",
+      "statusCode": 504,
+      "retryNumber": 1,
+      "backoffSeconds": 2
+    },
+    {
+      "event": "provider_attempt",
+      "attempt": 3,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [],
+      "reason": "success",
+      "statusCode": null,
+      "snapshotSaved": true,
+      "latencyMs": 5984,
+      "usage": [
+        {
+          "model": "gemini-3.8-flash",
+          "latencyMs": 5968,
+          "inputTokens": 1626,
+          "outputTokens": 439,
+          "reasoningTokens": null
+        }
+      ]
+    },
+    {
+      "event": "provider_attempt",
+      "attempt": 4,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [
+        "provenance"
+      ],
+      "reason": "http_other",
+      "statusCode": null,
+      "latencyMs": 12218,
+      "usage": []
+    },
+    {
+      "event": "provider_attempt",
+      "attempt": 5,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [],
+      "reason": "success",
+      "statusCode": null,
+      "snapshotSaved": true,
+      "latencyMs": 3985,
+      "usage": [
+        {
+          "model": "gemini-3.8-flash",
+          "latencyMs": 3985,
+          "inputTokens": 1693,
+          "outputTokens": 463,
+          "reasoningTokens": null
+        }
+      ]
+    },
+    {
+      "event": "provider_attempt",
+      "attempt": 6,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [
+        "provenance"
+      ],
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 12109,
+      "usage": []
+    },
+    {
+      "event": "retry_backoff",
+      "schemaName": "WriterOutput",
+      "reason": "http_504",
+      "statusCode": 504,
+      "retryNumber": 1,
+      "backoffSeconds": 2
+    },
+    {
+      "event": "provider_attempt",
+      "attempt": 7,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [
+        "provenance"
+      ],
+      "reason": "http_other",
+      "statusCode": null,
+      "latencyMs": 12812,
+      "usage": []
+    },
+    {
+      "event": "provider_attempt",
+      "attempt": 8,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [],
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 12187,
+      "usage": []
+    },
+    {
+      "event": "retry_backoff",
+      "schemaName": "WriterOutput",
+      "reason": "http_504",
+      "statusCode": 504,
+      "retryNumber": 1,
+      "backoffSeconds": 2
+    },
+    {
+      "event": "provider_attempt",
+      "attempt": 9,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [],
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 12203,
+      "usage": []
+    },
+    {
+      "event": "provider_attempt",
+      "attempt": 10,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [],
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 11828,
+      "usage": []
+    },
+    {
+      "event": "retry_backoff",
+      "schemaName": "WriterOutput",
+      "reason": "http_504",
+      "statusCode": 504,
+      "retryNumber": 1,
+      "backoffSeconds": 2
+    },
+    {
+      "event": "provider_attempt",
+      "attempt": 11,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [],
+      "reason": "success",
+      "statusCode": null,
+      "snapshotSaved": true,
+      "latencyMs": 10312,
+      "usage": [
+        {
+          "model": "gemini-3.8-flash",
+          "latencyMs": 10312,
+          "inputTokens": 1642,
+          "outputTokens": 470,
+          "reasoningTokens": null
+        }
+      ]
+    },
+    {
+      "event": "provider_attempt",
+      "attempt": 12,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [
+        "provenance"
+      ],
+      "reason": "success",
+      "statusCode": null,
+      "snapshotSaved": true,
+      "latencyMs": 8453,
+      "usage": [
+        {
+          "model": "gemini-3.8-flash",
+          "latencyMs": 8453,
+          "inputTokens": 2653,
+          "outputTokens": 467,
+          "reasoningTokens": null
+        }
+      ]
+    },
+    {
+      "event": "provider_attempt",
+      "attempt": 13,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [
+        "provenance"
+      ],
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 12062,
+      "usage": []
+    },
+    {
+      "event": "retry_backoff",
+      "schemaName": "WriterOutput",
+      "reason": "http_504",
+      "statusCode": 504,
+      "retryNumber": 1,
+      "backoffSeconds": 2
+    },
+    {
+      "event": "provider_attempt",
+      "attempt": 14,
+      "schemaName": "WriterOutput",
+      "stage": "writer",
+      "repairCheckIds": [
+        "provenance"
+      ],
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 12610,
+      "usage": []
+    }
+  ],
+  "usage": [
+    {
+      "model": "gemini-3.8-flash",
+      "latencyMs": 8141,
+      "inputTokens": 1208,
+      "outputTokens": 93,
+      "reasoningTokens": 533
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "latencyMs": 5968,
+      "inputTokens": 1626,
+      "outputTokens": 439,
+      "reasoningTokens": null
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "latencyMs": 3985,
+      "inputTokens": 1693,
+      "outputTokens": 463,
+      "reasoningTokens": null
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "latencyMs": 10312,
+      "inputTokens": 1642,
+      "outputTokens": 470,
+      "reasoningTokens": null
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "latencyMs": 8453,
+      "inputTokens": 2653,
+      "outputTokens": 467,
+      "reasoningTokens": null
+    }
+  ],
+  "sdkFailures": [
+    {
+      "schemaName": "WriterOutput",
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 12156
+    },
+    {
+      "schemaName": "WriterOutput",
+      "reason": "http_other",
+      "statusCode": 499,
+      "latencyMs": 12218
+    },
+    {
+      "schemaName": "WriterOutput",
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 12109
+    },
+    {
+      "schemaName": "WriterOutput",
+      "reason": "http_other",
+      "statusCode": 499,
+      "latencyMs": 12812
+    },
+    {
+      "schemaName": "WriterOutput",
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 12187
+    },
+    {
+      "schemaName": "WriterOutput",
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 12203
+    },
+    {
+      "schemaName": "WriterOutput",
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 11828
+    },
+    {
+      "schemaName": "WriterOutput",
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 12062
+    },
+    {
+      "schemaName": "WriterOutput",
+      "reason": "http_504",
+      "statusCode": 504,
+      "latencyMs": 12610
+    }
+  ],
+  "totalSeconds": 163.35900000005495,
+  "institutionContact": false,
+  "cost": null,
+  "workerRestoration": {
+    "suspended": true,
+    "resumed": true,
+    "identityValidated": true,
+    "noRunningJobsBeforePause": true
+  }
+}

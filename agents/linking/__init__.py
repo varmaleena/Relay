@@ -1,0 +1,1 @@
+"""Sanitized cluster explanation boundary."""

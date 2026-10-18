@@ -1,0 +1,26 @@
+[
+  {
+    "id": "mha-1930",
+    "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1814120&lang=2&reg=48",
+    "final_url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1814120&lang=2&reg=48",
+    "retrieved_at": "2026-10-14T13:56:02.501454+00:00",
+    "snapshot": "snapshots/mha-1930.html",
+    "sha256": "86cefeeb84d89891758801ef38eaa4e980424c759a3eed1bb67a411ec4c9e61d",
+    "bytes": 74573,
+    "extraction": "snapshots/mha-1930.txt",
+    "extraction_sha256": "f60d1bc9ea6577aff7fa3e5ac8aaf8c39c3c07ebc2682ef14cf9ff042750a5f9",
+    "extraction_method": "HTML tags stripped, entities decoded, whitespace normalized"
+  },
+  {
+    "id": "rbi-unauthorized-2017",
+    "url": "https://rbi.org.in/commonman/Upload/English/Notification/PDFs/NOTI1506072017.PDF",
+    "final_url": "https://rbi.org.in/commonman/Upload/English/Notification/PDFs/NOTI1506072017.PDF",
+    "retrieved_at": "2026-10-14T13:56:02.906426+00:00",
+    "snapshot": "snapshots/rbi-unauthorized-2017.pdf",
+    "sha256": "630f68e6f25a8cdcfe942c1e20b73b0c807b1690b0536b84b1e8b61b23f64b0e",
+    "bytes": 100028,
+    "extraction": "snapshots/rbi-unauthorized-2017.txt",
+    "extraction_sha256": "788a34b4a4c0ad12946b1a76389c774d6ca5ce3e0002bad96b9bab58286de9d5",
+    "extraction_method": "pypdf whitespace normalized"
+  }
+]

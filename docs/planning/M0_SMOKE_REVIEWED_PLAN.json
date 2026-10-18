@@ -1,0 +1,250 @@
+{
+  "planSha256": "0c54eebef33d23adeb5e9e89eccf763ecd42d78b4c40019b11807d869c44fb31",
+  "plan": {
+    "project": "work-511514",
+    "region": "asia-south1",
+    "environment": "dev",
+    "model": "gemini-3.8-flash",
+    "image": "asia-south1-docker.pkg.dev/work-511514/relay-dev/platform-smoke:m0-112f8acc1cbe2c3d",
+    "operations": [
+      {
+        "id": "enable-smoke-apis",
+        "command": [
+          "services",
+          "enable",
+          "run.googleapis.com",
+          "cloudbuild.googleapis.com",
+          "artifactregistry.googleapis.com",
+          "aiplatform.googleapis.com",
+          "iam.googleapis.com",
+          "iamcredentials.googleapis.com",
+          "logging.googleapis.com",
+          "storage.googleapis.com",
+          "--project=work-511514"
+        ],
+        "probe": null,
+        "expected": null
+      },
+      {
+        "id": "relay-dev-smoke",
+        "command": [
+          "iam",
+          "service-accounts",
+          "create",
+          "relay-dev-smoke",
+          "--display-name=relay-dev-smoke",
+          "--project=work-511514"
+        ],
+        "probe": [
+          "iam",
+          "service-accounts",
+          "describe",
+          "relay-dev-smoke@work-511514.iam.gserviceaccount.com",
+          "--project=work-511514"
+        ],
+        "expected": null
+      },
+      {
+        "id": "relay-dev-build",
+        "command": [
+          "iam",
+          "service-accounts",
+          "create",
+          "relay-dev-build",
+          "--display-name=relay-dev-build",
+          "--project=work-511514"
+        ],
+        "probe": [
+          "iam",
+          "service-accounts",
+          "describe",
+          "relay-dev-build@work-511514.iam.gserviceaccount.com",
+          "--project=work-511514"
+        ],
+        "expected": null
+      },
+      {
+        "id": "image-repository",
+        "command": [
+          "artifacts",
+          "repositories",
+          "create",
+          "relay-dev",
+          "--repository-format=docker",
+          "--location=asia-south1",
+          "--project=work-511514"
+        ],
+        "probe": [
+          "artifacts",
+          "repositories",
+          "describe",
+          "relay-dev",
+          "--location=asia-south1",
+          "--project=work-511514"
+        ],
+        "expected": {
+          "format": "DOCKER"
+        }
+      },
+      {
+        "id": "build-source-bucket",
+        "command": [
+          "storage",
+          "buckets",
+          "create",
+          "gs://work-511514-relay-dev-build-source",
+          "--location=asia-south1",
+          "--uniform-bucket-level-access",
+          "--public-access-prevention",
+          "--project=work-511514"
+        ],
+        "probe": [
+          "storage",
+          "buckets",
+          "describe",
+          "gs://work-511514-relay-dev-build-source"
+        ],
+        "expected": {
+          "location": "ASIA-SOUTH1",
+          "uniform_bucket_level_access": true,
+          "public_access_prevention": "enforced"
+        }
+      },
+      {
+        "id": "runtime-model-permission",
+        "command": [
+          "projects",
+          "add-iam-policy-binding",
+          "work-511514",
+          "--member=serviceAccount:relay-dev-smoke@work-511514.iam.gserviceaccount.com",
+          "--role=roles/aiplatform.user",
+          "--condition=None"
+        ],
+        "probe": null,
+        "expected": null
+      },
+      {
+        "id": "build-repository-writer",
+        "command": [
+          "artifacts",
+          "repositories",
+          "add-iam-policy-binding",
+          "relay-dev",
+          "--location=asia-south1",
+          "--project=work-511514",
+          "--member=serviceAccount:relay-dev-build@work-511514.iam.gserviceaccount.com",
+          "--role=roles/artifactregistry.writer"
+        ],
+        "probe": null,
+        "expected": null
+      },
+      {
+        "id": "build-source-reader",
+        "command": [
+          "storage",
+          "buckets",
+          "add-iam-policy-binding",
+          "gs://work-511514-relay-dev-build-source",
+          "--member=serviceAccount:relay-dev-build@work-511514.iam.gserviceaccount.com",
+          "--role=roles/storage.objectViewer"
+        ],
+        "probe": null,
+        "expected": null
+      },
+      {
+        "id": "build-log-writer",
+        "command": [
+          "projects",
+          "add-iam-policy-binding",
+          "work-511514",
+          "--member=serviceAccount:relay-dev-build@work-511514.iam.gserviceaccount.com",
+          "--role=roles/logging.logWriter",
+          "--condition=None"
+        ],
+        "probe": null,
+        "expected": null
+      },
+      {
+        "id": "build-smoke-image",
+        "command": [
+          "builds",
+          "submit",
+          ".",
+          "--config=infra/cloudbuild.smoke.yaml",
+          "--substitutions=_IMAGE=asia-south1-docker.pkg.dev/work-511514/relay-dev/platform-smoke:m0-112f8acc1cbe2c3d",
+          "--service-account=projects/work-511514/serviceAccounts/relay-dev-build@work-511514.iam.gserviceaccount.com",
+          "--gcs-source-staging-dir=gs://work-511514-relay-dev-build-source/source",
+          "--region=asia-south1",
+          "--project=work-511514"
+        ],
+        "probe": [
+          "artifacts",
+          "docker",
+          "images",
+          "describe",
+          "asia-south1-docker.pkg.dev/work-511514/relay-dev/platform-smoke:m0-112f8acc1cbe2c3d",
+          "--project=work-511514"
+        ],
+        "expected": null
+      },
+      {
+        "id": "deploy-private-smoke-job",
+        "command": [
+          "run",
+          "jobs",
+          "deploy",
+          "relay-dev-platform-smoke",
+          "--image=asia-south1-docker.pkg.dev/work-511514/relay-dev/platform-smoke:m0-112f8acc1cbe2c3d",
+          "--service-account=relay-dev-smoke@work-511514.iam.gserviceaccount.com",
+          "--region=asia-south1",
+          "--project=work-511514",
+          "--cpu=1",
+          "--memory=512Mi",
+          "--tasks=1",
+          "--parallelism=1",
+          "--max-retries=0",
+          "--task-timeout=120s",
+          "--labels=app=relay,environment=dev,milestone=m0",
+          "--set-env-vars=GOOGLE_CLOUD_PROJECT=work-511514,GENAI_LOCATION=global,MODEL_FAST=gemini-3.8-flash"
+        ],
+        "probe": null,
+        "expected": null
+      }
+    ],
+    "execution": [
+      "run",
+      "jobs",
+      "execute",
+      "relay-dev-platform-smoke",
+      "--region=asia-south1",
+      "--project=work-511514",
+      "--wait"
+    ],
+    "costControls": {
+      "targetInr": 1000,
+      "hardCap": false,
+      "budgetThresholds": [
+        0.5,
+        0.8,
+        1
+      ],
+      "maxSmokeExecutions": 1,
+      "maxRetries": 0,
+      "taskSeconds": 120,
+      "tasks": 1,
+      "parallelism": 1,
+      "requestOutputTokens": 256,
+      "idleCloudRunCompute": 0,
+      "automaticTriggers": false
+    },
+    "manualGates": [
+      "Root review must bind exact plan SHA and discovered model before apply.",
+      "Private job deployment does not execute; run one synthetic call separately.",
+      "INR1000 alerts are not a ceiling; activate filtered billing alerts separately.",
+      "No Firestore creation: API disabled and existing database location unverified.",
+      "No prod, Firebase, app data, BigQuery, Pub/Sub, Tasks or Search provisioning.",
+      "No deletion, cleanup policies, public invoker, keys or default build identity grants.",
+      "Build/deploy user needs serviceAccountUser on both identities and deployment access."
+    ]
+  }
+}

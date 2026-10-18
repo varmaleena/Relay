@@ -1,0 +1,75 @@
+{
+  "readAt": "2026-10-15T14:52:17.226230+00:00",
+  "projectNumber": "798642284156",
+  "service": "aiplatform.googleapis.com",
+  "method": "GET consumerQuotaMetrics viewFULL",
+  "pages": 2,
+  "metricsSeen": 372,
+  "selectedMetrics": [
+    {
+      "metric": "aiplatform.googleapis.com/global_generate_content_requests_per_minute_per_project_per_base_model",
+      "displayName": "Global generate content requests per minute per project per base model",
+      "bucketCount": 40,
+      "defaultBuckets": [
+        {
+          "unit": "1/min/{project}/{base_model}",
+          "effectiveLimit": null,
+          "defaultLimit": null,
+          "dimensions": {}
+        }
+      ],
+      "gemini38Buckets": []
+    },
+    {
+      "metric": "aiplatform.googleapis.com/global_online_prediction_requests_per_base_model",
+      "displayName": "Global online prediction requests per base model",
+      "bucketCount": 17,
+      "defaultBuckets": [
+        {
+          "unit": "1/min/{project}/{base_model}",
+          "effectiveLimit": null,
+          "defaultLimit": null,
+          "dimensions": {}
+        }
+      ],
+      "gemini38Buckets": []
+    },
+    {
+      "metric": "aiplatform.googleapis.com/online_prediction_requests",
+      "displayName": "Online prediction requests",
+      "bucketCount": 44,
+      "defaultBuckets": [
+        {
+          "unit": "1/min/{project}/{region}",
+          "effectiveLimit": "30000",
+          "defaultLimit": "30000",
+          "dimensions": {}
+        }
+      ],
+      "gemini38Buckets": []
+    }
+  ],
+  "inferenceCalls": 0,
+  "httpStatus": 200,
+  "truncated": false,
+  "selectedMetricCount": 89,
+  "gemini38ModelSpecificBucketsFound": false,
+  "limitations": [
+    "Quota settings only, no current utilization or server capacity telemetry.",
+    "Missing model bucket is not a zero limit.",
+    "Model documentation excludes fixed quota for3.8Flash; exact429 capacity mechanism remains unproven."
+  ],
+  "fullSnapshot": {
+    "readAt": "2026-10-15T14:55:23.992584+00:00",
+    "localPath": ".local/quota-audit/aiplatform-20261015T145523Z.json",
+    "sha256": "05765b7160e7a50ade701faf82304670b37e9b327abe3021d9ea6632443b96da",
+    "metricCount": 372,
+    "pages": 2,
+    "truncated": false,
+    "note": "Fresh complete read; earlier compacted selection was not a full raw snapshot. Pagination cursor values omitted; all metric payloads retained."
+  },
+  "sourceUrls": [
+    "https://docs.cloud.google.com/service-usage/docs/reference/rest/v1beta1/services.consumerQuotaMetrics/list",
+    "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-8-flash"
+  ]
+}

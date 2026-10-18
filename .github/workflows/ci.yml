@@ -1,0 +1,34 @@
+name: Relay quality gates
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  foundations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - run: python -m pip install -r requirements.lock
+      - run: npm ci
+      - run: python scripts/tasks.py lint
+      - run: python scripts/tasks.py typecheck
+      - run: python scripts/tasks.py build
+      - run: python scripts/tasks.py test
+      - run: python -m scripts.export_contracts --check
+      - run: npx firebase emulators:exec --project demo-relay-rules --only firestore,storage "npm run test:rules"
+      - run: npx firebase emulators:exec --project demo-relay-local --only firestore "python -m pytest tests/integration/test_intake_firestore.py -q"
+      - run: python -m pip check
+      - run: npm audit --audit-level=high

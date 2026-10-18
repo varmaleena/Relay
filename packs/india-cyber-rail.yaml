@@ -1,0 +1,153 @@
+pack_id: pack_in_cyber_rail
+version: 0.1.0
+status: draft
+jurisdiction:
+  code: IN
+  name: India
+  archetype: centralized_rail
+languages:
+- en
+- hi
+timezone: Asia/Kolkata
+currency: INR
+sources:
+- id: mha-1930
+  title: Cyber Frauds Helpline
+  publisher: Ministry of Home Affairs / PIB
+  url: https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1814120&lang=2&reg=48
+  retrieved_at: '2026-10-14T13:56:02.501454+00:00'
+  sha256: 86cefeeb84d89891758801ef38eaa4e980424c759a3eed1bb67a411ec4c9e61d
+- id: rbi-unauthorized-2017
+  title: Customer Protection – Limiting Liability of Customers in Unauthorised Electronic
+    Banking Transactions
+  publisher: Reserve Bank of India
+  url: https://rbi.org.in/commonman/Upload/English/Notification/PDFs/NOTI1506072017.PDF
+  retrieved_at: '2026-10-14T13:56:02.906426+00:00'
+  sha256: 630f68e6f25a8cdcfe942c1e20b73b0c807b1690b0536b84b1e8b61b23f64b0e
+recipients:
+- id: bank
+  type: bank
+  name: Your bank
+  channels:
+  - type: app
+    value: Use your bank’s official app or independently verified website/contact
+      channel
+    verified: false
+  source_refs: []
+  status: unverified
+  applies_when: 'True'
+  required_fields:
+  - payment.amount
+  - payment.timestamp
+  - payment.transaction_ref
+  template_id: bank-form
+  recipient_language: en
+- id: cyber
+  type: national_cyber_authority
+  name: National financial cyber fraud reporting
+  channels:
+  - type: phone
+    value: '1930'
+    verified: false
+  - type: portal
+    value: https://www.cybercrime.gov.in/
+    verified: false
+  source_refs:
+  - mha-1930:reporting
+  status: unverified
+  applies_when: 'True'
+  required_fields:
+  - payment.amount
+  - payment.timestamp
+  - payment.transaction_ref
+  template_id: cyber-form
+  recipient_language: en
+- id: payment-app
+  type: payment_app
+  name: Payment app support
+  channels:
+  - type: app
+    value: Use the support channel inside the payment app you used
+    verified: false
+  source_refs: []
+  status: unverified
+  applies_when: facts.payment.method == 'upi'
+  required_fields:
+  - payment.amount
+  - payment.timestamp
+  - payment.transaction_ref
+  template_id: payment-app-form
+  recipient_language: en
+sequencing:
+- id: sequence-bank
+  step: 1
+  recipient_id: bank
+  when: 'True'
+  rationale: 'Relay sequencing heuristic, pending human review: contact promptly;
+    steps can proceed in parallel.'
+  source_refs: []
+  status: unverified
+- id: sequence-cyber
+  step: 2
+  recipient_id: cyber
+  when: 'True'
+  rationale: 'Relay sequencing heuristic, pending human review: contact promptly;
+    steps can proceed in parallel.'
+  source_refs:
+  - mha-1930:reporting
+  status: unverified
+- id: sequence-payment-app
+  step: 3
+  recipient_id: payment-app
+  when: facts.payment.method == 'upi'
+  rationale: 'Relay sequencing heuristic, pending human review: contact promptly;
+    steps can proceed in parallel.'
+  source_refs: []
+  status: unverified
+deadlines: []
+liability_rules:
+- id: unauthorized-scope
+  condition: classification.authorization_type == 'unauthorized_access'
+  summary: The cited RBI circular concerns unauthorized electronic banking transactions.
+    A bank or qualified reviewer must assess applicability; this draft does not determine
+    liability.
+  limits: Do not apply unauthorized liability or reimbursement rules to payments made
+    under manipulation. No refund eligibility or numerical deadline inferred.
+  status: unverified
+  source_refs:
+  - rbi-unauthorized-2017:scope
+forms:
+- id: bank-form
+  recipient_id: bank
+  fields:
+  - payment.amount
+  - payment.timestamp
+  - payment.transaction_ref
+  format: text
+- id: cyber-form
+  recipient_id: cyber
+  fields:
+  - payment.amount
+  - payment.timestamp
+  - payment.transaction_ref
+  format: text
+- id: payment-app-form
+  recipient_id: payment-app
+  fields:
+  - payment.amount
+  - payment.timestamp
+  - payment.transaction_ref
+  format: text
+crisis_support: []
+disclaimers:
+- 'DRAFT: all rules and channels await human review; local demonstration only.'
+- Reporting does not guarantee recovery or reimbursement.
+- Accurately state whether you made the payment under manipulation or it occurred
+  without authorization.
+- Sequencing is Relay product advice, not a legal priority rule.
+- No numerical deadlines supplied; seek prompt advice through official channels.
+review:
+  reviewer: ''
+  reviewed_at: ''
+  notes: Pending human review; no approval or publication recorded.
+  accepted_unverified_rule_ids: []

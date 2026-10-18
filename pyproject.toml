@@ -1,0 +1,32 @@
+[project]
+name = "relay"
+version = "0.1.0"
+description = "Synthetic fraud-response demonstration on Google Cloud"
+requires-python = ">=3.12,<3.13"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = ["llm: requires authenticated live Google models", "emulator: requires Firebase emulators"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+exclude = [".venv", "docs/sources", "node_modules", ".tmp"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.12"
+check_untyped_defs = true
+warn_unused_ignores = true
+ignore_missing_imports = true
+exclude = [".venv", "node_modules", ".tmp"]
+
+[tool.coverage.run]
+source = ["packages", "services"]
+omit = ["*/__init__.py"]
+
+[tool.coverage.report]
+show_missing = true

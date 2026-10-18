@@ -1,0 +1,612 @@
+{
+  "status": "analysis_only_awaiting_plan_approval",
+  "sources": [
+    {
+      "path": "F:\\AI Builder\\docs\\sources\\RELAY_BUILD_SPEC.md",
+      "bytes": 196245,
+      "sha256": "bf0cdc89e437c3b61d3a3164d379fdffd10f830aa40aa0ebff5da159b47c5229"
+    },
+    {
+      "path": "F:\\AI Builder\\docs\\sources\\Relay_Project_Dossier.pdf",
+      "bytes": 169745,
+      "sha256": "7cd16ffefef4eaf3001713c40bc78d9a6ae47453912dbbc97fb859ad1d0ebc2b"
+    }
+  ],
+  "spec_lines": 2315,
+  "pdf_pages": 28,
+  "headings": [
+    {
+      "line": 1,
+      "heading": "# RELAY: End-to-End Build Specification"
+    },
+    {
+      "line": 12,
+      "heading": "## 0. How to use this document"
+    },
+    {
+      "line": 16,
+      "heading": "### 0.1 Non-negotiable rules"
+    },
+    {
+      "line": 29,
+      "heading": "### 0.2 Priority tags"
+    },
+    {
+      "line": 35,
+      "heading": "### 0.3 Mandatory verification tasks (do these in Milestone M0)"
+    },
+    {
+      "line": 67,
+      "heading": "## 1. Product definition"
+    },
+    {
+      "line": 69,
+      "heading": "### 1.1 The problem"
+    },
+    {
+      "line": 80,
+      "heading": "### 1.2 The solution"
+    },
+    {
+      "line": 90,
+      "heading": "### 1.3 What makes it different (be exact in claims)"
+    },
+    {
+      "line": 98,
+      "heading": "### 1.4 Personas"
+    },
+    {
+      "line": 109,
+      "heading": "### 1.5 Use cases (UC) and acceptance summaries"
+    },
+    {
+      "line": 128,
+      "heading": "### 1.6 Non-goals"
+    },
+    {
+      "line": 132,
+      "heading": "### 1.7 Honesty and labeling rules (enforced in UI and docs)"
+    },
+    {
+      "line": 144,
+      "heading": "## 2. Core concepts (shared vocabulary)"
+    },
+    {
+      "line": 161,
+      "heading": "## 3. Architecture"
+    },
+    {
+      "line": 163,
+      "heading": "### 3.1 System diagram"
+    },
+    {
+      "line": 204,
+      "heading": "### 3.2 Services"
+    },
+    {
+      "line": 218,
+      "heading": "### 3.3 Technology stack (with where each piece runs)"
+    },
+    {
+      "line": 243,
+      "heading": "### 3.4 Environments and configuration"
+    },
+    {
+      "line": 271,
+      "heading": "### 3.5 Key sequences"
+    },
+    {
+      "line": 304,
+      "heading": "## 4. Data model"
+    },
+    {
+      "line": 306,
+      "heading": "### 4.1 Firestore collections"
+    },
+    {
+      "line": 363,
+      "heading": "### 4.2 BigQuery tables"
+    },
+    {
+      "line": 386,
+      "heading": "### 4.3 Core JSON shapes (Pydantic models in `packages/schemas`; export JSON Schema and TypeScript types from them)"
+    },
+    {
+      "line": 465,
+      "heading": "### 4.4 Jurisdiction Pack schema (YAML on disk, JSON in Firestore; validated by JSON Schema)"
+    },
+    {
+      "line": 530,
+      "heading": "### 4.5 Reference packs to author in M3"
+    },
+    {
+      "line": 542,
+      "heading": "### 4.6 Case state machine"
+    },
+    {
+      "line": 555,
+      "heading": "## 5. Agents (Google ADK)"
+    },
+    {
+      "line": 557,
+      "heading": "### 5.1 Overview"
+    },
+    {
+      "line": 586,
+      "heading": "### 5.2 A1 IntakeLiveAgent (thin by design)"
+    },
+    {
+      "line": 634,
+      "heading": "### 5.3 A3 EvidenceAgent"
+    },
+    {
+      "line": 652,
+      "heading": "### 5.4 A4 ClassifierAgent"
+    },
+    {
+      "line": 661,
+      "heading": "### 5.5 A5 JurisdictionResolver"
+    },
+    {
+      "line": 665,
+      "heading": "### 5.6 A6 PlannerAgent (deterministic core)"
+    },
+    {
+      "line": 673,
+      "heading": "### 5.7 A7 PacketAgent"
+    },
+    {
+      "line": 694,
+      "heading": "### 5.8 A8 VerifierAgent"
+    },
+    {
+      "line": 698,
+      "heading": "### 5.9 A9 ReceiverBriefAgent (also served over A2A)"
+    },
+    {
+      "line": 702,
+      "heading": "### 5.10 A10 ClusterExplainerAgent"
+    },
+    {
+      "line": 706,
+      "heading": "### 5.11 A11 PackBuilderAgent and A12 PackCriticAgent"
+    },
+    {
+      "line": 729,
+      "heading": "### 5.12 A13 ScammerSimAgent (evaluation only)"
+    },
+    {
+      "line": 733,
+      "heading": "### 5.13 A14 GuidanceBaselineAgent"
+    },
+    {
+      "line": 737,
+      "heading": "### 5.14 A15 SafetyGuard"
+    },
+    {
+      "line": 743,
+      "heading": "## 6. Tools and protocols"
+    },
+    {
+      "line": 745,
+      "heading": "### 6.1 MCP servers (FastMCP, streamable HTTP, deployed on Cloud Run, authenticated with Google ID tokens)"
+    },
+    {
+      "line": 765,
+      "heading": "### 6.2 A2A receiver"
+    },
+    {
+      "line": 769,
+      "heading": "### 6.3 Reliability rules for all tool calls"
+    },
+    {
+      "line": 774,
+      "heading": "## 7. Safety, security, privacy"
+    },
+    {
+      "line": 776,
+      "heading": "### 7.1 Threat model (design for these)"
+    },
+    {
+      "line": 791,
+      "heading": "### 7.2 Action classes (enforced in code by an `ActionPolicy` module; every agent/tool call passes through it)"
+    },
+    {
+      "line": 801,
+      "heading": "### 7.3 SafetyGuard (A15)"
+    },
+    {
+      "line": 821,
+      "heading": "### 7.4 Privacy and data handling"
+    },
+    {
+      "line": 831,
+      "heading": "### 7.5 Access control and web security"
+    },
+    {
+      "line": 835,
+      "heading": "### 7.6 Distress protocol (UC11)"
+    },
+    {
+      "line": 844,
+      "heading": "### 7.7 Audit and provenance"
+    },
+    {
+      "line": 850,
+      "heading": "## 8. User interface specification"
+    },
+    {
+      "line": 852,
+      "heading": "### 8.1 Design brief and plan"
+    },
+    {
+      "line": 881,
+      "heading": "### 8.2 Global elements"
+    },
+    {
+      "line": 888,
+      "heading": "### 8.3 Screens"
+    },
+    {
+      "line": 1023,
+      "heading": "### 8.4 Components to build (shared library)"
+    },
+    {
+      "line": 1027,
+      "heading": "### 8.5 Internationalization"
+    },
+    {
+      "line": 1034,
+      "heading": "### 8.6 Accessibility checklist (all P0)"
+    },
+    {
+      "line": 1038,
+      "heading": "### 8.7 Microcopy rules and key strings (English; keys in i18n)"
+    },
+    {
+      "line": 1062,
+      "heading": "### 8.8 Performance and reliability targets"
+    },
+    {
+      "line": 1067,
+      "heading": "## 9. Evaluation harness (Evaluation Lab)"
+    },
+    {
+      "line": 1071,
+      "heading": "### 9.1 Systems compared"
+    },
+    {
+      "line": 1083,
+      "heading": "### 9.2 Synthetic dataset"
+    },
+    {
+      "line": 1099,
+      "heading": "### 9.3 Metrics (definitions; report n and 95% CI; use Wilson intervals for proportions and bootstrap for F1)"
+    },
+    {
+      "line": 1121,
+      "heading": "### 9.4 Targets (aspirational; never presented as results)"
+    },
+    {
+      "line": 1125,
+      "heading": "### 9.5 Manual external baseline log (documentation only)"
+    },
+    {
+      "line": 1129,
+      "heading": "### 9.6 Running it"
+    },
+    {
+      "line": 1144,
+      "heading": "## 10. Repository, environments, deployment, operations"
+    },
+    {
+      "line": 1146,
+      "heading": "### 10.1 Monorepo layout"
+    },
+    {
+      "line": 1196,
+      "heading": "### 10.2 One-time GCP setup (`infra/scripts/setup.sh`)"
+    },
+    {
+      "line": 1200,
+      "heading": "### 10.3 Build and deploy"
+    },
+    {
+      "line": 1209,
+      "heading": "### 10.4 Observability and demo reliability"
+    },
+    {
+      "line": 1213,
+      "heading": "### 10.5 Cost controls"
+    },
+    {
+      "line": 1218,
+      "heading": "## 11. Build plan"
+    },
+    {
+      "line": 1220,
+      "heading": "### 11.1 Milestones (build in this order; each ends with a working, deployed increment)"
+    },
+    {
+      "line": 1239,
+      "heading": "### 11.2 Acceptance tests (Given/When/Then; implement as Playwright e2e plus API tests)"
+    },
+    {
+      "line": 1257,
+      "heading": "### 11.3 Definition of done (every feature)"
+    },
+    {
+      "line": 1263,
+      "heading": "## 12. Demo, submission, and judging assets"
+    },
+    {
+      "line": 1265,
+      "heading": "### 12.1 What must be submitted (per the organizers' FAQ)"
+    },
+    {
+      "line": 1269,
+      "heading": "### 12.2 Three-minute video storyboard (hard limit 3:00)"
+    },
+    {
+      "line": 1283,
+      "heading": "### 12.3 Deck outline (PDF; about 14 slides)"
+    },
+    {
+      "line": 1287,
+      "heading": "### 12.4 Judging criteria map"
+    },
+    {
+      "line": 1301,
+      "heading": "### 12.5 README outline (judge-facing)"
+    },
+    {
+      "line": 1305,
+      "heading": "### 12.6 Anticipated judge questions (prepare short answers)"
+    },
+    {
+      "line": 1321,
+      "heading": "## 13. Risks and open decisions"
+    },
+    {
+      "line": 1340,
+      "heading": "## Appendix A: sample synthetic case (use as a fixture)"
+    },
+    {
+      "line": 1361,
+      "heading": "## Appendix B: baseline manual test prompts (October 2026)"
+    },
+    {
+      "line": 1373,
+      "heading": "## Appendix C: final pre-submission checklist"
+    },
+    {
+      "line": 1391,
+      "heading": "# ADDENDUM: API, contracts, environments, tests, SaaS operating model"
+    },
+    {
+      "line": 1395,
+      "heading": "## 14. API and contract specification"
+    },
+    {
+      "line": 1397,
+      "heading": "### 14.1 Conventions (apply to every REST endpoint on the `api` service)"
+    },
+    {
+      "line": 1441,
+      "heading": "### 14.2 Endpoint catalog"
+    },
+    {
+      "line": 1445,
+      "heading": "#### Cases and intake (victim)"
+    },
+    {
+      "line": 1461,
+      "heading": "#### Plan and packets (victim)"
+    },
+    {
+      "line": 1476,
+      "heading": "#### Receiver console"
+    },
+    {
+      "line": 1486,
+      "heading": "#### Packs and Pack Studio"
+    },
+    {
+      "line": 1501,
+      "heading": "#### Evaluation, demo, and meta"
+    },
+    {
+      "line": 1514,
+      "heading": "### 14.3 Live gateway WebSocket protocol (`live-gateway`)"
+    },
+    {
+      "line": 1550,
+      "heading": "### 14.4 Pub/Sub job contracts"
+    },
+    {
+      "line": 1570,
+      "heading": "### 14.5 Agent and view schemas (complete the shapes that Sections 4 and 5 only named)"
+    },
+    {
+      "line": 1639,
+      "heading": "### 14.6 Realtime contract (Firestore listeners the UI relies on)"
+    },
+    {
+      "line": 1650,
+      "heading": "### 14.7 MCP tool error contract"
+    },
+    {
+      "line": 1654,
+      "heading": "### 14.8 Language support matrix"
+    },
+    {
+      "line": 1670,
+      "heading": "## 15. Environments, development workflow, testing, release"
+    },
+    {
+      "line": 1672,
+      "heading": "### 15.1 Environments"
+    },
+    {
+      "line": 1687,
+      "heading": "### 15.2 Local development"
+    },
+    {
+      "line": 1706,
+      "heading": "### 15.3 Test plan"
+    },
+    {
+      "line": 1725,
+      "heading": "### 15.4 CI/CD pipeline stages"
+    },
+    {
+      "line": 1732,
+      "heading": "### 15.5 Release, rollback, data changes"
+    },
+    {
+      "line": 1742,
+      "heading": "## 16. SaaS operating model"
+    },
+    {
+      "line": 1746,
+      "heading": "### 16.1 Tenancy and organizations (build now)"
+    },
+    {
+      "line": 1752,
+      "heading": "### 16.2 Roles and permissions (RBAC)"
+    },
+    {
+      "line": 1766,
+      "heading": "### 16.3 Packaging and business model (documented, not built)"
+    },
+    {
+      "line": 1776,
+      "heading": "### 16.4 Reliability targets, support, and operations"
+    },
+    {
+      "line": 1787,
+      "heading": "### 16.5 Security and compliance posture"
+    },
+    {
+      "line": 1793,
+      "heading": "### 16.6 Documentation deliverables (build now)"
+    },
+    {
+      "line": 1802,
+      "heading": "## 17. UI inventory, clarity requirements, and Present Mode (for recording the demo)"
+    },
+    {
+      "line": 1806,
+      "heading": "### 17.1 UI inventory (authoritative)"
+    },
+    {
+      "line": 1838,
+      "heading": "### 17.2 Clarity requirements (apply to every screen)"
+    },
+    {
+      "line": 1884,
+      "heading": "### 17.3 Present Mode (S12) specification"
+    },
+    {
+      "line": 1920,
+      "heading": "### 17.4 Recording-ready requirements"
+    },
+    {
+      "line": 1945,
+      "heading": "### 17.5 UI comprehension tests (required before recording)"
+    },
+    {
+      "line": 1953,
+      "heading": "### 17.6 Required changes to earlier sections"
+    },
+    {
+      "line": 1967,
+      "heading": "## 18. Build-completeness appendix (fills the gaps found in the final audit)"
+    },
+    {
+      "line": 1971,
+      "heading": "### 18.1 Algorithms and formulas"
+    },
+    {
+      "line": 2027,
+      "heading": "### 18.2 Remaining agent prompts (v1)"
+    },
+    {
+      "line": 2078,
+      "heading": "### 18.3 Model call parameters, quotas, and cost"
+    },
+    {
+      "line": 2096,
+      "heading": "### 18.4 Notifications and session continuity"
+    },
+    {
+      "line": 2106,
+      "heading": "### 18.5 Provisioning and demo accounts"
+    },
+    {
+      "line": 2120,
+      "heading": "### 18.6 Infrastructure specifics"
+    },
+    {
+      "line": 2225,
+      "heading": "### 18.7 Draft texts (drafts for review by counsel; hackathon demo use only)"
+    },
+    {
+      "line": 2238,
+      "heading": "### 18.8 Work breakdown, dependencies, and parallel lanes"
+    },
+    {
+      "line": 2290,
+      "heading": "### 18.9 Hand-off protocol for coding agents"
+    },
+    {
+      "line": 2299,
+      "heading": "### 18.10 What no document can supply (human tasks you must do)"
+    }
+  ],
+  "tasks": [
+    "| T01 | Repo, tooling, CI skeleton, Makefile targets | IN | none | M0 |",
+    "| T02 | GCP setup script, service accounts, buckets, Firestore, Pub/Sub, BQ DDL | IN | T01 | M0 |",
+    "| T03 | Resolve V1–V9; `list_models.py`; record decisions | AG | T02 | M0 |",
+    "| T04 | Pydantic schemas, JSON Schema export, TS types | BE | T01 | M0 |",
+    "| T05 | OpenAPI from Section 14.2; TS client generation; drift check | BE | T04 | M0 |",
+    "| T06 | Settings, logging, ids, hashing, i18n helpers | BE | T01 | M0 |",
+    "| T07 | Pack validator, expression evaluator, deadline math (with tests) | BE | T04 | M0 |",
+    "| T08 | Firebase Auth, roles, App Check; Firestore and Storage rules with emulator tests | IN | T02, T04 | M0 |",
+    "| T09 | SafetyGuard v0 and ActionPolicy; output filter patterns (en, hi) | AG | T04 | M0 |",
+    "| T10 | Design tokens, fonts, base components, Flow Rail, i18n scaffolding | DS/FE | T01 | M1 |",
+    "| T11 | `api`: cases, facts, messages, uploads, evidence endpoints (E1–E11) | BE | T05, T06, T08 | M1 |",
+    "| T12 | EvidenceAgent and IntakeTextAgent; fixtures | AG | T03, T04, T09 | M1 |",
+    "| T13 | Victim S1, S2, S3 screens | FE | T10, T11 | M1 |",
+    "| T14 | `worker` skeleton, job handlers, idempotency | BE | T02, T04 | M2 |",
+    "| T15 | ClassifierAgent, JurisdictionResolver | AG | T12 | M2 |",
+    "| T16 | Rule engine (PlannerAgent core) | BE | T07, T15 | M2 |",
+    "| T17 | Author `pack_generic_fragmented` and `pack_in_cyber_rail` from official sources, with review records | DA | T07 | M2 |",
+    "| T18 | Plan endpoints (E12, E13) and Victim S4 | BE/FE | T16, T17 | M2 |",
+    "| T19 | Eval smoke harness: 20 hand-made cases, metrics skeleton | EV | T15 | M2 |",
+    "| T20 | PacketAgent, VerifierAgent loop, PDF export | AG/BE | T16, T17 | M3 |",
+    "| T21 | Packet endpoints (E14–E21), Victim S5 and S6, notifications inbox | BE/FE | T20 | M3 |",
+    "| T22 | Mock MCP servers (bank, rail) with simulation rules | BE | T04 | M3 |",
+    "| T23 | Send, track, deadline watcher | BE | T21, T22 | M3 |",
+    "| T24 | Receiver Console S7, console endpoints (E22–E24), ReceiverBriefAgent | BE/FE/AG | T23 | M4 |",
+    "| T25 | A2A receiver; needs-info loop (E19); audit panel | BE/AG | T24 | M4 |",
+    "| T26 | `live-gateway`, IntakeLiveAgent, audio worklets, captions, resume | BE/FE/AG | T12, T09 | M5 |",
+    "| T27 | Distress protocol and tests | AG/QA | T26 | M5 |",
+    "| T28 | `pack_uk_reimbursement` authored and reviewed; jurisdiction switch | DA/FE | T18 | M6 |",
+    "| T29 | Source ingestion with SSRF protections; passages index | BE | T04 | M6 |",
+    "| T30 | PackBuilderAgent, PackCriticAgent; build endpoints (E29–E36) | AG/BE | T29 | M6 |",
+    "| T31 | Pack Studio S9 (stepper, split source view, publish gate) | FE | T30 | M6 |",
+    "| T32 | Pack Builder evaluation vs gold pack; pre-built fallback pack | EV/DA | T30, T17 | M6 |",
+    "| T33 | Entity hashing, BigQuery sightings, links, clusters, ClusterExplainer | BE/AG | T14 | M7 |",
+    "| T34 | Linked cases panel S8 and validation endpoint (E25, E26) | FE/BE | T33, T24 | M7 |",
+    "| T35 | Synthetic generator (cases, screenshots), dataset v1, dataset card | EV | T19, T17, T28 | M8 |",
+    "| T36 | Systems: baseline, ablations; metrics with CIs; red-team set | EV | T35 | M8 |",
+    "| T37 | Eval Lab S10 and endpoints (E37–E40) | FE/BE | T36 | M8 |",
+    "| T38 | Accessibility pass, i18n human review, contrast and jargon lints | QA/DS | T13, T21, T24 | M9 |",
+    "| T39 | Authorization matrix tests, contract tests, load tests, resilience tests | QA | T24, T25 | M9 |",
+    "| T40 | Demo Control S11 and demo endpoints; `make preflight` | BE/FE | T23 | M9 |",
+    "| T41 | Present Mode S12: dual sessions, narration templates, operator panel, caption translation | FE | T24, T26, T40 | M9b |",
+    "| T42 | Comprehension tests (five-second, silent-video) with outsiders | QA/DS | T41 | M9b |",
+    "| T43 | Video, deck, README, repo cleanup, baseline log | all | T37, T42 | M10 |"
+  ]
+}

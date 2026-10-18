@@ -1,0 +1,30 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ['build', '-f', 'services/api/Dockerfile', '-t', '${_API_IMAGE}', '.']
+  - name: gcr.io/cloud-builders/docker
+    args: ['build', '-f', 'services/worker/Dockerfile', '-t', '${_WORKER_IMAGE}', '.']
+  # Opt-in preserves existing API/worker-only builds and their image metadata.
+  - name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    env: ['RELAY_BUILD_A2A=${_BUILD_A2A}', 'RELAY_A2A_IMAGE=${_A2A_IMAGE}']
+    args:
+      - -ceu
+      - |
+        if [ "$$RELAY_BUILD_A2A" = "true" ]; then
+          test "$$RELAY_A2A_IMAGE" != "review-required"
+          docker build -f services/a2a_receiver/Dockerfile -t "$$RELAY_A2A_IMAGE" .
+          docker push "$$RELAY_A2A_IMAGE"
+        elif [ "$$RELAY_BUILD_A2A" != "false" ]; then
+          echo 'Invalid A2A build opt-in' >&2
+          exit 1
+        fi
+images: ['${_API_IMAGE}', '${_WORKER_IMAGE}']
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: E2_MEDIUM
+timeout: 1200s
+substitutions:
+  _API_IMAGE: review-required
+  _WORKER_IMAGE: review-required
+  _BUILD_A2A: "false"
+  _A2A_IMAGE: review-required

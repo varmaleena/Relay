@@ -1,0 +1,48 @@
+.pack-studio {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+.pack-studio label {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.8rem 0;
+}
+.pack-studio label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: start;
+}
+.pack-studio input:not([type="checkbox"]),
+.pack-studio select,
+.pack-studio textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.65rem;
+}
+.pack-studio pre,
+.pack-studio blockquote {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.pack-studio table {
+  width: 100%;
+  table-layout: fixed;
+}
+.pack-studio td,
+.pack-studio th {
+  overflow-wrap: anywhere;
+  padding: 0.4rem;
+  vertical-align: top;
+}
+.pack-studio button {
+  margin: 0.2rem;
+}
+.pack-studio .flow-rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-left: 1.5rem;
+}
+.pack-studio fieldset {
+  min-width: 0;
+}

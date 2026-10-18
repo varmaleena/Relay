@@ -1,0 +1,171 @@
+{
+  "mode": "fake",
+  "synthetic": true,
+  "model": "fixture-fake",
+  "n": 20,
+  "claimBoundary": "Offline fixture consistency, not live AI accuracy or production latency.",
+  "orchestration": "Actual ADK SequentialAgent and Runner with fixture model outputs",
+  "draftPreviewExplicit": true,
+  "humanPackReview": "pending",
+  "metrics": [
+    {
+      "metric": "authorizationCorrect",
+      "correct": 0,
+      "n": 20,
+      "value": 0.0,
+      "ci95": [
+        0.0,
+        0.16112515805281938
+      ]
+    },
+    {
+      "metric": "typologyCorrect",
+      "correct": 0,
+      "n": 20,
+      "value": 0.0,
+      "ci95": [
+        0.0,
+        0.16112515805281938
+      ]
+    }
+  ],
+  "authorizationConfusionCounts": {},
+  "outcomes": {
+    "failed": 20
+  },
+  "recipientOrderChecks": {
+    "correct": 0,
+    "n": 0
+  },
+  "latency": {
+    "meanMs": 57.42291500209831,
+    "p95Ms": 2.3146000457927585,
+    "n": 20
+  },
+  "results": [
+    {
+      "caseId": "SYN-CLASS-001",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 1126.4209999935701
+    },
+    {
+      "caseId": "SYN-CLASS-002",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 1.2198000913485885
+    },
+    {
+      "caseId": "SYN-CLASS-003",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 0.9309999877586961
+    },
+    {
+      "caseId": "SYN-CLASS-004",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 1.5095999697223306
+    },
+    {
+      "caseId": "SYN-CLASS-005",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 1.576000009663403
+    },
+    {
+      "caseId": "SYN-CLASS-006",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 1.0479000629857183
+    },
+    {
+      "caseId": "SYN-CLASS-007",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 0.8453999180346727
+    },
+    {
+      "caseId": "SYN-CLASS-008",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 1.0575000196695328
+    },
+    {
+      "caseId": "SYN-CLASS-009",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 0.8272000122815371
+    },
+    {
+      "caseId": "SYN-CLASS-010",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 0.7770000956952572
+    },
+    {
+      "caseId": "SYN-CLASS-011",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 0.7504000095650554
+    },
+    {
+      "caseId": "SYN-CLASS-012",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 1.0148000437766314
+    },
+    {
+      "caseId": "SYN-CLASS-013",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 0.9246000554412603
+    },
+    {
+      "caseId": "SYN-CLASS-014",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 0.8274000138044357
+    },
+    {
+      "caseId": "SYN-CLASS-015",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 1.0089999996125698
+    },
+    {
+      "caseId": "SYN-CLASS-016",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 1.8857999239116907
+    },
+    {
+      "caseId": "SYN-CLASS-017",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 1.399699947796762
+    },
+    {
+      "caseId": "SYN-CLASS-018",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 1.070799888111651
+    },
+    {
+      "caseId": "SYN-CLASS-019",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 2.3146000457927585
+    },
+    {
+      "caseId": "SYN-CLASS-020",
+      "outcome": "failed",
+      "errorType": "AttributeError",
+      "latencyMs": 1.0487999534234405
+    }
+  ],
+  "datasetHash": "4c92cded8ec6f81dd2b5b2194c38b31119674062579b687708c9db0ec457805c",
+  "promptVersion": "classifier.v1",
+  "promptHash": "9dad4091aa60fd91071c356249560cf5cdf47db67fb476572a6bd24c7bb1022c",
+  "generatedAt": "2026-10-14T14:15:38.134931+00:00"
+}

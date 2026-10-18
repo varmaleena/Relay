@@ -1,0 +1,15 @@
+.git
+.venv
+.local
+.tools
+.tmp
+node_modules
+__pycache__
+**/__pycache__
+.env
+.env.*
+docs
+tests
+apps
+.coverage
+*-debug.log

@@ -1,0 +1,1 @@
+{"providerAttempts":0,"stage":"settings_validation","cause":"eval service requires unused model_fast and bucket_eval; harness corrected to existing narrow local intake-enabled SDK settings","inferenceAttempted":false}

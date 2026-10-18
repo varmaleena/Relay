@@ -1,0 +1,222 @@
+{
+  "generatedAt": "2026-10-14T05:39:20.110773+00:00",
+  "mode": "live",
+  "synthetic": true,
+  "model": "gemini-3.8-flash",
+  "project": "work-511514",
+  "processingLocation": "global",
+  "dataset": "M1-hand-authored-text-receipts-v1",
+  "maxConcurrency": 2,
+  "maxOutputTokens": 2000,
+  "schemaRetries": 0,
+  "pricing": "Conservative global 2027 estimate; excludes infrastructure/credits/FX.",
+  "limitations": "Text-only synthetic receipts; required-field matching is not complete entity F1 or screenshot OCR accuracy.",
+  "n": 20,
+  "requestsMax": 20,
+  "validatedCases": 19,
+  "inputTokens": 15758,
+  "outputAndReasoningTokens": 17165,
+  "conservativeModelCostUsd": 0.15237450000000002,
+  "usageIncomplete": true,
+  "promptVersion": "evidence.v1",
+  "promptHash": "8a0f18b0555eabcc38f6641489eb26e3d20164f64c0777aef51847079e665b28",
+  "datasetHash": "b04a8c773e778f4b3df0a1fa52d15857c3534e8332de2bc59f01de96988b0590",
+  "metrics": [
+    {
+      "metric": "schema_and_source_validated_cases",
+      "value": 0.95,
+      "n": 20,
+      "ci95": [
+        0.763868806553258,
+        0.9911185511992047
+      ]
+    },
+    {
+      "metric": "all_three_required_raw_tuples_present",
+      "value": 0.5,
+      "n": 20,
+      "ci95": [
+        0.2992980081982123,
+        0.7007019918017877
+      ]
+    }
+  ],
+  "results": [
+    {
+      "caseId": "SYN-INTAKE-001",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-002",
+      "status": "failed",
+      "code": "model_unavailable:504"
+    },
+    {
+      "caseId": "SYN-INTAKE-003",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-004",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-005",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-006",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-007",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-008",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-009",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-010",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-011",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-012",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-013",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-014",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-015",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-016",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 5
+    },
+    {
+      "caseId": "SYN-INTAKE-017",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-018",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-019",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-020",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "status": "unverified",
+  "human_review": null,
+  "policy_applicability_decision": null,
+  "policy_windows_and_limits": [
+    {
+      "id": "uk-app-policy-start",
+      "sourceRefs": [
+        "uk-psr-app-consumer:scope"
+      ],
+      "stated": "Payments on or after 7 October 2024; other scope conditions also apply.",
+      "computedDueAt": null,
+      "blockReason": "No covered rail/receiving-account/customer eligibility fields."
+    },
+    {
+      "id": "uk-report-window",
+      "sourceRefs": [
+        "uk-fos-app-consumer:app-scope"
+      ],
+      "stated": "Report no more than 13 months after the last payment.",
+      "computedDueAt": null,
+      "blockReason": "Current payment.timestamp does not certify the last payment in a multi-payment claim."
+    },
+    {
+      "id": "uk-reimbursement-processing",
+      "sourceRefs": [
+        "uk-psr-app-consumer:business-clock"
+      ],
+      "stated": "5 business days with stop-clock provisions; outcome within 35 business days under the described process.",
+      "computedDueAt": null,
+      "blockReason": "No verified scheme eligibility, claim-start/stop-clock state or reviewed business calendar."
+    },
+    {
+      "id": "uk-cap",
+      "sourceRefs": [
+        "uk-psr-app-consumer:maximum",
+        "uk-fos-app-consumer:app-scope"
+      ],
+      "stated": "Published maximum reimbursement level GBP 85000 per covered claim; firms may reimburse more and FOS may consider a complaint.",
+      "computedAmount": null,
+      "blockReason": "No eligibility or individual reimbursement award is determined."
+    },
+    {
+      "id": "uk-excess",
+      "sourceRefs": [
+        "uk-psr-app-consumer:excess"
+      ],
+      "stated": "Optional excess up to GBP 100; source says not for vulnerable consumers.",
+      "computedAmount": null,
+      "blockReason": "No vulnerability/excess decision represented."
+    },
+    {
+      "id": "uk-complaint-route",
+      "sourceRefs": [
+        "uk-fos-app-consumer:complaint-first"
+      ],
+      "stated": "Complain to the firm before FOS; unresolved response/timing prerequisites need confirmation.",
+      "computedDueAt": null,
+      "blockReason": "No firm-complaint/final-response timeline in canonical CaseFacts; do not conflate complaint and APP reimbursement clocks."
+    }
+  ],
+  "blocked_routes": [
+    {
+      "recipientId": "report-fraud",
+      "condition": "UK nation not represented",
+      "onlinePrimaryVerification": "https://www.reportfraud.police.uk/reporting-a-fraud/",
+      "rawSnapshotStatus": "HTTP403; not represented as archived source evidence"
+    },
+    {
+      "recipientId": "ombudsman",
+      "condition": "Complaint prerequisite state not represented"
+    }
+  ],
+  "source_cautions": [
+    "PSR consumer page retains an older Action Fraud label; current police site confirms Report Fraud. Do not copy the obsolete name.",
+    "PSR consumer page contains a separate FOS compensation-limit figure; this draft deliberately does not adopt it as a current award limit."
+  ]
+}

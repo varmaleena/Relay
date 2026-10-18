@@ -1,0 +1,12 @@
+# Minimal build context. Developer credentials and source dossiers cannot be uploaded.
+*
+!requirements.lock
+!.dockerignore
+!services/
+services/*
+!services/platform_smoke/
+!services/platform_smoke/Dockerfile
+!services/platform_smoke/main.py
+!infra/
+infra/*
+!infra/cloudbuild.smoke.yaml

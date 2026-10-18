@@ -1,0 +1,364 @@
+{
+  "runAt": "2026-10-15T14:30:44.882756+00:00",
+  "inputSha256": "b6b16aa8ecbfbdab4c41317f3fd6c0867cb35e233a01192d2547e0923a7e4141",
+  "model": "gemini-3.8-flash",
+  "project": "work-511514",
+  "processingLocation": "global",
+  "sdkVersion": "2.30.1",
+  "n": 3,
+  "providerAttempts": 7,
+  "providerFailures": [
+    "model_unavailable",
+    "model_unavailable",
+    "model_unavailable"
+  ],
+  "usage": [
+    {
+      "model": "gemini-3.8-flash",
+      "latencyMs": 12171,
+      "inputTokens": 1346,
+      "outputTokens": 482,
+      "reasoningTokens": 605
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "latencyMs": 10625,
+      "inputTokens": 1348,
+      "outputTokens": 314,
+      "reasoningTokens": 878
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "latencyMs": 12640,
+      "inputTokens": 2252,
+      "outputTokens": 305,
+      "reasoningTokens": 802
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "latencyMs": 10750,
+      "inputTokens": 2423,
+      "outputTokens": 170,
+      "reasoningTokens": 777
+    }
+  ],
+  "cost": null,
+  "costNote": "No fabricated monetary estimate; usage recorded where SDK supplied it.",
+  "limitations": [
+    "Synthetic smoke n=3; no production accuracy claim.",
+    "Draft sources remain unverified; model entailment is fallible."
+  ],
+  "results": [
+    {
+      "recipient": "bank",
+      "status": "VERIFIED",
+      "writerAttempts": 3,
+      "latencySeconds": 58.45299999997951,
+      "checks": [
+        {
+          "id": "recipient",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "Recipient must match selected pack and plan.",
+          "severity": "blocker"
+        },
+        {
+          "id": "language",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "Language metadata must match requested languages.",
+          "severity": "blocker"
+        },
+        {
+          "id": "footer",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "Required versioned footer and draft labels.",
+          "severity": "blocker"
+        },
+        {
+          "id": "attachments",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "Attachment manifest must match verified hashes.",
+          "severity": "blocker"
+        },
+        {
+          "id": "citations",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "Every source reference must resolve; draft status must survive.",
+          "severity": "blocker"
+        },
+        {
+          "id": "fields",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "Structured values and provenance must equal case facts.",
+          "severity": "blocker"
+        },
+        {
+          "id": "completeness",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "Completeness is computed from trusted field metadata.",
+          "severity": "blocker"
+        },
+        {
+          "id": "required",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "Required fields must be provided.",
+          "severity": "blocker"
+        },
+        {
+          "id": "victim_copy",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "A complete plain-language victim copy is required.",
+          "severity": "blocker"
+        },
+        {
+          "id": "rule_references",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "Plan rule references must belong to the selected pack.",
+          "severity": "blocker"
+        },
+        {
+          "id": "safety",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "No credentials, full accounts, promises or unsupported legal conclusions.",
+          "severity": "blocker"
+        },
+        {
+          "id": "amounts",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "Explicit currency amounts must equal the case amount.",
+          "severity": "blocker"
+        },
+        {
+          "id": "timestamps",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "Explicit timestamps must equal case facts.",
+          "severity": "blocker"
+        },
+        {
+          "id": "identifiers",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "Explicit identifiers must match victim facts, not new model values.",
+          "severity": "blocker"
+        },
+        {
+          "id": "provenance",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "Every populated field requires a traceable statement or evidence origin.",
+          "severity": "blocker"
+        },
+        {
+          "id": "promise",
+          "type": "deterministic",
+          "passed": true,
+          "detail": "Recovery cannot be promised.",
+          "severity": "blocker"
+        },
+        {
+          "id": "entailment_sentence_0",
+          "type": "llm",
+          "passed": true,
+          "detail": "Sentence 0 requires explicit fact/evidence support.",
+          "severity": "blocker"
+        },
+        {
+          "id": "entailment_sentence_1",
+          "type": "llm",
+          "passed": true,
+          "detail": "Sentence 1 requires explicit fact/evidence support.",
+          "severity": "blocker"
+        },
+        {
+          "id": "entailment_sentence_2",
+          "type": "llm",
+          "passed": true,
+          "detail": "Sentence 2 requires explicit fact/evidence support.",
+          "severity": "blocker"
+        },
+        {
+          "id": "entailment_sentence_3",
+          "type": "llm",
+          "passed": true,
+          "detail": "Sentence 3 requires explicit fact/evidence support.",
+          "severity": "blocker"
+        },
+        {
+          "id": "entailment_sentence_4",
+          "type": "llm",
+          "passed": true,
+          "detail": "Sentence 4 requires explicit fact/evidence support.",
+          "severity": "blocker"
+        },
+        {
+          "id": "entailment_sentence_5",
+          "type": "llm",
+          "passed": true,
+          "detail": "Sentence 5 requires explicit fact/evidence support.",
+          "severity": "blocker"
+        },
+        {
+          "id": "entailment",
+          "type": "llm",
+          "passed": true,
+          "detail": "Every sentence must be supported and both copies accurate.",
+          "severity": "blocker"
+        }
+      ],
+      "content": {
+        "language": "en",
+        "recipientLanguage": "en",
+        "subject": "Dispute Report: UPI Transaction TEST0000000001",
+        "summary": "Report regarding a disputed UPI transaction of 45000 INR with transaction reference TEST0000000001.",
+        "fields": [
+          {
+            "key": "payment.amount",
+            "label": "payment.amount",
+            "value": "INR 45000",
+            "required": true,
+            "availability": "available",
+            "provenance": {
+              "source": "victim_statement",
+              "reference": "payment.amount",
+              "confidence": null
+            }
+          },
+          {
+            "key": "payment.timestamp",
+            "label": "payment.timestamp",
+            "value": "2026-10-15T14:08:05.902172+00:00",
+            "required": true,
+            "availability": "available",
+            "provenance": {
+              "source": "victim_statement",
+              "reference": "payment.timestamp",
+              "confidence": null
+            }
+          },
+          {
+            "key": "payment.transaction_ref",
+            "label": "payment.transaction_ref",
+            "value": "TEST0000000001",
+            "required": true,
+            "availability": "available",
+            "provenance": {
+              "source": "victim_statement",
+              "reference": "payment.transaction_ref",
+              "confidence": null
+            }
+          },
+          {
+            "key": "payment.recipient_identifier",
+            "label": "payment.recipient_identifier",
+            "value": "safe.verify@fakebank",
+            "required": false,
+            "availability": "available",
+            "provenance": {
+              "source": "victim_statement",
+              "reference": "payment.recipient_identifier",
+              "confidence": null
+            }
+          },
+          {
+            "key": "payment.method",
+            "label": "payment.method",
+            "value": "upi",
+            "required": false,
+            "availability": "available",
+            "provenance": {
+              "source": "victim_statement",
+              "reference": "payment.method",
+              "confidence": null
+            }
+          },
+          {
+            "key": "victim_bank",
+            "label": "victim_bank",
+            "value": "Test Bank",
+            "required": false,
+            "availability": "available",
+            "provenance": {
+              "source": "victim_statement",
+              "reference": "victim_bank",
+              "confidence": null
+            }
+          },
+          {
+            "key": "contact.identifier",
+            "label": "contact.identifier",
+            "value": null,
+            "required": false,
+            "availability": "unknown",
+            "provenance": {
+              "source": "victim_statement",
+              "reference": "contact.identifier",
+              "confidence": null
+            }
+          }
+        ],
+        "message": "The victim states that following a phone contact claiming to be Test Bank, a UPI transfer of 45000 INR was made to recipient safe.verify@fakebank on 2026-10-15T14:08:05.902172Z under transaction reference TEST0000000001. The transaction was authorized by the victim. Caller identifier details remain unavailable. The recipient guidance and status are unverified. The victim requests review of this transaction.",
+        "requestedActions": [
+          "Review the reported UPI transaction TEST0000000001",
+          "Provide information on procedures for disputed transactions"
+        ],
+        "citations": [],
+        "attachments": [],
+        "victimCopy": {
+          "summary": "Record of your report regarding UPI transaction TEST0000000001.",
+          "message": "You reported an authorized UPI payment of 45000 INR on 2026-10-15T14:08:05.902172Z to recipient safe.verify@fakebank with transaction reference TEST0000000001, following a phone call claiming to represent Test Bank. The guidance status is unverified."
+        },
+        "footer": "Prepared by Relay from pack_in_cyber_rail v0.1.0. Review before sending. This is not legal advice. Unverified draft guidance / सत्यापित नहीं.",
+        "completeness": {
+          "score": 0.8333333333333334,
+          "missing": [],
+          "recipientId": "bank",
+          "notAvailable": []
+        }
+      }
+    },
+    {
+      "recipient": "cyber",
+      "status": "NEEDS_HUMAN_REVIEW",
+      "writerAttempts": 1,
+      "latencySeconds": 12.108999999938533,
+      "checks": [
+        {
+          "id": "writer_unavailable",
+          "type": "deterministic",
+          "passed": false,
+          "detail": "Draft unavailable or invalid; review required.",
+          "severity": "blocker"
+        }
+      ],
+      "content": null
+    },
+    {
+      "recipient": "payment-app",
+      "status": "NEEDS_HUMAN_REVIEW",
+      "writerAttempts": 1,
+      "latencySeconds": 12.266000000061467,
+      "checks": [
+        {
+          "id": "writer_unavailable",
+          "type": "deterministic",
+          "passed": false,
+          "detail": "Draft unavailable or invalid; review required.",
+          "severity": "blocker"
+        }
+      ],
+      "content": null
+    }
+  ]
+}

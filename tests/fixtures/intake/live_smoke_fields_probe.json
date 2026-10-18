@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-10-14T05:29:08.041250+00:00",
+  "mode": "live",
+  "synthetic": true,
+  "model": "gemini-3.8-flash",
+  "project": "work-511514",
+  "processingLocation": "global",
+  "dataset": "M1-hand-authored-text-receipts-v1",
+  "n": 1,
+  "requestsMax": 1,
+  "maxConcurrency": 2,
+  "maxOutputTokens": 2000,
+  "schemaRetries": 0,
+  "validatedCases": 0,
+  "inputTokens": 0,
+  "outputAndReasoningTokens": 0,
+  "conservativeModelCostUsd": 0.0,
+  "pricing": "Conservative global 2027 list estimate; excludes infrastructure, credits and FX.",
+  "limitations": "Text-only synthetic receipts; required-field matching is not complete entity F1 or screenshot OCR accuracy.",
+  "results": [
+    {
+      "caseId": "SYN-INTAKE-001",
+      "status": "failed",
+      "code": "model_unavailable:400"
+    }
+  ]
+}

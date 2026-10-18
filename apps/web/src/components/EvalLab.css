@@ -1,0 +1,142 @@
+.eval-lab {
+  max-width: 1240px;
+  margin: auto;
+  line-height: 1.6;
+}
+.eval-lab code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.eval-summary dl,
+.eval-system-grid dl {
+  display: grid;
+  grid-template-columns: minmax(100px, auto) 1fr;
+  gap: 8px 18px;
+}
+.eval-summary dt,
+.eval-system-grid dt {
+  font-weight: 700;
+}
+.eval-summary dd,
+.eval-system-grid dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.eval-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.eval-slice {
+  display: block;
+  max-width: 440px;
+  margin: 24px 0;
+}
+.eval-lab select {
+  display: block;
+  min-height: 48px;
+  width: 100%;
+  max-width: 440px;
+  margin-top: 8px;
+}
+.eval-table-wrap {
+  overflow: auto;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  margin: 24px 0;
+}
+.eval-table-wrap:focus-visible {
+  outline: 3px solid var(--station);
+  outline-offset: 3px;
+}
+.eval-lab table {
+  border-collapse: collapse;
+  min-width: 1050px;
+  width: 100%;
+  font-size: 0.92rem;
+}
+.eval-lab caption {
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 16px;
+}
+.eval-lab th,
+.eval-lab td {
+  padding: 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule);
+}
+.eval-lab thead {
+  background: var(--ledger);
+}
+.eval-lab td span,
+.eval-mode {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.85rem;
+}
+.eval-mode,
+.eval-unknown {
+  font-weight: 700;
+}
+.eval-system-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.eval-system-grid details {
+  margin: 0;
+}
+.eval-lab summary {
+  cursor: pointer;
+  min-height: 48px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.eval-failures {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  max-height: 480px;
+  overflow: auto;
+}
+.eval-failures li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+.eval-failures button {
+  text-align: left;
+  min-height: 48px;
+}
+.eval-lab .panel {
+  min-width: 0;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+@media (max-width: 600px) {
+  .eval-summary dl,
+  .eval-system-grid dl {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .eval-summary dd,
+  .eval-system-grid dd {
+    margin-bottom: 10px;
+  }
+  .eval-actions button {
+    width: 100%;
+  }
+}

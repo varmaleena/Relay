@@ -1,0 +1,97 @@
+pack_id: pack_generic_fragmented
+version: 0.1.0
+status: draft
+jurisdiction:
+  code: GENERIC
+  name: 'Country unconfirmed: generic guidance'
+  archetype: fragmented
+languages:
+- en
+- hi
+timezone: UTC
+currency: XXX
+sources: []
+recipients:
+- id: bank
+  type: bank
+  name: Your bank
+  channels:
+  - type: app
+    value: Use your bank’s official app or independently verified website/contact
+      channel
+    verified: false
+  source_refs: []
+  status: unverified
+  applies_when: 'True'
+  required_fields:
+  - payment.amount
+  - payment.timestamp
+  - payment.transaction_ref
+  template_id: bank-form
+  recipient_language: en
+- id: police
+  type: police
+  name: Local police or cybercrime authority
+  channels:
+  - type: in_person
+    value: Confirm your country and identify the appropriate authority using its official
+      channel
+    verified: false
+  source_refs: []
+  status: unverified
+  applies_when: 'True'
+  required_fields:
+  - payment.amount
+  - payment.timestamp
+  - payment.transaction_ref
+  template_id: police-form
+  recipient_language: en
+sequencing:
+- id: sequence-bank
+  step: 1
+  recipient_id: bank
+  when: 'True'
+  rationale: 'Relay sequencing heuristic, pending human review: contact promptly;
+    steps can proceed in parallel.'
+  source_refs: []
+  status: unverified
+- id: sequence-police
+  step: 2
+  recipient_id: police
+  when: 'True'
+  rationale: 'Relay sequencing heuristic, pending human review: contact promptly;
+    steps can proceed in parallel.'
+  source_refs: []
+  status: unverified
+deadlines: []
+liability_rules: []
+forms:
+- id: bank-form
+  recipient_id: bank
+  fields:
+  - payment.amount
+  - payment.timestamp
+  - payment.transaction_ref
+  format: text
+- id: police-form
+  recipient_id: police
+  fields:
+  - payment.amount
+  - payment.timestamp
+  - payment.transaction_ref
+  format: text
+crisis_support: []
+disclaimers:
+- 'DRAFT: all rules and channels await human review; local demonstration only.'
+- Reporting does not guarantee recovery or reimbursement.
+- Accurately state whether you made the payment under manipulation or it occurred
+  without authorization.
+- Sequencing is Relay product advice, not a legal priority rule.
+- No numerical deadlines supplied; seek prompt advice through official channels.
+- Country unconfirmed. UTC and XXX are placeholders, not inferred country or transaction
+  currency. No jurisdiction-specific legal authority.
+review:
+  reviewer: ''
+  reviewed_at: ''
+  notes: Pending human review; no approval or publication recorded.
+  accepted_unverified_rule_ids: []

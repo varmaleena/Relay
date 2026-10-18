@@ -1,0 +1,189 @@
+{
+  "generatedAt": "2026-10-14T05:39:20.110773+00:00",
+  "mode": "live",
+  "synthetic": true,
+  "model": "gemini-3.8-flash",
+  "project": "work-511514",
+  "processingLocation": "global",
+  "dataset": "M1-hand-authored-text-receipts-v1",
+  "n": 19,
+  "requestsMax": 19,
+  "maxConcurrency": 2,
+  "maxOutputTokens": 2000,
+  "schemaRetries": 0,
+  "validatedCases": 18,
+  "inputTokens": 14927,
+  "outputAndReasoningTokens": 16273,
+  "conservativeModelCostUsd": 0.144438,
+  "pricing": "Conservative global 2027 estimate; excludes infrastructure/credits/FX.",
+  "limitations": "Text-only synthetic receipts; required-field matching is not complete entity F1 or screenshot OCR accuracy.",
+  "results": [
+    {
+      "caseId": "SYN-INTAKE-002",
+      "status": "failed",
+      "code": "model_unavailable:504"
+    },
+    {
+      "caseId": "SYN-INTAKE-003",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-004",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-005",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-006",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-007",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-008",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-009",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-010",
+      "language": "en",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-011",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-012",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-013",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-014",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-015",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-016",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 5
+    },
+    {
+      "caseId": "SYN-INTAKE-017",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-018",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-019",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 3,
+      "allRequiredMatched": true,
+      "entityCount": 6
+    },
+    {
+      "caseId": "SYN-INTAKE-020",
+      "language": "hi",
+      "status": "validated",
+      "requiredFields": 3,
+      "matchedFields": 2,
+      "allRequiredMatched": false,
+      "entityCount": 6
+    }
+  ]
+}

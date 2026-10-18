@@ -1,0 +1,26 @@
+# Public configuration only. API and worker use separate workload identities.
+# Set SERVICE per deployment; API_BASE_URL is the stable API endpoint.
+ENVIRONMENT: dev
+SERVICE: api
+DEMO_MODE: 'true'
+GENAI_MODE: live
+GCP_PROJECT_ID: work-511514
+GENAI_PROJECT_ID: work-511514
+GCP_REGION: asia-south1
+GENAI_LOCATION: global
+AUTH_MODE: firebase
+INTAKE_ENABLED: 'true'
+PLANNING_ENABLED: 'true'
+PACKETS_ENABLED: 'true'
+ALLOW_DRAFT_PACK_PREVIEW: 'true'
+DEPLOYED_DEMO_PREVIEW: 'true'
+INTAKE_STORAGE_MODE: gcs
+STORAGE_SIGNING_EMAIL: relay-dev-api@work-511514.iam.gserviceaccount.com
+BUCKET_EVIDENCE: work-511514-relay-dev-evidence
+BUCKET_EXPORTS: work-511514-relay-dev-exports
+PUBSUB_TOPIC_JOBS: projects/work-511514/topics/relay-jobs
+MODEL_REASONING: gemini-3.8-flash
+PACKET_THINKING_LEVEL: LOW
+MAX_MODEL_CONCURRENCY: '1'
+API_BASE_URL: https://relay-dev-api-798642284156.asia-south1.run.app
+ALLOWED_ORIGINS: https://work-511514.web.app,https://work-511514.firebaseapp.com

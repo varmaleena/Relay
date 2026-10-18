@@ -1,0 +1,425 @@
+{
+  "mode": "fake",
+  "synthetic": true,
+  "model": "fixture-fake",
+  "n": 20,
+  "claimBoundary": "Offline fixture consistency, not live AI accuracy or production latency.",
+  "orchestration": "Actual ADK Workflow, FunctionNode and Runner",
+  "evaluationClock": "2026-10-14T06:00:00+00:00",
+  "sdkVersions": {
+    "google-adk": "2.11.0",
+    "google-genai": "2.30.1"
+  },
+  "draftPreviewExplicit": true,
+  "humanPackReview": "pending",
+  "metrics": [
+    {
+      "metric": "authorizationCorrect",
+      "correct": 20,
+      "n": 20,
+      "value": 1.0,
+      "ci95": [
+        0.8388748419471806,
+        1.0
+      ]
+    },
+    {
+      "metric": "typologyCorrect",
+      "correct": 20,
+      "n": 20,
+      "value": 1.0,
+      "ci95": [
+        0.8388748419471806,
+        1.0
+      ]
+    },
+    {
+      "metric": "urgencyCorrect",
+      "correct": 20,
+      "n": 20,
+      "value": 1.0,
+      "ci95": [
+        0.8388748419471806,
+        1.0
+      ]
+    }
+  ],
+  "authorizationConfusionCounts": {
+    "authorized_manipulated:authorized_manipulated": 12,
+    "unauthorized_access:unauthorized_access": 2,
+    "card_unauthorized:card_unauthorized": 2,
+    "unclear:unclear": 4
+  },
+  "outcomes": {
+    "planned": 16,
+    "clarification": 4
+  },
+  "recipientOrderChecks": {
+    "correct": 16,
+    "n": 16
+  },
+  "latency": {
+    "meanMs": 91.49178499937989,
+    "p95Ms": 133.7307000067085,
+    "n": 20
+  },
+  "results": [
+    {
+      "caseId": "SYN-CLASS-001",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "critical",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber",
+        "payment-app"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 498.3974000206217
+    },
+    {
+      "caseId": "SYN-CLASS-002",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "critical",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 43.934599962085485
+    },
+    {
+      "caseId": "SYN-CLASS-003",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "critical",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 37.26970008574426
+    },
+    {
+      "caseId": "SYN-CLASS-004",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "critical",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber",
+        "payment-app"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 47.20649996306747
+    },
+    {
+      "caseId": "SYN-CLASS-005",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "critical",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 47.34649998135865
+    },
+    {
+      "caseId": "SYN-CLASS-006",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "critical",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 48.33689995575696
+    },
+    {
+      "caseId": "SYN-CLASS-007",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "critical",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 102.24140004720539
+    },
+    {
+      "caseId": "SYN-CLASS-008",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "high",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 121.20009993668646
+    },
+    {
+      "caseId": "SYN-CLASS-009",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "critical",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber",
+        "payment-app"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 101.41110001131892
+    },
+    {
+      "caseId": "SYN-CLASS-010",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "critical",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber",
+        "payment-app"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 92.92089997325093
+    },
+    {
+      "caseId": "SYN-CLASS-011",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "critical",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 101.50019999127835
+    },
+    {
+      "caseId": "SYN-CLASS-012",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "high",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 128.2690999796614
+    },
+    {
+      "caseId": "SYN-CLASS-013",
+      "outcome": "clarification",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "critical",
+      "urgencyCorrect": true,
+      "requiresClarification": true,
+      "latencyMs": 11.72379998024553
+    },
+    {
+      "caseId": "SYN-CLASS-014",
+      "outcome": "clarification",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "critical",
+      "urgencyCorrect": true,
+      "requiresClarification": true,
+      "latencyMs": 11.773300007916987
+    },
+    {
+      "caseId": "SYN-CLASS-015",
+      "outcome": "clarification",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "critical",
+      "urgencyCorrect": true,
+      "requiresClarification": true,
+      "latencyMs": 12.262000003829598
+    },
+    {
+      "caseId": "SYN-CLASS-016",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "critical",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber",
+        "payment-app"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 133.7307000067085
+    },
+    {
+      "caseId": "SYN-CLASS-017",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "high",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 93.54290005285293
+    },
+    {
+      "caseId": "SYN-CLASS-018",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "high",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 94.57800001837313
+    },
+    {
+      "caseId": "SYN-CLASS-019",
+      "outcome": "planned",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "high",
+      "urgencyCorrect": true,
+      "requiresClarification": false,
+      "recipients": [
+        "bank",
+        "cyber"
+      ],
+      "recipientOrderCorrect": true,
+      "draftPreview": true,
+      "packVersion": "0.1.0",
+      "hasUnverifiedNotice": true,
+      "noInventedNumericDeadline": true,
+      "latencyMs": 94.73230002913624
+    },
+    {
+      "caseId": "SYN-CLASS-020",
+      "outcome": "clarification",
+      "authorizationCorrect": true,
+      "typologyCorrect": true,
+      "urgency": "high",
+      "urgencyCorrect": true,
+      "requiresClarification": true,
+      "latencyMs": 7.45829998049885
+    }
+  ],
+  "datasetHash": "9c49057446c9ac21a9f45f5dac76a780b463d6050976e95e76d9d3526e8eda72",
+  "promptVersion": "classifier.v1",
+  "promptHash": "9dad4091aa60fd91071c356249560cf5cdf47db67fb476572a6bd24c7bb1022c",
+  "generatedAt": "2026-10-15T06:04:01.483433+00:00",
+  "catalogHashes": {
+    "pack_generic_fragmented:0.1.0": "88b27e77d190e51f2efbedba9748dbb34cc3c7b6fc5d00179147df6fd4e80048",
+    "pack_in_cyber_rail:0.1.0": "d25cebe66192ba62c11b96ec0e94fa31c6aee4a63c9c2c5487a528af525041bc"
+  }
+}

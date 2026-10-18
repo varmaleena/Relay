@@ -1,0 +1,1 @@
+"""Receiver linking endpoints."""

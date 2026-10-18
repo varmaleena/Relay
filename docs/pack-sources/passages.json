@@ -1,0 +1,23 @@
+[
+  {
+    "id": "mha-1930:reporting",
+    "source_id": "mha-1930",
+    "locator": "press release first paragraph",
+    "text": "The Ministry of Home Affairs has operationalized a toll-free Helpline number ‘1930’ (earlier ‘155260’) for immediate reporting of financial frauds on the “Citizen Financial Cyber Fraud Reporting and Management System” module and to get assistance in lodging cyber crime incidents on the “National Cyber Crime Reporting Portal” ( www.cybercrime.gov.in ).",
+    "sha256": "c8decddc924aa1362632f343c2c8f19f227f2df70994321f1250e25b806a0b61"
+  },
+  {
+    "id": "rbi-unauthorized-2017:scope",
+    "source_id": "rbi-unauthorized-2017",
+    "locator": "page 1 heading",
+    "text": "Customer Protection – Limiting Liability of Customers in Unauthorised Electronic Banking Transactions",
+    "sha256": "fb8dd402d5dff1e9367c0460edd57d75eba20fa1bdbe3b38f967ae63cea2ca9e"
+  },
+  {
+    "id": "rbi-unauthorized-2017:reporting",
+    "source_id": "rbi-unauthorized-2017",
+    "locator": "page 2 paragraph 5",
+    "text": "Reporting of unauthorised transactions by customers to banks 5. Banks must ask their customers to mandatorily register for SMS alerts and wherever available register for e- mail alerts, for electronic banking transactions. The SMS alerts shall mandatorily be sent to the customers, while email alerts may be sent, wherever registered. The customers must be advised to notify their bank of any unauthorised electronic banking transaction at the earliest after the occurrence of such transaction, and informed that the longer the time taken to notify the bank, the higher will be the risk of loss to the bank/ customer. To facilitate this, banks must provide customers with 24x7 access through multiple channels (at a minimum, via website, phone banking, SMS, e-mail, IVR, a dedicated toll-free helpline, reporting to home branch, etc.) for reporting unauthorised transactions that have taken place and/ or loss or theft of payment instrument such as card, etc. Banks shall also enable customers to instantly respond by \"Reply\" t o the SMS and e- mail alerts and the customers should not be required to search for a web page or an e- mail address to notify the objection, if any. Further, a direct link for lodging the complaints, with specific option to report unauthorised electronic tr ansactions shall be provided by banks on home page of their website. The loss/ fraud reporting system shall also ensure that immediate response (including auto response) is sent to the customers acknowledging the complaint along with the registered complai nt number.",
+    "sha256": "fff809e2346a2cd94efac4c4b0ae6615160115f650aca8ee1871f0fc4dbb0e34"
+  }
+]

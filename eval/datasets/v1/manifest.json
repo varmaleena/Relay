@@ -1,0 +1,101 @@
+{
+  "datasetSha256": "01687b303189ec0078dd1f39522a610207d139454aff89b5ae585dfd395e7015",
+  "humanReview": "pending",
+  "reviewSampleCaseIds": [
+    "SYN-EVAL-00331",
+    "SYN-EVAL-00124",
+    "SYN-EVAL-00218",
+    "SYN-EVAL-00482",
+    "SYN-EVAL-00300",
+    "SYN-EVAL-00274",
+    "SYN-EVAL-00029",
+    "SYN-EVAL-00358",
+    "SYN-EVAL-00142",
+    "SYN-EVAL-00006",
+    "SYN-EVAL-00302",
+    "SYN-EVAL-00451",
+    "SYN-EVAL-00278",
+    "SYN-EVAL-00324",
+    "SYN-EVAL-00080",
+    "SYN-EVAL-00081",
+    "SYN-EVAL-00395",
+    "SYN-EVAL-00260",
+    "SYN-EVAL-00236",
+    "SYN-EVAL-00463",
+    "SYN-EVAL-00083",
+    "SYN-EVAL-00192",
+    "SYN-EVAL-00413",
+    "SYN-EVAL-00348",
+    "SYN-EVAL-00021",
+    "SYN-EVAL-00344",
+    "SYN-EVAL-00276",
+    "SYN-EVAL-00190",
+    "SYN-EVAL-00101",
+    "SYN-EVAL-00377",
+    "SYN-EVAL-00039",
+    "SYN-EVAL-00400",
+    "SYN-EVAL-00001",
+    "SYN-EVAL-00363",
+    "SYN-EVAL-00335",
+    "SYN-EVAL-00501",
+    "SYN-EVAL-00273",
+    "SYN-EVAL-00311",
+    "SYN-EVAL-00334",
+    "SYN-EVAL-00257",
+    "SYN-EVAL-00111",
+    "SYN-EVAL-00140",
+    "SYN-EVAL-00507",
+    "SYN-EVAL-00481",
+    "SYN-EVAL-00072",
+    "SYN-EVAL-00244",
+    "SYN-EVAL-00220",
+    "SYN-EVAL-00386",
+    "SYN-EVAL-00050",
+    "SYN-EVAL-00317",
+    "SYN-EVAL-00251",
+    "SYN-EVAL-00043",
+    "SYN-EVAL-00247"
+  ],
+  "slices": {
+    "language": {
+      "en": 176,
+      "hinglish": 176,
+      "hi": 176
+    },
+    "jurisdiction": {
+      "LIVE_HELD_OUT": 132,
+      "GB": 132,
+      "IN": 132,
+      "GENERIC": 132
+    },
+    "typologyScenario": {
+      "recovery_scam": 48,
+      "rental": 48,
+      "job_task": 48,
+      "marketplace": 48,
+      "official_impersonation": 48,
+      "crypto": 48,
+      "bank_impersonation": 48,
+      "romance": 48,
+      "investment": 48,
+      "phishing_credential": 48,
+      "tech_support": 48
+    },
+    "noise": {
+      "clean": 106,
+      "typo": 184,
+      "missing_reference": 106,
+      "crop_low_quality": 105,
+      "conflicting_authorization": 27
+    },
+    "modality": {
+      "text": 318,
+      "text_screenshot": 158,
+      "voice_transcript": 52
+    },
+    "split": {
+      "held_out_pending_pack": 132,
+      "evaluation": 396
+    }
+  }
+}

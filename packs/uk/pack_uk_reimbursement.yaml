@@ -1,0 +1,179 @@
+pack_id: pack_uk_reimbursement
+version: 0.1.0
+status: draft
+jurisdiction:
+  code: GB
+  name: United Kingdom (draft; unresolved nation-specific routes blocked)
+  archetype: mandatory_reimbursement
+languages:
+- en
+timezone: Europe/London
+currency: GBP
+sources:
+- id: uk-psr-app-consumer
+  title: APP fraud reimbursement protections
+  publisher: Payment Systems Regulator
+  url: https://www.psr.org.uk/information-for-consumers/app-fraud-reimbursement-protections/
+  retrieved_at: '2026-10-17T17:53:12.230545+00:00'
+  sha256: 2bdd4fc4083e2a16ae7b0b76df53768ce3f67850811a837cccc9345931fde983
+- id: uk-fos-app-consumer
+  title: Scams where you have been tricked into making a payment
+  publisher: Financial Ombudsman Service
+  url: https://www.financial-ombudsman.org.uk/consumers/complaints-can-help/fraud-scams/scams-youve-tricked-making-payment
+  retrieved_at: '2026-10-17T17:53:13.687099+00:00'
+  sha256: 08a605d86c0b8e69c261b5f482fe7ceb4b648e4d4dfcd9420fa6469ae3bab3db
+recipients:
+- id: bank
+  type: bank
+  name: Your sending bank or payment service provider
+  channels:
+  - type: app
+    value: Use an independently verified contact channel for your bank or payment
+      service provider
+    verified: false
+  source_refs:
+  - uk-psr-app-consumer:bank-first
+  - uk-fos-app-consumer:bank-first
+  status: unverified
+  applies_when: facts.country.value == 'GB'
+  required_fields:
+  - payment.amount
+  - payment.timestamp
+  template_id: uk-bank-report
+  recipient_language: en
+- id: report-fraud
+  type: police
+  name: Report Fraud — England, Wales and Northern Ireland only; nation confirmation
+    pending
+  channels:
+  - type: website
+    value: https://www.reportfraud.police.uk/
+    verified: false
+  source_refs:
+  - uk-fos-app-consumer:report-fraud
+  status: unverified
+  applies_when: 'False'
+  required_fields: []
+  template_id: uk-police-report
+  recipient_language: en
+- id: ombudsman
+  type: ombudsman
+  name: Financial Ombudsman Service — after the firm complaint process; eligibility
+    confirmation pending
+  channels:
+  - type: website
+    value: https://www.financial-ombudsman.org.uk/consumers/complaints-can-help/fraud-scams/scams-youve-tricked-making-payment
+    verified: false
+  source_refs:
+  - uk-fos-app-consumer:complaint-first
+  - uk-psr-app-consumer:bank-complaint
+  status: unverified
+  applies_when: 'False'
+  required_fields: []
+  template_id: uk-ombudsman-complaint
+  recipient_language: en
+sequencing:
+- id: uk-contact-bank-first
+  step: 1
+  recipient_id: bank
+  when: facts.country.value == 'GB'
+  rationale: The official sources say to contact the bank immediately; later police/complaint
+    routes require additional eligibility facts.
+  source_refs:
+  - uk-psr-app-consumer:bank-first
+  - uk-fos-app-consumer:complaint-first
+  status: unverified
+deadlines:
+- id: uk-report-promptly
+  applies_to:
+  - bank
+  from_event: discovery_timestamp
+  duration: null
+  type: soft
+  calendar: calendar
+  consequence: Contact the bank immediately. No numeric clock or reimbursement outcome
+    is calculated by this draft.
+  source_refs:
+  - uk-psr-app-consumer:bank-first
+  status: unverified
+liability_rules:
+- id: uk-potential-app-reimbursement
+  condition: facts.country.value == 'GB' and classification.authorization_type ==
+    'authorized_manipulated' and facts.payment.method == 'bank_transfer'
+  summary: A mandatory APP reimbursement framework may be relevant to an eligible
+    authorised scam transfer between UK accounts over Faster Payments or CHAPS. Ask
+    the bank to assess the policy conditions; this draft does not decide eligibility.
+  limits: The current schema does not capture the specific UK rail, receiving account
+    country, customer eligibility or all policy exceptions. Do not treat this rule
+    as a reimbursement promise or a rule for unauthorised payments, card, cash, crypto
+    or civil disputes.
+  source_refs:
+  - uk-psr-app-consumer:scope
+  - uk-fos-app-consumer:app-scope
+  - uk-fos-app-consumer:who-covered
+  status: unverified
+- id: uk-app-exceptions
+  condition: facts.country.value == 'GB' and classification.authorization_type ==
+    'authorized_manipulated' and facts.payment.method == 'bank_transfer'
+  summary: The source describes exclusions and a high-bar gross-negligence exception
+    with vulnerability protections. The bank or a qualified reviewer must assess them;
+    Relay does not decide gross negligence, vulnerability or an award.
+  limits: Missing facts cannot be treated as proof of eligibility. Other complaint
+    protections may still be considered by the Financial Ombudsman Service even where
+    APP reimbursement rules do not apply.
+  source_refs:
+  - uk-psr-app-consumer:exceptions
+  - uk-fos-app-consumer:exceptions
+  - uk-fos-app-consumer:outside-app-scope
+  status: unverified
+forms:
+- id: uk-bank-report
+  recipient_id: bank
+  fields:
+  - payment.amount
+  - payment.timestamp
+  - payment.transaction_ref
+  - payment.recipient_identifier
+  - contact.channel
+  - victim_bank
+  format: text
+- id: uk-police-report
+  recipient_id: report-fraud
+  fields:
+  - payment.amount
+  - payment.timestamp
+  - payment.transaction_ref
+  - contact.channel
+  format: portal_steps
+- id: uk-ombudsman-complaint
+  recipient_id: ombudsman
+  fields:
+  - victim_bank
+  - payment.amount
+  - payment.timestamp
+  format: portal_steps
+crisis_support: []
+disclaimers:
+- 'DRAFT: every rule and channel is unverified and awaits human review. No publication
+  or legal review is claimed.'
+- Only the initial bank-contact route is enabled. Report Fraud is blocked until UK
+  nation is captured; the Ombudsman route is blocked until complaint prerequisites
+  are represented and confirmed.
+- Bank contact-channel selection and form-field choices are Relay product advice;
+  no bank-specific contact details or official mandatory form requirements are asserted.
+- The source policy requires additional conditions, including covered rail, transfer
+  date, UK account destination and customer eligibility. Authorised manipulation is
+  not unauthorised access.
+- No numerical deadline, business-day date, final-payment date, final-response date,
+  eligibility outcome or reimbursement amount is calculated. See the isolated source
+  review mapping for cited policy windows and limits.
+- Reporting, sending a complaint or using this draft does not guarantee recovery,
+  reimbursement or investigation.
+- English-only reference content. Country code GB is explicit metadata, not inferred
+  from currency, language or payment method.
+review:
+  reviewer: ''
+  reviewed_at: ''
+  notes: Unreviewed source-author draft; unresolved scope and timing gates documented
+    in UK_DRAFT_PACK_REVIEW.md.
+  accepted_unverified_rule_ids: []

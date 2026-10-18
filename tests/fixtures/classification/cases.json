@@ -1,0 +1,908 @@
+[
+  {
+    "id": "SYN-CLASS-001",
+    "synthetic": true,
+    "language": "en",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "upi",
+        "authorizedByVictim": true,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "A caller claimed to work for my bank security team and told me to move money to a safe account. I made the UPI payment myself.",
+    "modelOutput": {
+      "typology": "bank_impersonation",
+      "authorizationType": "authorized_manipulated",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "authorized_manipulated",
+    "expectedRecipients": [
+      "bank",
+      "cyber",
+      "payment-app"
+    ],
+    "expectedUrgency": "critical",
+    "expectedTypology": "bank_impersonation"
+  },
+  {
+    "id": "SYN-CLASS-002",
+    "synthetic": true,
+    "language": "hi",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "bank_transfer",
+        "authorizedByVictim": true,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "मुनाफे का वादा करने वाले व्यक्ति के कहने पर मैंने बैंक ट्रांसफर किया। निवेश का पैसा नहीं मिला।",
+    "modelOutput": {
+      "typology": "investment",
+      "authorizationType": "authorized_manipulated",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "authorized_manipulated",
+    "expectedRecipients": [
+      "bank",
+      "cyber"
+    ],
+    "expectedUrgency": "critical",
+    "expectedTypology": "investment"
+  },
+  {
+    "id": "SYN-CLASS-003",
+    "synthetic": true,
+    "language": "en",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "bank_transfer",
+        "authorizedByVictim": true,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "An online romantic partner asked me for money for an emergency. I approved the bank transfer myself.",
+    "modelOutput": {
+      "typology": "romance",
+      "authorizationType": "authorized_manipulated",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "authorized_manipulated",
+    "expectedRecipients": [
+      "bank",
+      "cyber"
+    ],
+    "expectedUrgency": "critical",
+    "expectedTypology": "romance"
+  },
+  {
+    "id": "SYN-CLASS-004",
+    "synthetic": true,
+    "language": "hi",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "upi",
+        "authorizedByVictim": true,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "नौकरी देने का वादा करके मुझे ऑनलाइन काम के लिए शुल्क भेजने को कहा गया। मैंने UPI से भुगतान किया।",
+    "modelOutput": {
+      "typology": "job_task",
+      "authorizationType": "authorized_manipulated",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "authorized_manipulated",
+    "expectedRecipients": [
+      "bank",
+      "cyber",
+      "payment-app"
+    ],
+    "expectedUrgency": "critical",
+    "expectedTypology": "job_task"
+  },
+  {
+    "id": "SYN-CLASS-005",
+    "synthetic": true,
+    "language": "en",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "wallet",
+        "authorizedByVictim": true,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "I paid a marketplace seller from my wallet for a product, but no product arrived and the seller vanished.",
+    "modelOutput": {
+      "typology": "marketplace",
+      "authorizationType": "authorized_manipulated",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "authorized_manipulated",
+    "expectedRecipients": [
+      "bank",
+      "cyber"
+    ],
+    "expectedUrgency": "critical",
+    "expectedTypology": "marketplace"
+  },
+  {
+    "id": "SYN-CLASS-006",
+    "synthetic": true,
+    "language": "hi",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "bank_transfer",
+        "authorizedByVictim": true,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "किराये का घर दिखाने वाले व्यक्ति को मैंने बैंक से अग्रिम रकम भेजी। घर का विज्ञापन झूठा निकला।",
+    "modelOutput": {
+      "typology": "rental",
+      "authorizationType": "authorized_manipulated",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "authorized_manipulated",
+    "expectedRecipients": [
+      "bank",
+      "cyber"
+    ],
+    "expectedUrgency": "critical",
+    "expectedTypology": "rental"
+  },
+  {
+    "id": "SYN-CLASS-007",
+    "synthetic": true,
+    "language": "en",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "bank_transfer",
+        "authorizedByVictim": true,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "A person claimed my computer needed urgent technical support and asked me to pay. I made the bank transfer.",
+    "modelOutput": {
+      "typology": "tech_support",
+      "authorizationType": "authorized_manipulated",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "authorized_manipulated",
+    "expectedRecipients": [
+      "bank",
+      "cyber"
+    ],
+    "expectedUrgency": "critical",
+    "expectedTypology": "tech_support"
+  },
+  {
+    "id": "SYN-CLASS-008",
+    "synthetic": true,
+    "language": "hi",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "crypto",
+        "authorizedByVictim": true,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "क्रिप्टो में निवेश करने पर लाभ का वादा किया गया था। मैंने क्रिप्टो भुगतान मंजूर किया, लेकिन निकासी नहीं हुई।",
+    "modelOutput": {
+      "typology": "crypto",
+      "authorizationType": "authorized_manipulated",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "authorized_manipulated",
+    "expectedRecipients": [
+      "bank",
+      "cyber"
+    ],
+    "expectedUrgency": "high",
+    "expectedTypology": "crypto"
+  },
+  {
+    "id": "SYN-CLASS-009",
+    "synthetic": true,
+    "language": "en",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "upi",
+        "authorizedByVictim": true,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "Someone offered to recover money I had previously lost if I paid a fee. I approved the UPI payment.",
+    "modelOutput": {
+      "typology": "recovery_scam",
+      "authorizationType": "authorized_manipulated",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "authorized_manipulated",
+    "expectedRecipients": [
+      "bank",
+      "cyber",
+      "payment-app"
+    ],
+    "expectedUrgency": "critical",
+    "expectedTypology": "recovery_scam"
+  },
+  {
+    "id": "SYN-CLASS-010",
+    "synthetic": true,
+    "language": "hi",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "upi",
+        "authorizedByVictim": true,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "पुलिस अधिकारी होने का दावा करके मुझे पैसे भेजने को कहा गया। डरकर मैंने UPI से रकम भेजी।",
+    "modelOutput": {
+      "typology": "official_impersonation",
+      "authorizationType": "authorized_manipulated",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "authorized_manipulated",
+    "expectedRecipients": [
+      "bank",
+      "cyber",
+      "payment-app"
+    ],
+    "expectedUrgency": "critical",
+    "expectedTypology": "official_impersonation"
+  },
+  {
+    "id": "SYN-CLASS-011",
+    "synthetic": true,
+    "language": "en",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "bank_transfer",
+        "authorizedByVictim": false,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "After a phishing message, I discovered a bank transfer that I had not made or approved.",
+    "modelOutput": {
+      "typology": "phishing_credential",
+      "authorizationType": "unauthorized_access",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "unauthorized_access",
+    "expectedRecipients": [
+      "bank",
+      "cyber"
+    ],
+    "expectedUrgency": "critical",
+    "expectedTypology": "phishing_credential"
+  },
+  {
+    "id": "SYN-CLASS-012",
+    "synthetic": true,
+    "language": "hi",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "card",
+        "authorizedByVictim": false,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "फिशिंग संदेश आने के बाद मेरे कार्ड पर ऐसा भुगतान दिखा जिसकी मैंने मंजूरी नहीं दी थी।",
+    "modelOutput": {
+      "typology": "phishing_credential",
+      "authorizationType": "card_unauthorized",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "card_unauthorized",
+    "expectedRecipients": [
+      "bank",
+      "cyber"
+    ],
+    "expectedUrgency": "high",
+    "expectedTypology": "phishing_credential"
+  },
+  {
+    "id": "SYN-CLASS-013",
+    "synthetic": true,
+    "language": "en",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "upi",
+        "authorizedByVictim": null,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "The payment is visible in the app, but I cannot remember whether I approved it or someone else did.",
+    "modelOutput": {
+      "typology": "other",
+      "authorizationType": "unclear",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "unclear",
+    "expectedRecipients": [
+      "bank",
+      "cyber",
+      "payment-app"
+    ],
+    "expectedUrgency": "critical",
+    "expectedTypology": "other"
+  },
+  {
+    "id": "SYN-CLASS-014",
+    "synthetic": true,
+    "language": "hi",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "bank_transfer",
+        "authorizedByVictim": null,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "बैंक की सुरक्षा टीम कहने वाले का फोन आया था। भुगतान किसने शुरू किया, मुझे अभी स्पष्ट नहीं है।",
+    "modelOutput": {
+      "typology": "bank_impersonation",
+      "authorizationType": "unclear",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "unclear",
+    "expectedRecipients": [
+      "bank",
+      "cyber"
+    ],
+    "expectedUrgency": "critical",
+    "expectedTypology": "bank_impersonation"
+  },
+  {
+    "id": "SYN-CLASS-015",
+    "synthetic": true,
+    "language": "en",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "bank_transfer",
+        "authorizedByVictim": null,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "I approved one investment payment, but another payment appeared too. I am unsure which transaction this report concerns.",
+    "modelOutput": {
+      "typology": "investment",
+      "authorizationType": "unclear",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "unclear",
+    "expectedRecipients": [
+      "bank",
+      "cyber"
+    ],
+    "expectedUrgency": "critical",
+    "expectedTypology": "investment"
+  },
+  {
+    "id": "SYN-CLASS-016",
+    "synthetic": true,
+    "language": "hi",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "upi",
+        "authorizedByVictim": false,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "मेरे बैंक का कर्मचारी होने का दावा करके खाते तक पहुंच बनाई गई। बाद में किसी और ने UPI भुगतान किया; मैंने मंजूरी नहीं दी।",
+    "modelOutput": {
+      "typology": "bank_impersonation",
+      "authorizationType": "unauthorized_access",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "unauthorized_access",
+    "expectedRecipients": [
+      "bank",
+      "cyber",
+      "payment-app"
+    ],
+    "expectedUrgency": "critical",
+    "expectedTypology": "bank_impersonation"
+  },
+  {
+    "id": "SYN-CLASS-017",
+    "synthetic": true,
+    "language": "en",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "card",
+        "authorizedByVictim": false,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "I discovered an unauthorized card purchase, but I do not know how anyone got access.",
+    "modelOutput": {
+      "typology": "other",
+      "authorizationType": "card_unauthorized",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "card_unauthorized",
+    "expectedRecipients": [
+      "bank",
+      "cyber"
+    ],
+    "expectedUrgency": "high",
+    "expectedTypology": "other"
+  },
+  {
+    "id": "SYN-CLASS-018",
+    "synthetic": true,
+    "language": "hi",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "cash",
+        "authorizedByVictim": true,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "किराये के कमरे का नकली प्रस्ताव मिला। मैंने खुद नकद जमा रकम दी थी।",
+    "modelOutput": {
+      "typology": "rental",
+      "authorizationType": "authorized_manipulated",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "authorized_manipulated",
+    "expectedRecipients": [
+      "bank",
+      "cyber"
+    ],
+    "expectedUrgency": "high",
+    "expectedTypology": "rental"
+  },
+  {
+    "id": "SYN-CLASS-019",
+    "synthetic": true,
+    "language": "en",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "card",
+        "authorizedByVictim": true,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "I made a card payment to a marketplace seller. The promised item never arrived.",
+    "modelOutput": {
+      "typology": "marketplace",
+      "authorizationType": "authorized_manipulated",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "authorized_manipulated",
+    "expectedRecipients": [
+      "bank",
+      "cyber"
+    ],
+    "expectedUrgency": "high",
+    "expectedTypology": "marketplace"
+  },
+  {
+    "id": "SYN-CLASS-020",
+    "synthetic": true,
+    "language": "hi",
+    "facts": {
+      "country": {
+        "value": "IN",
+        "provenance": {
+          "source": "selected"
+        }
+      },
+      "payment": {
+        "method": "other",
+        "authorizedByVictim": null,
+        "timestamp": "2026-10-14T05:00:00Z",
+        "amount": {
+          "value": "100",
+          "currency": "INR"
+        }
+      },
+      "contact": {
+        "channel": "phone"
+      },
+      "ongoingContact": false
+    },
+    "narration": "मुझे एक भुगतान मिला है पर मैं नहीं बता सकता कि मैंने उसे मंजूर किया था या किस माध्यम से हुआ था।",
+    "modelOutput": {
+      "typology": "other",
+      "authorizationType": "unclear",
+      "authorizationRationale": "Supplied fixture facts only.",
+      "urgency": {
+        "level": "normal",
+        "reason": "Overwritten."
+      },
+      "confidence": 0.9,
+      "fundsLikelyInSystem": "yes"
+    },
+    "expectedAuthorization": "unclear",
+    "expectedRecipients": [
+      "bank",
+      "cyber"
+    ],
+    "expectedUrgency": "high",
+    "expectedTypology": "other"
+  }
+]

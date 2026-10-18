@@ -1,0 +1,26 @@
+.related-cases {
+  min-width: 0;
+}
+.related-cases code {
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+.related-list {
+  padding: 0;
+  list-style: none;
+}
+.related-list > li {
+  border-block-start: 1px solid var(--line, #b7b7b7);
+  padding-block: 1rem;
+}
+.related-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.related-actions button {
+  min-height: 44px;
+}
+.related-cases ul {
+  overflow-wrap: anywhere;
+}

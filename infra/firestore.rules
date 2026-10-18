@@ -1,0 +1,93 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function role() { return signedIn() ? request.auth.token.get('role', '') : ''; }
+    function victim() {
+      return signedIn() && (role() == 'victim' ||
+        (role() == '' && request.auth.token.get('firebase', {}).get('sign_in_provider', '') == 'anonymous'));
+    }
+    function activeCase(data) {
+      return data.get('accessExpiresAtMs', null) is int &&
+        request.time < timestamp.value(data.accessExpiresAtMs) &&
+        !data.get('deleting', false) && !data.get('deleted', false);
+    }
+    function ownsCase(caseId) {
+      let data = get(/databases/$(database)/documents/cases/$(caseId)).data;
+      return victim() && data.victimUid == request.auth.uid && activeCase(data);
+    }
+    function orgMember(orgId) {
+      return signedIn() && orgId != '' && request.auth.token.get('orgId', '') == orgId;
+    }
+    function reviewerOf(orgId) { return role() == 'reviewer' && orgMember(orgId); }
+
+    match /cases/{caseId} {
+      allow read: if victim() && resource.data.victimUid == request.auth.uid && activeCase(resource.data);
+      allow write: if false;
+      match /{collection}/{documentId} {
+        allow read: if collection in ['evidence', 'transcript', 'packets', 'events', 'pipeline', 'plans'] && ownsCase(caseId);
+        allow write: if false;
+        match /versions/{versionId} {
+          allow read: if collection in ['packets', 'plans'] && ownsCase(caseId);
+          allow write: if false;
+        }
+      }
+    }
+    // These documents are created as recipient-scoped projections by trusted servers.
+    // An addressed packet never grants receiver access to the full victim case.
+    match /receiverViews/{orgId}/cases/{caseId} {
+      allow read: if role() == 'receiver' && orgMember(orgId) && activeCase(resource.data);
+      allow write: if false;
+      match /{collection}/{documentId} {
+        allow read: if collection in ['packets', 'evidence', 'events'] && role() == 'receiver' && orgMember(orgId)
+          && activeCase(get(/databases/$(database)/documents/receiverViews/$(orgId)/cases/$(caseId)).data);
+        allow write: if false;
+      }
+    }
+    match /notifications/{notificationId} {
+      allow read: if signedIn() && resource.data.uid == request.auth.uid;
+      allow update: if signedIn() && resource.data.uid == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['readAt'])
+        && request.resource.data.readAt == request.time;
+      allow create, delete: if false;
+    }
+    match /jobs/{jobId} {
+      allow read: if signedIn() && resource.data.victimUid == request.auth.uid;
+      allow write: if false;
+    }
+    match /users/{uid} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      allow write: if false;
+    }
+    match /orgs/{orgId} {
+      allow read: if orgMember(orgId);
+      allow write: if false;
+    }
+    match /sources/{sourceId} {
+      allow read: if reviewerOf(resource.data.orgId);
+      allow write: if false;
+      match /passages/{passageId} {
+        allow read: if reviewerOf(get(/databases/$(database)/documents/sources/$(sourceId)).data.orgId);
+        allow write: if false;
+      }
+    }
+    match /packBuilds/{buildId} {
+      allow read: if reviewerOf(resource.data.orgId);
+      allow write: if false;
+    }
+    match /packs/{packId}/versions/{versionId} {
+      allow read: if reviewerOf(resource.data.orgId);
+      allow write: if false;
+    }
+    // Published projections exclude review notes/private source metadata.
+    match /publishedPacks/{packId} {
+      allow read: if resource.data.status == 'published';
+      allow write: if false;
+      match /versions/{versionId} {
+        allow read: if resource.data.status == 'published';
+        allow write: if false;
+      }
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

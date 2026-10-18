@@ -1,0 +1,1182 @@
+[
+  {
+    "id": "SYN-INTAKE-001",
+    "synthetic": true,
+    "language": "en",
+    "text": "I am in India. I sent INR 45000 by UPI at 2026-10-14T06:30:00Z. A fake bank caller phoned me. Contact has stopped.",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "IN",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "upi",
+          "amount": {
+            "value": "45000",
+            "currency": "INR"
+          },
+          "timestamp": "2026-10-14T06:30:00Z"
+        },
+        "contact": {
+          "channel": "phone"
+        },
+        "ongoingContact": false
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 01. Amount INR 45000. Ref TEST0000000001. Payee demo01@fakebank. Time 2026-10-14T06:30:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000001",
+          "normalizedValue": "TEST0000000001",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo01@fakebank",
+          "normalizedValue": "demo01@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "45000",
+          "normalizedValue": "45000",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-002",
+    "synthetic": true,
+    "language": "en",
+    "text": "I am in the UK. I sent GBP 3000 by bank transfer at 2026-10-11T10:00:00Z. An investment contact emailed me. We are no longer in contact.",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "GB",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "bank_transfer",
+          "amount": {
+            "value": "3000",
+            "currency": "GBP"
+          },
+          "timestamp": "2026-10-11T10:00:00Z"
+        },
+        "contact": {
+          "channel": "email"
+        },
+        "ongoingContact": false
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 02. Amount GBP 3000. Ref TEST0000000002. Payee demo02@fakebank. Time 2026-10-11T10:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000002",
+          "normalizedValue": "TEST0000000002",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo02@fakebank",
+          "normalizedValue": "demo02@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "3000",
+          "normalizedValue": "3000",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-003",
+    "synthetic": true,
+    "language": "en",
+    "text": "I am in India. A job contact on WhatsApp got me to pay INR 2000 via UPI at 2026-10-14T05:00:00Z. They still message me.",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "IN",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "upi",
+          "amount": {
+            "value": "2000",
+            "currency": "INR"
+          },
+          "timestamp": "2026-10-14T05:00:00Z"
+        },
+        "contact": {
+          "channel": "whatsapp"
+        },
+        "ongoingContact": true
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 03. Amount INR 2000. Ref TEST0000000003. Payee demo03@fakebank. Time 2026-10-14T05:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000003",
+          "normalizedValue": "TEST0000000003",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo03@fakebank",
+          "normalizedValue": "demo03@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "2000",
+          "normalizedValue": "2000",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-004",
+    "synthetic": true,
+    "language": "en",
+    "text": "I am in Singapore. I paid SGD 80 with a card at 2026-10-13T12:00:00Z after an SMS. Contact has stopped.",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "SG",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "card",
+          "amount": {
+            "value": "80",
+            "currency": "SGD"
+          },
+          "timestamp": "2026-10-13T12:00:00Z"
+        },
+        "contact": {
+          "channel": "sms"
+        },
+        "ongoingContact": false
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 04. Amount SGD 80. Ref TEST0000000004. Payee demo04@fakebank. Time 2026-10-13T12:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000004",
+          "normalizedValue": "TEST0000000004",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo04@fakebank",
+          "normalizedValue": "demo04@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "80",
+          "normalizedValue": "80",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-005",
+    "synthetic": true,
+    "language": "en",
+    "text": "I am in Australia. I transferred AUD 600 from my wallet at 2026-10-14T02:00:00Z to a marketplace contact. We stopped contact.",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "AU",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "wallet",
+          "amount": {
+            "value": "600",
+            "currency": "AUD"
+          },
+          "timestamp": "2026-10-14T02:00:00Z"
+        },
+        "contact": {
+          "channel": "marketplace"
+        },
+        "ongoingContact": false
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 05. Amount AUD 600. Ref TEST0000000005. Payee demo05@fakebank. Time 2026-10-14T02:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000005",
+          "normalizedValue": "TEST0000000005",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo05@fakebank",
+          "normalizedValue": "demo05@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "600",
+          "normalizedValue": "600",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-006",
+    "synthetic": true,
+    "language": "en",
+    "text": "I am in India. I sent INR 7500 by bank transfer at 2026-10-14T01:00:00Z. A caller claimed to be police. They are still calling.",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "IN",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "bank_transfer",
+          "amount": {
+            "value": "7500",
+            "currency": "INR"
+          },
+          "timestamp": "2026-10-14T01:00:00Z"
+        },
+        "contact": {
+          "channel": "phone"
+        },
+        "ongoingContact": true
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 06. Amount INR 7500. Ref TEST0000000006. Payee demo06@fakebank. Time 2026-10-14T01:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000006",
+          "normalizedValue": "TEST0000000006",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo06@fakebank",
+          "normalizedValue": "demo06@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "7500",
+          "normalizedValue": "7500",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-007",
+    "synthetic": true,
+    "language": "en",
+    "text": "I am in the UK. I sent GBP 150 in cryptocurrency at 2026-10-12T16:00:00Z to someone on social media. Contact has stopped.",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "GB",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "crypto",
+          "amount": {
+            "value": "150",
+            "currency": "GBP"
+          },
+          "timestamp": "2026-10-12T16:00:00Z"
+        },
+        "contact": {
+          "channel": "social"
+        },
+        "ongoingContact": false
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 07. Amount GBP 150. Ref TEST0000000007. Payee demo07@fakebank. Time 2026-10-12T16:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000007",
+          "normalizedValue": "TEST0000000007",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo07@fakebank",
+          "normalizedValue": "demo07@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "150",
+          "normalizedValue": "150",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-008",
+    "synthetic": true,
+    "language": "en",
+    "text": "I am in India. I paid INR 500 cash at 2026-10-13T10:00:00Z after an email rental offer. I am still in contact.",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "IN",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "cash",
+          "amount": {
+            "value": "500",
+            "currency": "INR"
+          },
+          "timestamp": "2026-10-13T10:00:00Z"
+        },
+        "contact": {
+          "channel": "email"
+        },
+        "ongoingContact": true
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 08. Amount INR 500. Ref TEST0000000008. Payee demo08@fakebank. Time 2026-10-13T10:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000008",
+          "normalizedValue": "TEST0000000008",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo08@fakebank",
+          "normalizedValue": "demo08@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "500",
+          "normalizedValue": "500",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-009",
+    "synthetic": true,
+    "language": "en",
+    "text": "I am in India. I sent INR 1000 by UPI at 2026-10-14T04:30:00Z after a recovery-service SMS. I stopped contact.",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "IN",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "upi",
+          "amount": {
+            "value": "1000",
+            "currency": "INR"
+          },
+          "timestamp": "2026-10-14T04:30:00Z"
+        },
+        "contact": {
+          "channel": "sms"
+        },
+        "ongoingContact": false
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 09. Amount INR 1000. Ref TEST0000000009. Payee demo09@fakebank. Time 2026-10-14T04:30:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000009",
+          "normalizedValue": "TEST0000000009",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo09@fakebank",
+          "normalizedValue": "demo09@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "1000",
+          "normalizedValue": "1000",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-010",
+    "synthetic": true,
+    "language": "en",
+    "text": "I am in the UK. I used a card to pay GBP 99 at 2026-10-13T15:00:00Z after a website offer. Contact has stopped.",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "GB",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "card",
+          "amount": {
+            "value": "99",
+            "currency": "GBP"
+          },
+          "timestamp": "2026-10-13T15:00:00Z"
+        },
+        "contact": {
+          "channel": "website"
+        },
+        "ongoingContact": false
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 10. Amount GBP 99. Ref TEST0000000010. Payee demo10@fakebank. Time 2026-10-13T15:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000010",
+          "normalizedValue": "TEST0000000010",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo10@fakebank",
+          "normalizedValue": "demo10@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "99",
+          "normalizedValue": "99",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-011",
+    "synthetic": true,
+    "language": "hi",
+    "text": "मैं भारत में हूँ। मैंने 2026-10-14T06:30:00Z पर UPI से INR 45000 भेजे। बैंक का दावा करने वाले ने फोन किया था। अब संपर्क बंद है।",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "IN",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "upi",
+          "amount": {
+            "value": "45000",
+            "currency": "INR"
+          },
+          "timestamp": "2026-10-14T06:30:00Z"
+        },
+        "contact": {
+          "channel": "phone"
+        },
+        "ongoingContact": false
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 11. Amount INR 45000. Ref TEST0000000011. Payee demo11@fakebank. Time 2026-10-14T06:30:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000011",
+          "normalizedValue": "TEST0000000011",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo11@fakebank",
+          "normalizedValue": "demo11@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "45000",
+          "normalizedValue": "45000",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-012",
+    "synthetic": true,
+    "language": "hi",
+    "text": "मैं ब्रिटेन में हूँ। मैंने 2026-10-11T10:00:00Z पर बैंक ट्रांसफर से GBP 3000 भेजे। निवेश का ईमेल आया था। अब संपर्क नहीं है।",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "GB",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "bank_transfer",
+          "amount": {
+            "value": "3000",
+            "currency": "GBP"
+          },
+          "timestamp": "2026-10-11T10:00:00Z"
+        },
+        "contact": {
+          "channel": "email"
+        },
+        "ongoingContact": false
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 12. Amount GBP 3000. Ref TEST0000000012. Payee demo12@fakebank. Time 2026-10-11T10:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000012",
+          "normalizedValue": "TEST0000000012",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo12@fakebank",
+          "normalizedValue": "demo12@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "3000",
+          "normalizedValue": "3000",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-013",
+    "synthetic": true,
+    "language": "hi",
+    "text": "मैं भारत में हूँ। नौकरी के लिए WhatsApp पर बात हुई। मैंने 2026-10-14T05:00:00Z पर UPI से INR 2000 भेजे। अभी संदेश आ रहे हैं।",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "IN",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "upi",
+          "amount": {
+            "value": "2000",
+            "currency": "INR"
+          },
+          "timestamp": "2026-10-14T05:00:00Z"
+        },
+        "contact": {
+          "channel": "whatsapp"
+        },
+        "ongoingContact": true
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 13. Amount INR 2000. Ref TEST0000000013. Payee demo13@fakebank. Time 2026-10-14T05:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000013",
+          "normalizedValue": "TEST0000000013",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo13@fakebank",
+          "normalizedValue": "demo13@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "2000",
+          "normalizedValue": "2000",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-014",
+    "synthetic": true,
+    "language": "hi",
+    "text": "मैं सिंगापुर में हूँ। SMS के बाद मैंने 2026-10-13T12:00:00Z पर कार्ड से SGD 80 दिए। संपर्क बंद है।",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "SG",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "card",
+          "amount": {
+            "value": "80",
+            "currency": "SGD"
+          },
+          "timestamp": "2026-10-13T12:00:00Z"
+        },
+        "contact": {
+          "channel": "sms"
+        },
+        "ongoingContact": false
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 14. Amount SGD 80. Ref TEST0000000014. Payee demo14@fakebank. Time 2026-10-13T12:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000014",
+          "normalizedValue": "TEST0000000014",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo14@fakebank",
+          "normalizedValue": "demo14@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "80",
+          "normalizedValue": "80",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-015",
+    "synthetic": true,
+    "language": "hi",
+    "text": "मैं ऑस्ट्रेलिया में हूँ। बाजार की वेबसाइट पर बात हुई। 2026-10-14T02:00:00Z पर वॉलेट से AUD 600 भेजे। संपर्क बंद है।",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "AU",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "wallet",
+          "amount": {
+            "value": "600",
+            "currency": "AUD"
+          },
+          "timestamp": "2026-10-14T02:00:00Z"
+        },
+        "contact": {
+          "channel": "marketplace"
+        },
+        "ongoingContact": false
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 15. Amount AUD 600. Ref TEST0000000015. Payee demo15@fakebank. Time 2026-10-14T02:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000015",
+          "normalizedValue": "TEST0000000015",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo15@fakebank",
+          "normalizedValue": "demo15@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "600",
+          "normalizedValue": "600",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-016",
+    "synthetic": true,
+    "language": "hi",
+    "text": "मैं भारत में हूँ। पुलिस बताने वाले का फोन आया। 2026-10-14T01:00:00Z पर बैंक ट्रांसफर से INR 7500 भेजे। अभी फोन आ रहे हैं।",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "IN",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "bank_transfer",
+          "amount": {
+            "value": "7500",
+            "currency": "INR"
+          },
+          "timestamp": "2026-10-14T01:00:00Z"
+        },
+        "contact": {
+          "channel": "phone"
+        },
+        "ongoingContact": true
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 16. Amount INR 7500. Ref TEST0000000016. Payee demo16@fakebank. Time 2026-10-14T01:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000016",
+          "normalizedValue": "TEST0000000016",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo16@fakebank",
+          "normalizedValue": "demo16@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "7500",
+          "normalizedValue": "7500",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-017",
+    "synthetic": true,
+    "language": "hi",
+    "text": "मैं ब्रिटेन में हूँ। सोशल मीडिया पर बात हुई। 2026-10-12T16:00:00Z पर क्रिप्टो से GBP 150 भेजे। संपर्क बंद है।",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "GB",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "crypto",
+          "amount": {
+            "value": "150",
+            "currency": "GBP"
+          },
+          "timestamp": "2026-10-12T16:00:00Z"
+        },
+        "contact": {
+          "channel": "social"
+        },
+        "ongoingContact": false
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 17. Amount GBP 150. Ref TEST0000000017. Payee demo17@fakebank. Time 2026-10-12T16:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000017",
+          "normalizedValue": "TEST0000000017",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo17@fakebank",
+          "normalizedValue": "demo17@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "150",
+          "normalizedValue": "150",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-018",
+    "synthetic": true,
+    "language": "hi",
+    "text": "मैं भारत में हूँ। किराये का ईमेल आया। 2026-10-13T10:00:00Z पर नकद INR 500 दिए। अभी संपर्क है।",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "IN",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "cash",
+          "amount": {
+            "value": "500",
+            "currency": "INR"
+          },
+          "timestamp": "2026-10-13T10:00:00Z"
+        },
+        "contact": {
+          "channel": "email"
+        },
+        "ongoingContact": true
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 18. Amount INR 500. Ref TEST0000000018. Payee demo18@fakebank. Time 2026-10-13T10:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000018",
+          "normalizedValue": "TEST0000000018",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo18@fakebank",
+          "normalizedValue": "demo18@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "500",
+          "normalizedValue": "500",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-019",
+    "synthetic": true,
+    "language": "hi",
+    "text": "मैं भारत में हूँ। पैसे वापस दिलाने का SMS आया। 2026-10-14T04:30:00Z पर UPI से INR 1000 भेजे। मैंने संपर्क बंद कर दिया।",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "IN",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "upi",
+          "amount": {
+            "value": "1000",
+            "currency": "INR"
+          },
+          "timestamp": "2026-10-14T04:30:00Z"
+        },
+        "contact": {
+          "channel": "sms"
+        },
+        "ongoingContact": false
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 19. Amount INR 1000. Ref TEST0000000019. Payee demo19@fakebank. Time 2026-10-14T04:30:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000019",
+          "normalizedValue": "TEST0000000019",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo19@fakebank",
+          "normalizedValue": "demo19@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "1000",
+          "normalizedValue": "1000",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  },
+  {
+    "id": "SYN-INTAKE-020",
+    "synthetic": true,
+    "language": "hi",
+    "text": "मैं ब्रिटेन में हूँ। वेबसाइट पर एक ऑफर मिला। 2026-10-13T15:00:00Z पर कार्ड से GBP 99 दिए। अब संपर्क नहीं है।",
+    "intake": {
+      "factsDelta": {
+        "country": {
+          "value": "GB",
+          "provenance": {
+            "source": "victim_statement"
+          }
+        },
+        "payment": {
+          "method": "card",
+          "amount": {
+            "value": "99",
+            "currency": "GBP"
+          },
+          "timestamp": "2026-10-13T15:00:00Z"
+        },
+        "contact": {
+          "channel": "website"
+        },
+        "ongoingContact": false
+      }
+    },
+    "evidenceText": "Synthetic Test Bank transfer receipt 20. Amount GBP 99. Ref TEST0000000020. Payee demo20@fakebank. Time 2026-10-13T15:00:00Z.",
+    "extraction": {
+      "documentType": "receipt",
+      "entities": [
+        {
+          "type": "transaction_ref",
+          "rawValue": "TEST0000000020",
+          "normalizedValue": "TEST0000000020",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "upi_id",
+          "rawValue": "demo20@fakebank",
+          "normalizedValue": "demo20@fakebank",
+          "role": "unknown",
+          "confidence": 0.95
+        },
+        {
+          "type": "amount",
+          "rawValue": "99",
+          "normalizedValue": "99",
+          "role": "unknown",
+          "confidence": 0.95
+        }
+      ],
+      "summary": "Synthetic transfer receipt.",
+      "confidence": 0.95,
+      "injectionSuspected": false,
+      "notes": ""
+    }
+  }
+]

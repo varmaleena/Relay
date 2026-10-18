@@ -1,0 +1,26 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function signedIn() { return request.auth != null; }
+    function ownsCase(uid, caseId) {
+      return signedIn() && request.auth.uid == uid &&
+        firestore.get(/databases/(default)/documents/cases/$(caseId)).data.victimUid == request.auth.uid;
+    }
+    match /evidence/{uid}/{caseId}/{fileName} {
+      allow read: if ownsCase(uid, caseId);
+      allow write: if false;
+    }
+    match /exports/{uid}/{caseId}/{fileName} {
+      allow read: if ownsCase(uid, caseId);
+      allow write: if false;
+    }
+    match /sources/{orgId}/{sourceId}/{fileName} {
+      allow read: if signedIn() && request.auth.token.get('role', '') == 'reviewer'
+        && request.auth.token.get('orgId', '') == orgId;
+      allow write: if false;
+    }
+    // Upload and scoped receiver previews use server-issued Google signed URLs.
+    // Rules do not replace server IAM, byte validation or signed URL expiry.
+    match /{allPaths=**} { allow read, write: if false; }
+  }
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "id": "uk-psr-app-consumer:bank-first",
+    "source_id": "uk-psr-app-consumer",
+    "text": "Contact your bank immediately if you think you've been scammed.",
+    "sha256": "d9e27fce0bfd5528f0d0d61cdb3182cecbcfac1b4d276dc148516e4ca56e0284",
+    "page": null,
+    "offsetStart": 6954,
+    "offsetEnd": 7017
+  },
+  {
+    "id": "uk-psr-app-consumer:scope",
+    "source_id": "uk-psr-app-consumer",
+    "text": "These protections start on 7 October 2024, applying to payments made on or after this date.\n\n\nHere’s what you need to know about these protections\n\n\n\n\nThe protections apply to individuals, microenterprises and charities.\n\n\n\n\nAll types of payment firms, including bigger high street banks but also smaller payment firms, building societies, and e-money firms, among others, will be brought into the new reimbursement arrangements. Through our measures, these firms will be incentivised to stop fraud from happening in the first place – including, for the first time, those firms on the receiving end that bank the fraudsters. The arrangements don’t include credit unions, municipal banks and national savings banks.\n\n\nThese measures apply to UK bank transfers – so when money is moved from one UK bank account to another over the Faster Payments system or CHAPS. Other payment types, including card, cash, and cheque have their own protections in place.",
+    "sha256": "9c392968631294d6868c0a89ce01938e0044837d648a20a9e75548a1a0f7ff73",
+    "page": null,
+    "offsetStart": 4672,
+    "offsetEnd": 5624
+  },
+  {
+    "id": "uk-psr-app-consumer:exceptions",
+    "source_id": "uk-psr-app-consumer",
+    "text": "You won’t get your money back if you’re found to have been complicit in the fraud or grossly negligent. Gross negligence is a high bar and this exception does not apply to vulnerable consumers.",
+    "sha256": "1d800cedf77fb8fb5754950197cb4b99cbd8ffbaa7a928628f080b9e12f4fdcb",
+    "page": null,
+    "offsetStart": 6057,
+    "offsetEnd": 6250
+  },
+  {
+    "id": "uk-psr-app-consumer:timing",
+    "source_id": "uk-psr-app-consumer",
+    "text": "Once you’ve contacted your bank, they will be able to advise and support you on the reimbursement claim process. You should report it as soon as possible, and within 13 months of making the fraudulent payment. Throughout the process, you should:\n\n\n\nRespond to any requests for information from your bank promptly - after checking that the request is genuine\n\n\nReport the details to the police or consent to your bank reporting to the police on your behalf",
+    "sha256": "a75a927bb7a8eec287df3f13fb528dbd8814c65dd390c529586335aea391668f",
+    "page": null,
+    "offsetStart": 7021,
+    "offsetEnd": 7476
+  },
+  {
+    "id": "uk-psr-app-consumer:business-clock",
+    "source_id": "uk-psr-app-consumer",
+    "text": "From 7 October, you can expect to be reimbursed within 5 business days of making your claim.\n\n\nWhere payment firms need more time to gather information to help them with their assessment, they can ‘stop the clock’. For example, firms may need more information from victims to assess their vulnerability to the scam. But to make sure there aren’t any delays in reimbursement, the payment firm must arrive at an outcome within 35 business days.",
+    "sha256": "d2bce636b175c745211b9459a3072516ff2398151736ab9ee95fe38d7c14c6ae",
+    "page": null,
+    "offsetStart": 7532,
+    "offsetEnd": 7974
+  },
+  {
+    "id": "uk-psr-app-consumer:excess",
+    "source_id": "uk-psr-app-consumer",
+    "text": "There is an optional £100 excess that firms can apply (individual firms may choose to apply the excess, choose an alternative excess value up to the maximum £100 or not to use it at all). This excess cannot be applied to vulnerable consumers.",
+    "sha256": "7aad3e86ffe1b664d79c919cc4e1a9a7fd83e6067f14495630afeb9731ebd336",
+    "page": null,
+    "offsetStart": 7977,
+    "offsetEnd": 8219
+  },
+  {
+    "id": "uk-psr-app-consumer:maximum",
+    "source_id": "uk-psr-app-consumer",
+    "text": "The maximum amount of money people can claim is £85,000 which will cover over 99% of claims. Individual firms may choose to reimburse more than £85,000.",
+    "sha256": "97694726e231b9d6170eb1987f1c96ce68cb2ead431ba63589d12575c8cf15d6",
+    "page": null,
+    "offsetStart": 8222,
+    "offsetEnd": 8374
+  },
+  {
+    "id": "uk-psr-app-consumer:bank-complaint",
+    "source_id": "uk-psr-app-consumer",
+    "text": "Your bank will investigate the issue and get back to you to let you know the decision they have made. If you are unhappy with their response, you can take the matter further by referring it to the Financial Ombudsman Service. You can contact The Financial Ombudsman Service directly to register your complaint.",
+    "sha256": "1bb966db52ddd3294d604c4b572e54afa39ee4b36ec499bd999b7b87cea398d7",
+    "page": null,
+    "offsetStart": 8993,
+    "offsetEnd": 9303
+  },
+  {
+    "id": "uk-fos-app-consumer:bank-first",
+    "source_id": "uk-fos-app-consumer",
+    "text": "Contact your bank or payment services provider immediately",
+    "sha256": "f1248bed635f1a08484c17038b399d4651a56e4d2587149412c2f4e0608bda37",
+    "page": null,
+    "offsetStart": 3498,
+    "offsetEnd": 3556
+  },
+  {
+    "id": "uk-fos-app-consumer:report-fraud",
+    "source_id": "uk-fos-app-consumer",
+    "text": "Report the scam to Report Fraud – the UK’s national reporting centre for fraud and cybercrime",
+    "sha256": "ff7605571d9f459bfacd1fa6c43c4be1a4efb5d8af06893b157c1e33368e6c99",
+    "page": null,
+    "offsetStart": 3587,
+    "offsetEnd": 3680
+  },
+  {
+    "id": "uk-fos-app-consumer:retain-evidence",
+    "source_id": "uk-fos-app-consumer",
+    "text": "Keep records of all contact and correspondence between you and the scammer. This will be useful when you ask your bank – or payment service provider – to reimburse you and if you need to bring a complaint to our service later.",
+    "sha256": "39d41ae3aa9735e77bd8cb152e9fca02e829c76e876aa65431aa7c138b6fe28b",
+    "page": null,
+    "offsetStart": 3683,
+    "offsetEnd": 3909
+  },
+  {
+    "id": "uk-fos-app-consumer:who-covered",
+    "source_id": "uk-fos-app-consumer",
+    "text": "These rules on APP fraud cover:\n\n\n\nindividuals\n\n\ncharities with an annual income of less than £1 million, and\n\n\nmicro-enterprises – not larger businesses",
+    "sha256": "f0e714c90ca238e4beae0cf3dc64ce97797a29e96ae5310e445379ece68af97d",
+    "page": null,
+    "offsetStart": 6175,
+    "offsetEnd": 6328
+  },
+  {
+    "id": "uk-fos-app-consumer:complaint-first",
+    "source_id": "uk-fos-app-consumer",
+    "text": "Before bringing your complaint to us, complain to the company involved. They must get back to you within 15 days – either with a response to your complaint, or to explain why they can’t yet give you a response. They then have to send you a response within 35 days. If you’re not happy with this response – or they don’t reply in time – you can bring your complaint to us.",
+    "sha256": "ad75788b9803c07e6d135f24714f23d829bf615213b11d2d097e363bd55d225f",
+    "page": null,
+    "offsetStart": 6714,
+    "offsetEnd": 7085
+  },
+  {
+    "id": "uk-fos-app-consumer:app-scope",
+    "source_id": "uk-fos-app-consumer",
+    "text": "If you were tricked into transferring money to someone else’s account in the UK – on or after 7 October 2024\n \n \n\n \n\n \n\n\nNew rules – the Faster Payments Scheme (FPS) and the CHAPS reimbursement rules – came into force on 7 October 2024. These rules cover most transfers between UK bank and other accounts.\n\n\nThe rules require banks and other payment service providers to reimburse you up to a maximum of £85,000 if you're the victim of a scam. However, if you lost more than £85,000, we can still look at your case.\n\n\nYou may be covered by the rules if you:\n\n\n\nmade a transfer as part of a scam on or after 7 October 2024\n\n\nmade the transfer to another UK account\n\n\ntell your bank or payment service provider about the scam no more than 13 months after the last payment you made",
+    "sha256": "d8d5d79be4628a8de51b5b1fb4681f24deb36a0cccf4d809d018236cdc158a46",
+    "page": null,
+    "offsetStart": 9004,
+    "offsetEnd": 9782
+  },
+  {
+    "id": "uk-fos-app-consumer:exceptions",
+    "source_id": "uk-fos-app-consumer",
+    "text": "If the rules apply and you were particularly vulnerable to the specific type of APP scam, your bank or payment service provider must reimburse you.\n\n\nIn all other cases, if your bank or payment service provider turns down your claim for reimbursement, they must show that you acted with ‘gross negligence’. But ‘gross negligence’ is much more than not being careful.\n\n\nAnd it will be up to them to prove that you acted with gross negligence. It won’t be down to you to show you that didn’t.\n\n\nTo prove this, they will have to show that you failed to do one or more of the ‘requirements’ set out in the PSR’s guidance under paragraph 1.3.\n\n\nIf your bank or payment service provider does decide to reimburse you it may deduct an excess of up to £100 for each scam claim.",
+    "sha256": "46ddece83645a30d26c2638227526d3f18d71fbc2fabab6174f7b4bdd653950c",
+    "page": null,
+    "offsetStart": 9786,
+    "offsetEnd": 10554
+  },
+  {
+    "id": "uk-fos-app-consumer:outside-app-scope",
+    "source_id": "uk-fos-app-consumer",
+    "text": "If you were tricked you into making another type of payment where reimbursement rules don't apply\n \n \n\n \n\n \n\n\nWe can still help you.\n\n\nYou may have made a:\n\n\n\npayment to an account in your own name – sometimes called a 'me-to-me scam' or 'multi-stage' scam - possibly to an account with a different bank or to a cryptocurrency account\n\n\ncard payment to a genuine merchant – for example, for the purchase of cryptocurrency\n\n\npayment to someone overseas\n\n\ncash withdrawal to give to someone who turned out to be a scammer\n\n\nanother type of payment or payments to several accounts\n\n\n\nWe’ll look at whether your bank – or payment service provider – did enough to:\n\n\n\nprevent you falling victim to fraud or \n\n\nget your money back\n\n\n\nWe’ll look at whether they should have spotted what might have looked like suspicious payments. And if they did, we’ll want to know what they did to warn you that your payments might be part of a scam.\n\n\nWe’ll also want to understand:\n\n\n\nhow the scam unfolded and what the scammer told you\n\n\nwhat steps the bank or payment service provider took to try and recover your money\n\n\nand, in some cases, the part played by any other firms that were involved in the scam – for example, any other of your account providers\n\n\n\nIf we find that the business could, and should, have prevented you from falling victim to a scam, we may ask them to reimburse you – in full or in part.",
+    "sha256": "bcf8b3844eedefede79c0b610359a36f9749a3d98894e6fdcb81199c5c67f50a",
+    "page": null,
+    "offsetStart": 11804,
+    "offsetEnd": 13201
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "uk-psr-app-consumer",
+    "title": "APP fraud reimbursement protections",
+    "publisher": "Payment Systems Regulator",
+    "url": "https://www.psr.org.uk/information-for-consumers/app-fraud-reimbursement-protections/",
+    "retrieved_at": "2026-10-17T17:53:12.230545+00:00",
+    "sha256": "2bdd4fc4083e2a16ae7b0b76df53768ce3f67850811a837cccc9345931fde983",
+    "snapshot": "uk-psr-app-consumer.html",
+    "extraction": "uk-psr-app-consumer.txt",
+    "extraction_sha256": "2d2dc917cd7f96f6ae0028f64abd72d72136b1b1ad3898fea416b16d5fa91220",
+    "content_type": "text/html",
+    "http_status": 200,
+    "extraction_method": "HTMLParser visible text; script/style/iframe/object/svg excluded"
+  },
+  {
+    "id": "uk-fos-app-consumer",
+    "title": "Scams where you have been tricked into making a payment",
+    "publisher": "Financial Ombudsman Service",
+    "url": "https://www.financial-ombudsman.org.uk/consumers/complaints-can-help/fraud-scams/scams-youve-tricked-making-payment",
+    "retrieved_at": "2026-10-17T17:53:13.687099+00:00",
+    "sha256": "08a605d86c0b8e69c261b5f482fe7ceb4b648e4d4dfcd9420fa6469ae3bab3db",
+    "snapshot": "uk-fos-app-consumer.html",
+    "extraction": "uk-fos-app-consumer.txt",
+    "extraction_sha256": "8f1d703d1a531e57b435d84814082ab0a334d76ee49141d3d3e1b157cb138020",
+    "content_type": "text/html",
+    "http_status": 200,
+    "extraction_method": "HTMLParser visible text; script/style/iframe/object/svg excluded"
+  }
+]

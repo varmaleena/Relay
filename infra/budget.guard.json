@@ -1,0 +1,35 @@
+{
+  "status": "cloud-alert-created-by-root; application-guards-design-only",
+  "currency": "INR",
+  "targetAmount": 1000,
+  "hardCap": false,
+  "scope": "work-511514 only, project filtered, excluding other billing-account projects",
+  "thresholds": [
+    0.5,
+    0.8,
+    1.0
+  ],
+  "notifications": "Default billing account administrators/users. No external recipients added.",
+  "period": "Selected operating window 2026-10-13 inclusive through 2026-10-19 exclusive; competition submission cutoff remains unverified.",
+  "actions": {
+    "50percent": "Review model usage and infrastructure charges.",
+    "80percent": "Pause bulk evaluations/live voice and allow only deliberate smoke calls.",
+    "100percent": "Pause discretionary cloud execution; review accrued charges before further runs."
+  },
+  "technicalGuards": {
+    "smokeJobTasks": 1,
+    "smokeJobParallelism": 1,
+    "smokeJobRetries": 0,
+    "smokeJobTimeoutSeconds": 120,
+    "smokeModelRequests": 1,
+    "smokeMaxOutputTokens": 256,
+    "scheduledTriggers": false,
+    "publicEndpoints": false,
+    "alwaysOnInstances": 0,
+    "bulkEvaluations": false,
+    "futureBigQueryMaximumBytesBilledRequired": true,
+    "futurePerModelAndSessionBudgetsRequired": true
+  },
+  "limits": "Billing alerts lag usage and do not stop spending. Cloud Run max instances and app token guards are bounds, not billing caps. No automatic billing-account disable or cloud resource deletion.",
+  "cloudEvidence": "docs/planning/CLOUD_EXECUTION_RECORD.md"
+}

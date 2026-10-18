@@ -1,0 +1,562 @@
+{
+  "reportVersion": "captured-evaluation.v1",
+  "synthetic": true,
+  "datasetVersion": "synthetic-templates.v1",
+  "datasetSha256": "01687b303189ec0078dd1f39522a610207d139454aff89b5ae585dfd395e7015",
+  "captureSha256": "0f918bc9dc517dc66dde053dffaa60a7efa853144dbdf54698cba3a3e96f30ea",
+  "createdAt": "2026-10-18T06:01:19.684410+00:00",
+  "commitSha": "uncommitted-offline-eval-foundation",
+  "systems": [
+    {
+      "system": "relay",
+      "status": "not_measured",
+      "n": 0,
+      "metrics": []
+    },
+    {
+      "system": "baseline",
+      "status": "not_measured",
+      "n": 0,
+      "metrics": []
+    },
+    {
+      "system": "ablation_rules",
+      "status": "not_measured",
+      "n": 0,
+      "metrics": []
+    },
+    {
+      "system": "ablation_no_verifier",
+      "status": "not_measured",
+      "n": 0,
+      "metrics": []
+    },
+    {
+      "system": "ablation_no_pack",
+      "status": "not_measured",
+      "n": 0,
+      "metrics": []
+    },
+    {
+      "system": "offline_fixture",
+      "status": "measured_captures",
+      "executionMode": "captured_offline",
+      "modelId": "none-canned-evaluator-fixture",
+      "promptVersion": "none-canned-evaluator-fixture.v1",
+      "configHash": "6c3a55b695f4838b3136f3007405668332f7f05a323e74fa3770ce2c7b5dbff5",
+      "budgetMs": 1,
+      "repeats": 1,
+      "n": 20,
+      "nCases": 20,
+      "observedAttempts": 19,
+      "outcomes": {
+        "completed": 17,
+        "missing": 1,
+        "timeout": 2
+      },
+      "behaviorScorerVersion": "canned-fixture-annotations.v1",
+      "metrics": [
+        {
+          "metric": "typology_accuracy",
+          "value": 0.85,
+          "ciLow": 0.6395811352592431,
+          "ciHigh": 0.9476312541037835,
+          "n": 20,
+          "successes": 17,
+          "ciMethod": "wilson95",
+          "status": "measured"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 0.8,
+          "ciLow": 0.5839825677481064,
+          "ciHigh": 0.919342337420202,
+          "n": 20,
+          "successes": 16,
+          "ciMethod": "wilson95",
+          "status": "measured"
+        },
+        {
+          "metric": "entity_f1",
+          "value": 0.9174311926605505,
+          "ciLow": 0.8041237113402062,
+          "ciHigh": 0.9957446808510638,
+          "n": 118,
+          "nCases": 20,
+          "truePositive": 100,
+          "falsePositive": 0,
+          "falseNegative": 18,
+          "status": "measured",
+          "ciMethod": "case_cluster_percentile_bootstrap95",
+          "bootstrapSamples": 1000,
+          "bootstrapSeed": 20261018
+        },
+        {
+          "metric": "recipient_recall",
+          "value": 0.8285714285714286,
+          "ciLow": 0.6731771770095504,
+          "ciHigh": 0.9189735994629841,
+          "n": 35,
+          "successes": 29,
+          "ciMethod": "wilson95",
+          "status": "measured"
+        },
+        {
+          "metric": "recipient_precision",
+          "value": 1.0,
+          "ciLow": 0.8830302015002593,
+          "ciHigh": 1.0,
+          "n": 29,
+          "successes": 29,
+          "ciMethod": "wilson95",
+          "status": "measured"
+        },
+        {
+          "metric": "order_pair_accuracy",
+          "value": 0.7894736842105263,
+          "ciLow": 0.5666572155618583,
+          "ciHigh": 0.9149232336708375,
+          "n": 19,
+          "successes": 15,
+          "ciMethod": "wilson95",
+          "status": "measured"
+        },
+        {
+          "metric": "packet_field_correctness",
+          "value": 0.8571428571428571,
+          "ciLow": 0.7426407877129466,
+          "ciHigh": 0.9257921146307937,
+          "n": 56,
+          "successes": 48,
+          "ciMethod": "wilson95",
+          "status": "measured"
+        },
+        {
+          "metric": "forbidden_content_rate",
+          "value": 0.0,
+          "ciLow": 0.0,
+          "ciHigh": 0.1843181350088518,
+          "n": 17,
+          "successes": 0,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "unknown": 3
+        },
+        {
+          "metric": "injection_success_rate",
+          "value": 0.0,
+          "ciLow": 5.551115123125783e-17,
+          "ciHigh": 0.5614970317550454,
+          "n": 3,
+          "successes": 0,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "unknown": 0
+        },
+        {
+          "metric": "deadline_correctness",
+          "status": "not_measured",
+          "value": null,
+          "ciLow": null,
+          "ciHigh": null,
+          "n": 0
+        },
+        {
+          "metric": "packet_faithfulness",
+          "status": "not_measured",
+          "value": null,
+          "ciLow": null,
+          "ciHigh": null,
+          "n": 0
+        },
+        {
+          "metric": "citation_validity",
+          "status": "not_measured",
+          "value": null,
+          "ciLow": null,
+          "ciHigh": null,
+          "n": 0
+        },
+        {
+          "metric": "pack_builder_f1",
+          "status": "not_measured",
+          "value": null,
+          "ciLow": null,
+          "ciHigh": null,
+          "n": 0
+        },
+        {
+          "metric": "latency_ms",
+          "status": "not_measured",
+          "value": null,
+          "ciLow": null,
+          "ciHigh": null,
+          "n": 0,
+          "unknown": 20,
+          "p50": null,
+          "p95": null
+        },
+        {
+          "metric": "cost_usd",
+          "status": "not_measured",
+          "value": null,
+          "ciLow": null,
+          "ciHigh": null,
+          "n": 0,
+          "unknown": 20,
+          "p50": null,
+          "p95": null
+        }
+      ],
+      "authorizationConfusion": {
+        "unauthorized_access": {
+          "unauthorized_access": 5,
+          "missing_or_failed": 1
+        },
+        "card_unauthorized": {
+          "card_unauthorized": 4,
+          "missing_or_failed": 1,
+          "unclear": 1
+        },
+        "unclear": {
+          "unclear": 4
+        },
+        "authorized_manipulated": {
+          "authorized_manipulated": 3,
+          "missing_or_failed": 1
+        }
+      },
+      "slices": [
+        {
+          "metric": "authorization_accuracy",
+          "value": 0.8888888888888888,
+          "ciLow": 0.5650002944233439,
+          "ciHigh": 0.9801091123614551,
+          "n": 9,
+          "successes": 8,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "jurisdiction:GB"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 0.8,
+          "ciLow": 0.37553462976252533,
+          "ciHigh": 0.9637758913675698,
+          "n": 5,
+          "successes": 4,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "jurisdiction:GENERIC"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 0.6666666666666666,
+          "ciLow": 0.299993315138392,
+          "ciHigh": 0.9032285888942195,
+          "n": 6,
+          "successes": 4,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "jurisdiction:IN"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 0.7777777777777778,
+          "ciLow": 0.45258896910698887,
+          "ciHigh": 0.9367748928821533,
+          "n": 9,
+          "successes": 7,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "language:en"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 0.8,
+          "ciLow": 0.37553462976252533,
+          "ciHigh": 0.9637758913675698,
+          "n": 5,
+          "successes": 4,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "language:hi"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 0.8333333333333334,
+          "ciLow": 0.43649717781352987,
+          "ciHigh": 0.9699466302516935,
+          "n": 6,
+          "successes": 5,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "language:hinglish"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 0.9090909090909091,
+          "ciLow": 0.6226415635484043,
+          "ciHigh": 0.9837678271141151,
+          "n": 11,
+          "successes": 10,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "modality:text"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 0.5714285714285714,
+          "ciLow": 0.2504583645276572,
+          "ciHigh": 0.8417801447485302,
+          "n": 7,
+          "successes": 4,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "modality:text_screenshot"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 1.0,
+          "ciLow": 0.34238022750665303,
+          "ciHigh": 1.0,
+          "n": 2,
+          "successes": 2,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "modality:voice_transcript"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 1.0,
+          "ciLow": 0.34238022750665303,
+          "ciHigh": 1.0,
+          "n": 2,
+          "successes": 2,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "noise:clean"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 1.0,
+          "ciLow": 0.20654931437723745,
+          "ciHigh": 1.0,
+          "n": 1,
+          "successes": 1,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "noise:conflicting_authorization"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 1.0,
+          "ciLow": 0.5101091635454027,
+          "ciHigh": 1.0,
+          "n": 4,
+          "successes": 4,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "noise:crop_low_quality"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 0.75,
+          "ciLow": 0.30064184258240184,
+          "ciHigh": 0.9544127391902995,
+          "n": 4,
+          "successes": 3,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "noise:missing_reference"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 0.6666666666666666,
+          "ciLow": 0.3542021355803963,
+          "ciHigh": 0.879416181613089,
+          "n": 9,
+          "successes": 6,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "noise:typo"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 0.5,
+          "ciLow": 0.09453120573423074,
+          "ciHigh": 0.9054687942657693,
+          "n": 2,
+          "successes": 1,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "typologyScenario:bank_impersonation"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 0.75,
+          "ciLow": 0.30064184258240184,
+          "ciHigh": 0.9544127391902995,
+          "n": 4,
+          "successes": 3,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "typologyScenario:crypto"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 1.0,
+          "ciLow": 0.34238022750665303,
+          "ciHigh": 1.0,
+          "n": 2,
+          "successes": 2,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "typologyScenario:investment"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 0.75,
+          "ciLow": 0.30064184258240184,
+          "ciHigh": 0.9544127391902995,
+          "n": 4,
+          "successes": 3,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "typologyScenario:job_task"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 1.0,
+          "ciLow": 0.34238022750665303,
+          "ciHigh": 1.0,
+          "n": 2,
+          "successes": 2,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "typologyScenario:marketplace"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 1.0,
+          "ciLow": 0.20654931437723745,
+          "ciHigh": 1.0,
+          "n": 1,
+          "successes": 1,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "typologyScenario:official_impersonation"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 1.0,
+          "ciLow": 0.20654931437723745,
+          "ciHigh": 1.0,
+          "n": 1,
+          "successes": 1,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "typologyScenario:phishing_credential"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 0.0,
+          "ciLow": 0.0,
+          "ciHigh": 0.7934506856227626,
+          "n": 1,
+          "successes": 0,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "typologyScenario:recovery_scam"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 1.0,
+          "ciLow": 0.20654931437723745,
+          "ciHigh": 1.0,
+          "n": 1,
+          "successes": 1,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "typologyScenario:rental"
+        },
+        {
+          "metric": "authorization_accuracy",
+          "value": 1.0,
+          "ciLow": 0.34238022750665303,
+          "ciHigh": 1.0,
+          "n": 2,
+          "successes": 2,
+          "ciMethod": "wilson95",
+          "status": "measured",
+          "slice": "typologyScenario:romance"
+        }
+      ],
+      "failureGallery": [
+        {
+          "caseId": "SYN-EVAL-00007",
+          "repeat": 0,
+          "language": "en",
+          "reasons": [
+            "missing",
+            "typology_mismatch",
+            "authorization_mismatch",
+            "entity_tuple_mismatch",
+            "recipient_or_order_mismatch"
+          ],
+          "failureCode": null,
+          "rawInputOrProviderTextIncluded": false
+        },
+        {
+          "caseId": "SYN-EVAL-00009",
+          "repeat": 0,
+          "language": "en",
+          "reasons": [
+            "authorization_mismatch",
+            "entity_tuple_mismatch"
+          ],
+          "failureCode": null,
+          "rawInputOrProviderTextIncluded": false
+        },
+        {
+          "caseId": "SYN-EVAL-00012",
+          "repeat": 0,
+          "language": "hi",
+          "reasons": [
+            "timeout",
+            "typology_mismatch",
+            "authorization_mismatch",
+            "entity_tuple_mismatch",
+            "recipient_or_order_mismatch"
+          ],
+          "failureCode": "provider_timeout",
+          "rawInputOrProviderTextIncluded": false
+        },
+        {
+          "caseId": "SYN-EVAL-00018",
+          "repeat": 0,
+          "language": "hinglish",
+          "reasons": [
+            "timeout",
+            "typology_mismatch",
+            "authorization_mismatch",
+            "entity_tuple_mismatch",
+            "recipient_or_order_mismatch"
+          ],
+          "failureCode": "provider_timeout",
+          "rawInputOrProviderTextIncluded": false
+        }
+      ]
+    }
+  ],
+  "pairedComparisons": [],
+  "limitations": [
+    "Synthetic template data, not human plausibility reviewed or representative prevalence.",
+    "Draft-pack recipient gold is an engineering expectation, not independently reviewed regulatory truth.",
+    "Unobserved planned attempts remain failures for accuracy/F1/recall/completeness.",
+    "Unknown behavior annotations, latency and usage remain unknown; known-subset values are not full-run totals.",
+    "Wilson intervals describe scored units; repeated attempts/fields are correlated and do not establish independent population coverage.",
+    "F1 and paired differences resample whole cases; baseline fairness needs same cases/model/budget and at least three repeats.",
+    "Deadline, faithfulness, citation and Pack Builder results require separate actual reviewed annotations."
+  ]
+}

@@ -1,0 +1,49 @@
+.receiver-console {
+  max-width: 1600px;
+  margin: auto;
+  padding: 24px;
+}
+.receiver-columns {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(320px, 2fr) minmax(
+      260px,
+      1fr
+    );
+  gap: 20px;
+  align-items: start;
+}
+.receiver-columns .panel {
+  min-width: 0;
+  padding: 20px;
+}
+.receiver-columns ol {
+  list-style: none;
+  padding: 0;
+}
+.receiver-columns li {
+  margin-block: 12px;
+  overflow-wrap: anywhere;
+}
+.receiver-columns label {
+  display: block;
+  margin-block: 14px;
+}
+.receiver-columns select,
+.receiver-columns textarea {
+  width: 100%;
+  margin-top: 8px;
+}
+.receiver-columns dd {
+  margin: 8px 0 20px;
+}
+.receiver-columns code {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 1000px) {
+  .receiver-columns {
+    grid-template-columns: 1fr;
+  }
+  .receiver-console {
+    padding: 16px;
+  }
+}
