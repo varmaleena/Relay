@@ -9,7 +9,7 @@ The public [evidence and results page](https://work-511514.web.app/results) sepa
 ## Submission links
 
 - [Live prototype](https://work-511514.web.app)
-- [Narrated and captioned demonstration video](https://drive.google.com/file/d/1U6Ag1LrUGu6eN4uJwC-B0XncIogZwh5Y/view), 1 minute 41 seconds. Actual synthetic screen recording, disclosed synthetic English narration and real waiting time.
+- [Narrated and captioned demonstration video](https://drive.google.com/file/d/1U6Ag1LrUGu6eN4uJwC-B0XncIogZwh5Y/view), approximately 1 minute 57 seconds. Actual synthetic screen recording and real waiting time, followed by a labeled static view of the downloaded PDF. Synthetic English narration is disclosed.
 - [Six-slide proposal PDF](https://drive.google.com/file/d/16DkEH1BvfXshfo7Jm_zenFrzer9BHD9f/view)
 - [Evidence and results](https://work-511514.web.app/results)
 - [Submission scope and limitations](docs/submission/SUBMISSION_READINESS.md)

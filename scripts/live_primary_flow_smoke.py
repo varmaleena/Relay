@@ -7,6 +7,7 @@ import hashlib
 import json
 import os
 import subprocess
+import sys
 import time
 from contextlib import contextmanager
 from datetime import UTC, datetime, timedelta
@@ -37,6 +38,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 @contextmanager
 def paused_worker(client: Any, pid: int, parent: int, state: dict[str, Any]):
+    if sys.platform != "win32":
+        raise RuntimeError("worker pause smoke requires Windows")
+
     def running():
         return list(
             client.collection("jobs")

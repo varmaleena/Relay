@@ -36,7 +36,10 @@ target. The submitted video shows the working text-first journey.
 - PDF deck: https://drive.google.com/file/d/16DkEH1BvfXshfo7Jm_zenFrzer9BHD9f/view
 - Results: https://work-511514.web.app/results
 
-The video is approximately1:41 with synthetic English narration and captions
-over an actual continuous hosted synthetic recording. Real waiting time is kept.
+The video is approximately1:57 with synthetic English narration and captions
+over an actual continuous hosted synthetic recording, followed by a labeled
+static view of the actual downloaded PDF. Real waiting time is kept. Its ending
+explains that automated report checks passed while source guidance remains
+unreviewed; it does not hide or remove that PDF warning.
 These links were checked without credentials; the owner still makes the actual
 submission and any eligibility/originality/terms declarations in the portal.

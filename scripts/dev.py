@@ -14,6 +14,13 @@ from typing import IO
 
 from scripts.dev_checkpoint import EmulatorCheckpoints
 
+if sys.platform == "win32":
+    from signal import CTRL_BREAK_EVENT as PROCESS_STOP_SIGNAL
+    from subprocess import CREATE_NEW_PROCESS_GROUP as PROCESS_CREATION_FLAGS
+else:
+    PROCESS_STOP_SIGNAL = signal.SIGINT
+    PROCESS_CREATION_FLAGS = 0
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -135,7 +142,7 @@ def main() -> None:
             env=child_env or env,
             stdout=handle,
             stderr=handle,
-            creationflags=subprocess.CREATE_NEW_PROCESS_GROUP if os.name == "nt" else 0,
+            creationflags=PROCESS_CREATION_FLAGS,
         )
         processes.append(process)
         return process
@@ -212,7 +219,7 @@ def main() -> None:
                     env=export_env,
                     stdout=checkpoint_log,
                     stderr=checkpoint_log,
-                    creationflags=subprocess.CREATE_NEW_PROCESS_GROUP if os.name == "nt" else 0,
+                    creationflags=PROCESS_CREATION_FLAGS,
                 )
             time.sleep(1)
         raise RuntimeError("A local service stopped; inspect .tmp/dev logs")
@@ -230,7 +237,7 @@ def main() -> None:
         for process in services:
             if process.poll() is None:
                 if os.name == "nt":
-                    process.send_signal(signal.CTRL_BREAK_EVENT)
+                    process.send_signal(PROCESS_STOP_SIGNAL)
                 else:
                     process.send_signal(signal.SIGINT)
         for process in services:
@@ -263,9 +270,7 @@ def main() -> None:
                 except (subprocess.SubprocessError, OSError):
                     print("Emulator export failed; inspect .tmp/dev/export.log.", flush=True)
         if emulator_process is not None and emulator_process.poll() is None:
-            emulator_process.send_signal(
-                signal.CTRL_BREAK_EVENT if os.name == "nt" else signal.SIGINT
-            )
+            emulator_process.send_signal(PROCESS_STOP_SIGNAL)
             try:
                 emulator_process.wait(timeout=15)
             except subprocess.TimeoutExpired:

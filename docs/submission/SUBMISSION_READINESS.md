@@ -24,7 +24,7 @@ cutoff and any eligibility declarations still require the owner's review.
 - Repository destination: https://github.com/varmaleena/Relay
 - Deck: RELAY_DECK.pdf, six English slides; editable RELAY_DECK.pptx also provided.
 - Raw actual recording: RELAY_DEMO.webm,100.88seconds, synthetic inputs only.
-- Narrated/captioned recording: RELAY_DEMO_NARRATED.webm,100.83seconds, VP9/Opus,
+- Narrated/captioned recording: RELAY_DEMO_NARRATED.webm,116.82seconds, VP9/Opus,
   visible English captions and synthetic-narration disclosure.
 - Public video: https://drive.google.com/file/d/1U6Ag1LrUGu6eN4uJwC-B0XncIogZwh5Y/view
 - Public PDF: https://drive.google.com/file/d/16DkEH1BvfXshfo7Jm_zenFrzer9BHD9f/view
