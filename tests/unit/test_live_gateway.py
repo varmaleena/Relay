@@ -136,9 +136,20 @@ def close_reason(ws, code):
     return result["reason"]
 
 
-def test_safe_text_and_buffered_audio_use_auth_and_release_lease(context):
+def test_safe_text_and_buffered_audio_use_auth_and_release_lease(context, monkeypatch):
+    from threading import Event
+
     c = context
-    with TestClient(app(c)) as client:
+    test_app = app(c)
+    released = Event()
+    original_release = c.registry.release
+
+    def observe_release(record):
+        original_release(record)
+        released.set()
+
+    monkeypatch.setattr(c.registry, "release", observe_release)
+    with TestClient(test_app) as client:
         with client.websocket_connect(
             "/live/v1/session", headers={"origin": "https://relay.test"}
         ) as ws:
@@ -149,6 +160,9 @@ def test_safe_text_and_buffered_audio_use_auth_and_release_lease(context):
             assert ws.receive_bytes() == b"\0\0" * 320
             ws.send_json({"type": "end"})
             assert close_reason(ws, 1000) == "ended"
+            # The close frame precedes the server's asynchronous finalizer.
+            # Keep the test transport alive until the actual lease mutation finishes.
+            assert released.wait(timeout=5), "graceful end did not release the lease"
     assert c.verifier.calls == [("synthetic-id", "synthetic-appcheck")]
     assert c.provider.closed
     assert not any(path.startswith("liveSessions/") for path in c.repo.documents)
