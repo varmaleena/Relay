@@ -18,6 +18,19 @@ NOW = datetime(2026, 10, 14, tzinfo=UTC)
 ROOT = Path(__file__).resolve().parents[2]
 
 
+@pytest.fixture(autouse=True)
+def reproducible_statement_identifiers(monkeypatch):
+    """Avoid random card-shaped digit runs in synthetic opaque provenance IDs."""
+    from itertools import count
+    from uuid import UUID
+
+    sequence = count(1)
+    monkeypatch.setattr(
+        "packages.common.identifiers.uuid4",
+        lambda: UUID(hex=f"bbbbbbbbbbbbbbbbbbbbbbbb{next(sequence):08x}"),
+    )
+
+
 def confirmed():
     return {
         "country": {"value": "IN"},
