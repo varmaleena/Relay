@@ -36,10 +36,21 @@ target. The submitted video shows the working text-first journey.
 - PDF deck: https://drive.google.com/file/d/16DkEH1BvfXshfo7Jm_zenFrzer9BHD9f/view
 - Results: https://work-511514.web.app/results
 
-The video is approximately1:57 with synthetic English narration and captions
-over an actual continuous hosted synthetic recording, followed by a labeled
-static view of the actual downloaded PDF. Real waiting time is kept. Its ending
-explains that automated report checks passed while source guidance remains
-unreviewed; it does not hide or remove that PDF warning.
+The video is approximately 3:21 with synthetic English narration and captions.
+It includes an introduction, the actual continuous hosted synthetic recording,
+the downloaded PDF, and an explanation of Google services and remaining gates.
+Real waiting time is kept. Automated report checks passed while source guidance
+remains unreviewed; the PDF warning stays visible.
+The 14-page deck uses the official supplied challenge template, with its branding
+and required sections retained. The PDF is below the portal's 5 MB limit.
 These links were checked without credentials; the owner still makes the actual
 submission and any eligibility/originality/terms declarations in the portal.
+
+## Portal requirements supplied by the owner on 18 October
+
+Video: 3–4 minutes. Deck: prescribed template, PDF below 5 MB.
+Deadline shown in the portal: 18 October 2026, 11:59 PM IST.
+Team: Agent Forge. Leader: Leena Varma.
+Members: Nanda Varshitha, Deekshitha, Umesh.
+These portal-specific requirements supersede the earlier public-page duration
+interpretation. The previous 1:57 video and six-slide custom deck were insufficient.

@@ -17,14 +17,21 @@ the actual dashboard's available theme field rather than inventing a category.
 The public site lists18October as the prototype deadline; the dashboard's exact
 cutoff and any eligibility declarations still require the owner's review.
 
+The owner subsequently supplied the actual portal rules: prescribed deck template,
+PDF below 5 MB, 3–4 minute video, and deadline18October2026 at11:59PM IST.
+These specific rules supersede the earlier public-page interpretation. The prior
+six-slide custom deck and1:57 video were insufficient and have been replaced.
+
 ## Package
 
 - Prototype: https://work-511514.web.app
 - Evidence: https://work-511514.web.app/results
 - Repository destination: https://github.com/varmaleena/Relay
-- Deck: RELAY_DECK.pdf, six English slides; editable RELAY_DECK.pptx also provided.
+- Deck: RELAY_DECK.pdf,14 English slides using the supplied official template,
+  1,642,172 bytes; editable RELAY_DECK.pptx also provided. Original branding and
+  required sections retained; download instructions and unused blank slide omitted.
 - Raw actual recording: RELAY_DEMO.webm,100.88seconds, synthetic inputs only.
-- Narrated/captioned recording: RELAY_DEMO_NARRATED.webm,116.82seconds, VP9/Opus,
+- Narrated/captioned recording: RELAY_DEMO_NARRATED.webm,approximately201.5seconds, VP9/Opus,
   visible English captions and synthetic-narration disclosure.
 - Public video: https://drive.google.com/file/d/1U6Ag1LrUGu6eN4uJwC-B0XncIogZwh5Y/view
 - Public PDF: https://drive.google.com/file/d/16DkEH1BvfXshfo7Jm_zenFrzer9BHD9f/view
@@ -54,8 +61,11 @@ passed. This accommodates observed cold starts; it does not claim latency improv
 or the p95 target passed. No always-on instance/cost expansion was introduced.
 
 The initial public CI run failed on two formatting-only test files. They were
-formatted; full local lint and typecheck passed. Remote follow-up CI is a separate
-gate whose actual outcome must be recorded, not assumed.
+formatted; full local lint and typecheck passed. Follow-up public CI at
+2a562be35c87f32058eb3470e0b7cfd3c25613dc passed:1,155 Python tests,6 skips,
+Firebase rules and Firestore emulator checks, lint, typecheck, build, contracts and
+dependency checks. Artifact byte preservation and deterministic test IDs were
+corrected without weakening integrity hashes or credential filters.
 
 Remaining: owner review of portal eligibility/cutoff and actual submission. No
 portal confirmation or binding declaration is fabricated. The package is a
