@@ -1,0 +1,6 @@
+# Preserve source evidence exactly as captured; hashes refer to these bytes.
+docs/pack-sources/** -text
+*.pdf -text
+*.png -text
+*.ttf -text
+*.webm -text
